@@ -1,20 +1,245 @@
-<!doctype html><html lang="uk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Захисти дисертацій — НУБіП України</title><meta name="theme-color" content="#103b75"><meta name="application-name" content="Захисти НУБіП"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="apple-mobile-web-app-title" content="Захисти НУБіП"><link rel="manifest" href="./manifest.webmanifest"><link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png"><link rel="apple-touch-icon" href="./icon-192.png"><style>
-:root{font-family:system-ui,-apple-system,'Segoe UI',sans-serif;color:#163454;background:#f3f7fd}*{box-sizing:border-box}body{margin:0}header{background:linear-gradient(110deg,#103b75,#2469b5);color:white;padding:35px max(18px,calc((100vw - 1140px)/2)) 52px}h1{margin:6px 0;font-size:clamp(26px,4vw,43px)}header p{opacity:.9}.tag{font-size:12px;letter-spacing:.12em;font-weight:800}main{max-width:1140px;margin:-24px auto 60px;padding:0 18px}.panel,.card{background:white;border:1px solid #dce7f5;border-radius:16px;box-shadow:0 4px 20px #173e7712}.panel{padding:18px;margin-bottom:18px}.row{display:flex;gap:12px;align-items:center;flex-wrap:wrap;justify-content:space-between}.stats{display:flex;gap:25px;flex-wrap:wrap}.stat b{display:block;font-size:26px;color:#185caa}.stat small,.muted{font-size:13px;color:#5c7390}button,select,input{font:inherit;border:1px solid #cbdaf0;border-radius:10px;padding:10px 12px;background:white;color:#143962}button{cursor:pointer}button.active,.primary{background:#185caa;color:white;border-color:#185caa}.tabs,.filters{display:flex;gap:9px;flex-wrap:wrap}.filters{margin-top:14px}.filters input{flex:1;min-width:190px}.layout{display:grid;grid-template-columns:1fr 300px;gap:18px}.cards{display:grid;gap:12px}.card{padding:19px}.card h3{margin:10px 0;font-size:20px}.card p{line-height:1.55;margin:8px 0}.pill{display:inline-block;background:#e7f1ff;color:#225b9c;border-radius:30px;padding:5px 10px;font-size:12px;font-weight:700}.pill.blue{background:#e7effd;color:#22579d}.pill.gray{background:#f0f2f0;color:#5f748e}.card a{color:#185caa;font-weight:700}.date{font-weight:800;color:#225b9c}.calendar{position:sticky;top:16px}.month{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}.grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;text-align:center}.grid button{padding:8px 0;border:0;border-radius:8px;font-size:12px}.grid button.has{background:#dcecff;color:#164d91;font-weight:800}.grid button.chosen{background:#185caa;color:white}.grid span{font-size:11px;color:#6b7e99;padding:7px 0}.empty{padding:34px;text-align:center;background:white;border:1px dashed #c7d9ed;border-radius:16px;color:#5c7390}.notice{background:#fff8e9;border:1px solid #efdbab;color:#72551a;border-radius:12px;padding:12px;margin-top:12px;font-size:13px}footer{text-align:center;font-size:12px;color:#5c7390;padding:18px}@media(max-width:790px){.layout{grid-template-columns:1fr}.calendar{position:static;order:-1}header{padding:24px 20px 45px}}
-.pill.orange{background:#fff0dd;color:#9c5100;border-color:#f2cf9b}
-.install-app{border:1px solid #b7d3f4;background:#e7f1ff;color:#103b75;border-radius:11px;padding:11px 16px;font:inherit;font-weight:700;cursor:pointer;margin:10px 0}.install-app:hover{background:#d9eaff}.install-help{font-size:13px;color:#4b6588;line-height:1.45;margin:0 0 12px}.install-app[hidden]{display:none!important}
-</style></head><body><header><div class="tag">НУБіП УКРАЇНИ · ІНФОРМАЦІЙНИЙ ВЕБЗАСТОСУНОК</div><h1>Захисти дисертацій</h1><p>Найближчі захисти, календар і архів з 2026 року</p></header><aside id="pwaPanel" style="max-width:1140px;margin:12px auto 0;padding:0 18px"><button id="installApp" class="install-app" type="button">📲 Встановити застосунок</button><p class="install-help" id="installHelp">Android: відкрийте меню Chrome → «Встановити застосунок» або «Додати на головний екран». Windows: у Chrome або Edge натисніть значок встановлення в адресному рядку чи скористайтеся меню браузера.</p></aside><main><section class="panel"><div class="row"><div class="stats"><div class="stat"><b id="all">—</b><small>Усього</small></div><div class="stat"><b id="future">—</b><small>Майбутні</small></div><div class="stat"><b id="past">—</b><small>Архів</small></div><div class="stat"><b id="phd">—</b><small>PhD (визначено)</small></div><div class="stat"><b id="doctor">—</b><small>Доктор наук</small></div><div class="stat"><b id="candidate">—</b><small>Кандидат наук</small></div></div><button id="sync" class="primary">↻ Оновити</button></div><div id="status" class="muted" style="margin-top:12px">Завантаження…</div><div id="notice" class="notice" hidden></div></section><section class="panel"><div class="tabs"><button data-tab="future" class="active">Найближчі</button><button data-tab="calendar">Календар</button><button data-tab="past">Архів</button><button data-tab="all">Усі захисти</button></div><div class="filters"><input id="q" placeholder="Пошук: здобувач, тема, спеціальність, рада…" aria-label="Пошук"><select id="degree" aria-label="Науковий ступінь"><option value="">Усі ступені</option><option value="PhD">Доктор філософії (PhD)</option><option value="Доктор наук">Доктор наук</option><option value="Кандидат наук">Кандидат наук</option><option value="unknown">Ступінь не визначено</option></select><select id="year" aria-label="Рік"><option value="">Усі роки</option></select><button id="clear">Скинути</button></div></section><div class="layout"><section><div class="row" style="margin-bottom:12px"><h2 id="heading" style="margin:0;font-size:21px">Найближчі захисти</h2><span class="muted" id="count"></span></div><div id="cards" class="cards"></div></section><aside class="panel calendar"><div class="month"><button id="prev" aria-label="Попередній місяць">‹</button><b id="month"></b><button id="next" aria-label="Наступний місяць">›</button></div><div class="grid" id="grid"></div><p class="muted">Зелені дати — заплановані або проведені захисти. Натисніть дату для перегляду.</p><button id="resetDay" style="width:100%">Усі дати</button></aside></div><footer>Джерело: <a href="https://nubip.edu.ua/defend" target="_blank" rel="noopener noreferrer">офіційний сайт НУБіП України</a>. Оновлення даних — кожні 3 години. Ступінь визначається за формулюванням на офіційній сторінці, а не за номером ради.</footer></main><script>
-const $=id=>document.getElementById(id);let items=[],tab='future',day='',view=new Date();view.setDate(1);const today=()=>{let d=new Date();return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`};const esc=s=>String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));const nice=d=>new Date(d+'T12:00:00').toLocaleDateString('uk-UA',{day:'numeric',month:'long',year:'numeric'});function setTabs(){document.querySelectorAll('[data-tab]').forEach(b=>b.classList.toggle('active',b.dataset.tab===tab))}
-function render(){const now=today();let years=[...new Set(items.map(x=>x.date.slice(0,4)))].sort().reverse(),current=$('year').value;$('year').innerHTML='<option value="">Усі роки</option>'+years.map(y=>`<option value="${y}">${y}</option>`).join('');$('year').value=current;$('all').textContent=items.length;$('future').textContent=items.filter(x=>x.date>=now).length;$('past').textContent=items.filter(x=>x.date<now).length;$('phd').textContent=items.filter(x=>x.degree==='PhD').length;$('doctor').textContent=items.filter(x=>x.degree==='Доктор наук').length;$('candidate').textContent=items.filter(x=>x.degree==='Кандидат наук').length;let q=$('q').value.toLocaleLowerCase('uk-UA').trim(),degree=$('degree').value;let filtered=items.filter(x=>(tab==='all'||tab==='calendar'||(tab==='future'?x.date>=now:x.date<now))&&(!day||x.date===day)&&(!current||x.date.startsWith(current))&&(!degree||(degree==='unknown'?!x.degree:x.degree===degree))&&(!q||[x.title,x.person,x.person_original,x.person_display,x.topic,x.place,x.degree,x.degree_full,x.council,x.specialty].join(' ').toLocaleLowerCase('uk-UA').includes(q)));filtered.sort((a,b)=>(a.date+' '+a.time).localeCompare(b.date+' '+b.time)*(tab==='past'?-1:1));$('heading').textContent=({future:'Найближчі захисти',past:'Архів захистів',all:'Усі захисти',calendar:'Календар захистів'})[tab]+(day?' · '+nice(day):'');$('count').textContent=filtered.length+' записів';$('cards').innerHTML=filtered.length?filtered.map(x=>`<article class="card"><div class="row"><span class="date">${nice(x.date)} · ${esc(x.time||'час не вказано')}</span><span class="pill ${x.degree==='Доктор наук'?'blue':x.degree==='Кандидат наук'?'orange':x.degree?'':'gray'}">${esc(x.degree_full||(x.degree==='PhD'?'Доктор філософії (PhD)':x.degree||'Ступінь уточнюється'))}</span></div><h3>Захист дисертації ${esc(x.person_original||x.person||x.title)}</h3><p><strong>Тема:</strong> ${esc(x.topic||x.title)}</p>${x.specialty?`<p><strong>Спеціальність:</strong> ${esc(x.specialty)}</p>`:''}${x.council?`<p><strong>Рада:</strong> ${esc(x.council)}</p>`:''}${x.place?`<p><strong>Місце:</strong> ${esc(x.place)}</p>`:''}<p><a href="${esc(x.url)}" target="_blank" rel="noopener noreferrer">Офіційна сторінка та документи ↗</a></p></article>`).join(''):'<div class="empty">За вибраними умовами записів немає. Спробуйте змінити фільтри.</div>';calendar()}
-function calendar(){let y=view.getFullYear(),m=view.getMonth(),first=(new Date(y,m,1).getDay()+6)%7,days=new Date(y,m+1,0).getDate();$('month').textContent=view.toLocaleDateString('uk-UA',{month:'long',year:'numeric'});let html=['Пн','Вт','Ср','Чт','Пт','Сб','Нд'].map(s=>`<span>${s}</span>`).join('')+'<span></span>'.repeat(first),dates=new Set(items.map(x=>x.date));for(let i=1;i<=days;i++){let d=`${y}-${String(m+1).padStart(2,'0')}-${String(i).padStart(2,'0')}`;html+=`<button class="${dates.has(d)?'has':''} ${day===d?'chosen':''}" data-day="${d}">${i}</button>`}$('grid').innerHTML=html;document.querySelectorAll('[data-day]').forEach(b=>b.onclick=()=>{day=b.dataset.day;tab='calendar';setTabs();render()})}
-async function load(){try{let r=await fetch('./data.json?ts='+Date.now(),{cache:'no-store'});if(!r.ok)throw Error('Не вдалося отримати data.json');let data=await r.json();items=data.items||[];$('status').textContent=`Захистів: ${items.length} · Перевірено сторінок: ${data.pages_scanned||0} · Оновлено: ${data.updated_at?new Date(data.updated_at).toLocaleString('uk-UA'):'ще не виконано'}`;let msg=!data.complete?'Синхронізацію ще не завершено.':data.detail_failures?'Не вдалося перевірити частину детальних сторінок: '+data.detail_failures:'';$('notice').hidden=!msg;$('notice').textContent=msg;render()}catch(e){$('status').textContent='Не вдалося завантажити дані';$('notice').hidden=false;$('notice').textContent=e.message;render()}}
-document.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>{tab=b.dataset.tab;day='';setTabs();render()});$('q').oninput=render;$('year').onchange=render;$('degree').onchange=render;$('clear').onclick=()=>{$('q').value='';$('year').value='';$('degree').value='';day='';render()};$('prev').onclick=()=>{view.setMonth(view.getMonth()-1);calendar()};$('next').onclick=()=>{view.setMonth(view.getMonth()+1);calendar()};$('resetDay').onclick=()=>{day='';render()};$('sync').onclick=load;load();setInterval(load,180000);
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Захисти дисертацій — НУБіП України</title>
+<meta name="theme-color" content="#103b75">
+<meta name="application-name" content="Захисти НУБіП">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Захисти НУБіП">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png">
+<link rel="apple-touch-icon" href="./icon-192.png">
+<style>
+:root{font-family:system-ui,-apple-system,'Segoe UI',sans-serif;color:#163454;background:#f3f7fd}
+*{box-sizing:border-box}body{margin:0}
+header{background:linear-gradient(110deg,#103b75,#2469b5);color:white;padding:35px max(18px,calc((100vw - 1140px)/2)) 52px}
+h1{margin:6px 0;font-size:clamp(26px,4vw,43px)}header p{opacity:.9}.tag{font-size:12px;letter-spacing:.12em;font-weight:800}
+main{max-width:1140px;margin:-24px auto 60px;padding:0 18px}
+.panel,.card{background:white;border:1px solid #dce7f5;border-radius:16px;box-shadow:0 4px 20px #173e7712}
+.panel{padding:18px;margin-bottom:18px}.row{display:flex;gap:12px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.stats{display:flex;gap:25px;flex-wrap:wrap}.stat b{display:block;font-size:26px;color:#185caa}
+.stat small,.muted{font-size:13px;color:#5c7390}
+button,select,input{font:inherit;border:1px solid #cbdaf0;border-radius:10px;padding:10px 12px;background:white;color:#143962}
+button{cursor:pointer}button.active,.primary{background:#185caa;color:white;border-color:#185caa}
+.tabs,.filters{display:flex;gap:9px;flex-wrap:wrap}.filters{margin-top:14px}.filters input{flex:1;min-width:190px}
+.layout{display:grid;grid-template-columns:1fr 300px;gap:18px}.cards{display:grid;gap:12px}
+.card{padding:19px}.card h3{margin:10px 0;font-size:20px}.card p{line-height:1.55;margin:8px 0}
+.pill{display:inline-block;background:#e7f1ff;color:#225b9c;border-radius:30px;padding:5px 10px;font-size:12px;font-weight:700}
+.pill.blue{background:#e7effd;color:#22579d}.pill.orange{background:#fff0dd;color:#9c5100}
+.pill.gray{background:#f0f2f0;color:#5f748e}.card a,.next-defense a{color:#185caa;font-weight:700}
+.date{font-weight:800;color:#225b9c}.calendar{position:sticky;top:16px}
+.month{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;text-align:center}
+.grid button{padding:8px 0;border:0;border-radius:8px;font-size:12px}
+.grid button.has{background:#dcecff;color:#164d91;font-weight:800}
+.grid button.chosen{background:#185caa;color:white}
+.grid span{font-size:11px;color:#6b7e99;padding:7px 0}
+.empty{padding:34px;text-align:center;background:white;border:1px dashed #c7d9ed;border-radius:16px;color:#5c7390}
+.notice{background:#fff8e9;border:1px solid #efdbab;color:#72551a;border-radius:12px;padding:12px;margin-top:12px;font-size:13px}
+footer{text-align:center;font-size:12px;color:#5c7390;padding:18px}
+.install-app{border:1px solid #b7d3f4;background:#e7f1ff;color:#103b75;border-radius:11px;padding:11px 16px;font:inherit;font-weight:700;cursor:pointer;margin:10px 0}
+.install-app:hover{background:#d9eaff}.install-help{font-size:13px;color:#4b6588;line-height:1.45;margin:0 0 12px}.install-app[hidden]{display:none!important}
+.countdown{display:inline-flex;gap:6px;align-items:center;max-width:100%;padding:7px 11px;margin:8px 0 1px;border-radius:9px;font-size:13px;font-weight:750;line-height:1.4}
+.countdown.far{background:#e7f1ff;color:#164c8a}
+.countdown.soon{background:#fff1df;color:#92520b}
+.countdown.tomorrow{background:#ffedf0;color:#a12d46}
+.countdown.today{background:#e6f7ed;color:#146b42}
+.countdown.past{background:#f0f3f7;color:#65768a}
+.next-defense{margin-top:16px;padding:15px 16px;background:linear-gradient(110deg,#e6f1ff,#f5f9ff);border:1px solid #bad6f6;border-radius:13px}
+.next-defense h2{margin:0 0 8px;font-size:17px;color:#163b71}
+.next-defense p{margin:6px 0;line-height:1.5}.next-defense .countdown{font-size:14px}
+@media(max-width:790px){.layout{grid-template-columns:1fr}.calendar{position:static;order:-1}header{padding:24px 20px 45px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="tag">НУБіП УКРАЇНИ · ІНФОРМАЦІЙНИЙ ВЕБЗАСТОСУНОК</div>
+  <h1>Захисти дисертацій</h1>
+  <p>Найближчі захисти, календар і архів з 2026 року</p>
+</header>
+<aside id="pwaPanel" style="max-width:1140px;margin:12px auto 0;padding:0 18px">
+  <button id="installApp" class="install-app" type="button">📲 Встановити застосунок</button>
+  <p class="install-help" id="installHelp">Android: відкрийте меню Chrome → «Встановити застосунок» або «Додати на головний екран». iPhone: Safari → «Поділитися» → «На початковий екран». Windows: скористайтеся меню Chrome або Edge.</p>
+</aside>
+<main>
+  <section class="panel">
+    <div class="row">
+      <div class="stats">
+        <div class="stat"><b id="all">—</b><small>Усього</small></div>
+        <div class="stat"><b id="future">—</b><small>Майбутні</small></div>
+        <div class="stat"><b id="past">—</b><small>Архів</small></div>
+        <div class="stat"><b id="phd">—</b><small>PhD (визначено)</small></div>
+        <div class="stat"><b id="doctor">—</b><small>Доктор наук</small></div>
+        <div class="stat"><b id="candidate">—</b><small>Кандидат наук</small></div>
+      </div>
+      <button id="sync" class="primary" type="button">↻ Оновити</button>
+    </div>
+    <div id="status" class="muted" style="margin-top:12px">Завантаження…</div>
+    <div id="notice" class="notice" hidden></div>
+    <div id="nextDefense" class="next-defense" hidden aria-live="polite"></div>
+  </section>
+  <section class="panel">
+    <div class="tabs">
+      <button data-tab="future" class="active" type="button">Найближчі</button>
+      <button data-tab="calendar" type="button">Календар</button>
+      <button data-tab="past" type="button">Архів</button>
+      <button data-tab="all" type="button">Усі захисти</button>
+    </div>
+    <div class="filters">
+      <input id="q" placeholder="Пошук: здобувач, тема, спеціальність, рада…" aria-label="Пошук">
+      <select id="degree" aria-label="Науковий ступінь">
+        <option value="">Усі ступені</option>
+        <option value="PhD">Доктор філософії (PhD)</option>
+        <option value="Доктор наук">Доктор наук</option>
+        <option value="Кандидат наук">Кандидат наук</option>
+        <option value="unknown">Ступінь не визначено</option>
+      </select>
+      <select id="year" aria-label="Рік"><option value="">Усі роки</option></select>
+      <button id="clear" type="button">Скинути</button>
+    </div>
+  </section>
+  <div class="layout">
+    <section>
+      <div class="row" style="margin-bottom:12px">
+        <h2 id="heading" style="margin:0;font-size:21px">Найближчі захисти</h2>
+        <span class="muted" id="count"></span>
+      </div>
+      <div id="cards" class="cards"></div>
+    </section>
+    <aside class="panel calendar">
+      <div class="month">
+        <button id="prev" type="button" aria-label="Попередній місяць">‹</button>
+        <b id="month"></b>
+        <button id="next" type="button" aria-label="Наступний місяць">›</button>
+      </div>
+      <div class="grid" id="grid"></div>
+      <p class="muted">Сині дати — заплановані або проведені захисти. Натисніть дату для перегляду.</p>
+      <button id="resetDay" type="button" style="width:100%">Усі дати</button>
+    </aside>
+  </div>
+  <footer>Джерело: <a href="https://nubip.edu.ua/defend" target="_blank" rel="noopener noreferrer">офіційний сайт НУБіП України</a>. Оновлення даних — кожні 3 години. Ступінь визначається за формулюванням на офіційній сторінці, а не за номером ради.</footer>
+</main>
+<script>
+const $ = id => document.getElementById(id);
+let items = [], tab = 'future', day = '', view = new Date();
+view.setDate(1);
+// Дати захистів трактуємо як календарні дати за Києвом.
+function today() {
+  try { return new Intl.DateTimeFormat('sv-SE', {timeZone:'Europe/Kyiv', year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date()); }
+  catch(e) { const d = new Date(); return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`; }
+}
+const esc = s => String(s || '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const nice = d => new Date(d+'T12:00:00').toLocaleDateString('uk-UA', {day:'numeric',month:'long',year:'numeric'});
+const dateAsUTC = d => Date.UTC(Number(d.slice(0,4)), Number(d.slice(5,7))-1, Number(d.slice(8,10)));
+function daysUntil(date) { return Math.round((dateAsUTC(date)-dateAsUTC(today()))/86400000); }
+function dayWord(n) { const a=n%10,b=n%100; return b>=11&&b<=14 ? 'днів' : a===1 ? 'день' : a>=2&&a<=4 ? 'дні' : 'днів'; }
+function countdown(date, time='') {
+  const days = daysUntil(date);
+  if (days<0) return {style:'past',text:`Від дати захисту ${dayWord(-days)==='день'?'минув':'минуло'} ${-days} ${dayWord(-days)}`};
+  if (days===0) return {style:'today',text:'Захист заплановано сьогодні'+(time?' о '+time:'')};
+  if (days===1) return {style:'tomorrow',text:'До захисту залишився 1 день (завтра)'};
+  return {style:days<=7?'soon':'far',text:`До захисту залишилося ${days} ${dayWord(days)}`};
+}
+function countdownMarkup(x) {const c=countdown(x.date,x.time);return `<div class="countdown ${c.style}">${esc(c.text)}</div>`;}
+function setTabs() { document.querySelectorAll('[data-tab]').forEach(b => b.classList.toggle('active',b.dataset.tab===tab)); }
+function nextDefense() {
+  const now = today();
+  const future = items.filter(x=>x.date>=now).sort((a,b)=>(a.date+' '+(a.time||'')).localeCompare(b.date+' '+(b.time||'')));
+  const box = $('nextDefense');
+  if (!future.length) {box.hidden=true;box.innerHTML='';return;}
+  const x=future[0];
+  box.hidden=false;
+  box.innerHTML=`<h2>Найближчий захист</h2><div>${countdownMarkup(x)}</div><p><strong>${nice(x.date)}${x.time?' · '+esc(x.time):''}</strong></p><p>Захист дисертації ${esc(x.person_original||x.person||x.title)}</p><p><a href="${esc(x.url)}" target="_blank" rel="noopener noreferrer">Переглянути повідомлення ↗</a></p>`;
+}
+function render() {
+  const now=today();
+  const years=[...new Set(items.map(x=>x.date.slice(0,4)))].sort().reverse();
+  const current=$('year').value;
+  $('year').innerHTML='<option value="">Усі роки</option>'+years.map(y=>`<option value="${y}">${y}</option>`).join('');
+  $('year').value=current;
+  $('all').textContent=items.length;
+  $('future').textContent=items.filter(x=>x.date>=now).length;
+  $('past').textContent=items.filter(x=>x.date<now).length;
+  $('phd').textContent=items.filter(x=>x.degree==='PhD').length;
+  $('doctor').textContent=items.filter(x=>x.degree==='Доктор наук').length;
+  $('candidate').textContent=items.filter(x=>x.degree==='Кандидат наук').length;
+  const q=$('q').value.toLocaleLowerCase('uk-UA').trim(), degree=$('degree').value;
+  const filtered=items.filter(x=>
+    (tab==='all'||tab==='calendar'||(tab==='future'?x.date>=now:x.date<now)) &&
+    (!day||x.date===day) && (!current||x.date.startsWith(current)) &&
+    (!degree||(degree==='unknown'?!x.degree:x.degree===degree)) &&
+    (!q||[x.title,x.person,x.person_original,x.person_display,x.topic,x.place,x.degree,x.degree_full,x.council,x.specialty].join(' ').toLocaleLowerCase('uk-UA').includes(q))
+  );
+  filtered.sort((a,b)=>(a.date+' '+(a.time||'')).localeCompare(b.date+' '+(b.time||''))*(tab==='past'?-1:1));
+  $('heading').textContent=({future:'Найближчі захисти',past:'Архів захистів',all:'Усі захисти',calendar:'Календар захистів'})[tab]+(day?' · '+nice(day):'');
+  $('count').textContent=filtered.length+' записів';
+  $('cards').innerHTML=filtered.length?filtered.map(x=>`<article class="card">
+    <div class="row"><span class="date">${nice(x.date)} · ${esc(x.time||'час не вказано')}</span>
+      <span class="pill ${x.degree==='Доктор наук'?'blue':x.degree==='Кандидат наук'?'orange':x.degree?'':'gray'}">${esc(x.degree_full||(x.degree==='PhD'?'Доктор філософії (PhD)':x.degree||'Ступінь уточнюється'))}</span>
+    </div>
+    ${countdownMarkup(x)}
+    <h3>Захист дисертації ${esc(x.person_original||x.person||x.title)}</h3>
+    <p><strong>Тема:</strong> ${esc(x.topic||x.title)}</p>
+    ${x.specialty?`<p><strong>Спеціальність:</strong> ${esc(x.specialty)}</p>`:''}
+    ${x.council?`<p><strong>Рада:</strong> ${esc(x.council)}</p>`:''}
+    ${x.place?`<p><strong>Місце:</strong> ${esc(x.place)}</p>`:''}
+    <p><a href="${esc(x.url)}" target="_blank" rel="noopener noreferrer">Офіційна сторінка та документи ↗</a></p>
+  </article>`).join(''):'<div class="empty">За вибраними умовами записів немає. Спробуйте змінити фільтри.</div>';
+  nextDefense();calendar();
+}
+function calendar() {
+  const y=view.getFullYear(),m=view.getMonth(),first=(new Date(y,m,1).getDay()+6)%7,days=new Date(y,m+1,0).getDate();
+  $('month').textContent=view.toLocaleDateString('uk-UA',{month:'long',year:'numeric'});
+  let html=['Пн','Вт','Ср','Чт','Пт','Сб','Нд'].map(s=>`<span>${s}</span>`).join('')+'<span></span>'.repeat(first);
+  const dates=new Set(items.map(x=>x.date));
+  for(let i=1;i<=days;i++){
+    const d=`${y}-${String(m+1).padStart(2,'0')}-${String(i).padStart(2,'0')}`;
+    html+=`<button type="button" aria-label="${d}" class="${dates.has(d)?'has':''} ${day===d?'chosen':''}" data-day="${d}">${i}</button>`;
+  }
+  $('grid').innerHTML=html;
+  document.querySelectorAll('[data-day]').forEach(b=>b.onclick=()=>{day=b.dataset.day;tab='calendar';setTabs();render();});
+}
+async function load() {
+  try {
+    const r=await fetch('./data.json?ts='+Date.now(),{cache:'no-store'});
+    if(!r.ok)throw Error('Не вдалося отримати data.json');
+    const data=await r.json();items=data.items||[];
+    $('status').textContent=`Захистів: ${items.length} · Перевірено сторінок: ${data.pages_scanned||0} · Оновлено: ${data.updated_at?new Date(data.updated_at).toLocaleString('uk-UA'):'ще не виконано'}`;
+    const msg=!data.complete?'Синхронізацію ще не завершено.':data.detail_failures?'Не вдалося перевірити частину детальних сторінок: '+data.detail_failures:'';
+    $('notice').hidden=!msg;$('notice').textContent=msg;render();
+  } catch(e) {
+    $('status').textContent='Не вдалося завантажити дані';
+    $('notice').hidden=false;$('notice').textContent=e.message;render();
+  }
+}
+document.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>{tab=b.dataset.tab;day='';setTabs();render();});
+$('q').oninput=render;$('year').onchange=render;$('degree').onchange=render;
+$('clear').onclick=()=>{$('q').value='';$('year').value='';$('degree').value='';day='';render();};
+$('prev').onclick=()=>{view.setMonth(view.getMonth()-1);calendar();};
+$('next').onclick=()=>{view.setMonth(view.getMonth()+1);calendar();};
+$('resetDay').onclick=()=>{day='';render();};
+$('sync').onclick=load;load();
+setInterval(load,180000);
+let lastRenderedDate=today();
+setInterval(()=>{const current=today();if(current!==lastRenderedDate){lastRenderedDate=current;render();}},60000);
 
 let deferredInstallPrompt=null;
-const installButton=document.getElementById('installApp');
-const installHelp=document.getElementById('installHelp');
+const installButton=$('installApp'),installHelp=$('installHelp');
 window.addEventListener('beforeinstallprompt',event=>{event.preventDefault();deferredInstallPrompt=event;installButton.hidden=false;});
-installButton.addEventListener('click',async()=>{if(deferredInstallPrompt){const prompt=deferredInstallPrompt;deferredInstallPrompt=null;await prompt.prompt();await prompt.userChoice;installButton.hidden=true;}else{installHelp.textContent='Встановлення доступне через меню Chrome на Android або через меню Chrome / Edge на Windows. Якщо кнопки встановлення немає, відкрийте застосунок через HTTPS і зачекайте кілька секунд.';}});
+installButton.addEventListener('click',async()=>{
+  if(deferredInstallPrompt){
+    const prompt=deferredInstallPrompt;deferredInstallPrompt=null;
+    await prompt.prompt();await prompt.userChoice;installButton.hidden=true;
+  }else{
+    installHelp.textContent='Встановлення доступне через меню Chrome на Android або через Safari → «Поділитися» → «На початковий екран» на iPhone. Якщо кнопку не видно, відкрийте застосунок через HTTPS.';
+  }
+});
 window.addEventListener('appinstalled',()=>{installButton.hidden=true;installHelp.textContent='Застосунок встановлено. Він доступний як окрема програма.';});
 if(window.matchMedia('(display-mode: standalone)').matches){installButton.hidden=true;installHelp.hidden=true;}
 if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js').catch(err=>console.warn('Service Worker:',err)));}
-</script></body></html>
+</script>
+</body>
+</html>
