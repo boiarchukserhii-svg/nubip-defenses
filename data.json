@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-12T20:03:38+00:00",
+  "updated_at": "2026-10-12T20:34:45+00:00",
   "pages_scanned": 17,
   "complete": true,
   "detail_failures": 0,
@@ -13,13 +13,14 @@
       "time": "10:00",
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "СУХІНИ Дениса Володимировича",
-      "person_display": "СУХІНА Денис Володимирович",
-      "name_status": "verified_example",
+      "person_display": "СУХІНИ Дениса Володимировича",
       "degree": "PhD",
       "council": "РСВР 175",
       "specialty": "201 Агрономія",
       "supervisor": "доктор сільськогосподарських наук, професор НОВИЦЬКА Наталія Валеріївна , професор кафедри рослинництва Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-shevchenka-dmytra-vitaliyovycha-na-temu-rozroblennya-intelektualnoyi",
@@ -30,13 +31,14 @@
       "time": "13:00",
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ШЕВЧЕНКА Дмитра Віталійовича",
-      "person_display": "ШЕВЧЕНКО Дмитро Віталійович",
-      "name_status": "verified_example",
+      "person_display": "ШЕВЧЕНКА Дмитра Віталійовича",
       "degree": "PhD",
       "council": "РСВР 177",
       "specialty": "122 Комп’ютерні науки",
       "supervisor": "кандидат технічних наук, доцент ГОЛУБ Белла Львівна , завідувач кафедри комп’ютерних наук Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-pryadka-oleksandra-viktorovycha-na-temu-metodyka-orhanizatsiyi-samostiynoyi",
@@ -47,13 +49,14 @@
       "time": "10:00",
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ПРЯДКА Олександра Вікторовича",
-      "person_display": "ПРЯДК Олександр Вікторович",
-      "name_status": "automatic_review",
+      "person_display": "ПРЯДКА Олександра Вікторовича",
       "degree": "PhD",
       "council": "РСВР 174",
       "specialty": "011 Освітні, педагогічні науки",
       "supervisor": "доктор педагогічних наук, професор КУЧАЙ Олександр Володимирович , професор кафедри педагогіки Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-andrusyka-pavla-petrovycha-na-temu-pidhotovka-studentiv-spetsialnosti-osvitni",
@@ -64,13 +67,14 @@
       "time": "13:00",
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "АНДРУСИКА Павла Петровича",
-      "person_display": "АНДРУСИК Павло Петрович",
-      "name_status": "automatic_review",
+      "person_display": "АНДРУСИКА Павла Петровича",
       "degree": "PhD",
       "council": "РСВР 170",
       "specialty": "011 Освітні, педагогічні науки",
       "supervisor": "доктор педагогічних наук, професор КУЧАЙ Олександр Володимирович , професор кафедри педагогіки Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-chepurnoyi-oksany-leonidivny-na-temu-udoskonalennya-tekhnolohiyi-vareno",
@@ -81,13 +85,14 @@
       "time": "10:00",
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ЧЕПУРНОЇ Оксани Леонідівни",
-      "person_display": "ЧЕПУРНА Оксана Леонідівна",
-      "name_status": "verified_example",
+      "person_display": "ЧЕПУРНОЇ Оксани Леонідівни",
       "degree": "PhD",
       "council": "РСВР 176",
       "specialty": "181 Харчові технології",
       "supervisor": "кандидат технічних наук, доцент ШТОНДА Оксана Анатоліївна , доцент кафедри технології м’ясних, рибних та морепродуктів Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-lokes-snizhany-ivanivny-na-temu-sanitarno-hihiyenichna-otsinka-varenykh",
@@ -99,12 +104,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ЛОКЕС Сніжани Іванівни",
       "person_display": "ЛОКЕС Сніжани Іванівни",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 173",
       "specialty": "212 Ветеринарна гігієна, санітарія і експертиза",
       "supervisor": "доктор ветеринарних наук, професор ШЕВЧЕНКО Лариса Василівна , професор кафедри гігієни тварин і харчових продуктів імені професора А. К. Скороходька Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-hutsola-ruslana-ivanovycha-na-temu-pravove-stanovyshche-ahrokholdynhiv-v",
@@ -115,13 +121,14 @@
       "time": "10:00",
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ГУЦОЛА Руслана Івановича",
-      "person_display": "ГУЦОЛ Руслан Іванович",
-      "name_status": "verified_example",
+      "person_display": "ГУЦОЛА Руслана Івановича",
       "degree": "PhD",
       "council": "РСВР 171",
       "specialty": "081 Право",
       "supervisor": "доктор юридичних наук, професор ЄРМОЛЕНКО Володимир Михайлович , завідувач кафедри аграрного, земельного та екологічного права імені академіка В. З. Янчука Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-yerosovoyi-anastasiyi-anatoliyivny-na-temu-administratyvno-pravove",
@@ -132,13 +139,14 @@
       "time": "10:00",
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ЄРОСОВОЇ Анастасії Анатоліївни",
-      "person_display": "ЄРОСОВА Анастасія Анатоліївна",
-      "name_status": "automatic_review",
+      "person_display": "ЄРОСОВОЇ Анастасії Анатоліївни",
       "degree": "PhD",
       "council": "РСВР 172",
       "specialty": "081 Право",
       "supervisor": "кандидат юридичних наук, професор КАЛМИКОВА Олена Вікторівна , професор кафедри адміністративного та фінансового права Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-ivanovoyi-iryny-yevhenivny-na-temu-naukovi-osnovy-protsesiv-okholodzhennya",
@@ -149,13 +157,14 @@
       "time": "10:00",
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ІВАНОВОЇ Ірини Євгенівни",
-      "person_display": "ІВАНОВА Ірина Євгенівна",
-      "name_status": "automatic_review",
-      "degree": "",
+      "person_display": "ІВАНОВОЇ Ірини Євгенівни",
+      "degree": "Доктор наук",
       "council": "Д 26.004.13",
       "specialty": "",
       "supervisor": "",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор технічних наук",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-honcharovoyi-iryny-mykolayivny-na-temu-orhanizatsiyno-ekonomichnyy-mekhanizm",
@@ -166,13 +175,14 @@
       "time": "10:00",
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ГОНЧАРОВОЇ Ірини Миколаївни",
-      "person_display": "ГОНЧАРОВА Ірина Миколаївна",
-      "name_status": "automatic_review",
+      "person_display": "ГОНЧАРОВОЇ Ірини Миколаївни",
       "degree": "PhD",
       "council": "РСВР 178",
       "specialty": "051 Економіка",
       "supervisor": "доктор економічних наук, професор КОВАЛЬ Віктор Васильович , професор кафедри управління підприємницькою та туристичною діяльністю Ізмаїльського державного гуманітарного університету Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-tupchiy-olhy-mykolayivny-na-temu-transformatsiya-polezakhysnykh-lisovykh-smuh",
@@ -184,12 +194,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ТУПЧІЙ Ольги Миколаївни",
       "person_display": "ТУПЧІЙ Ольги Миколаївни",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 182",
       "specialty": "205 Лісове господарство",
       "supervisor": "доктор сільськогосподарських наук, професор ЮХНОВСЬКИЙ Василь Юрійович , професор кафедри відтворення лісів та лісових меліорацій Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-ponzelya-yaroslava-yuriyovycha-na-temu-rekomendatsiyna-systema-dlya-pobudovy",
@@ -201,12 +212,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ПОНЗЕЛЯ Ярослава Юрійовича",
       "person_display": "ПОНЗЕЛЯ Ярослава Юрійовича",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 181",
       "specialty": "122 Комп’ютерні науки",
       "supervisor": "доктор педагогічних наук, професор ГЛАЗУНОВА Олена Григорівна , проректор з науково-педагогічної роботи та цифрової трансформації, професор кафедри інформаційних систем і технологій Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-nahornoyi-kateryny-volodymyrivny-na-temu-formuvannya-innovatsiynoyi",
@@ -217,13 +229,14 @@
       "time": "10:00",
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "НАГОРНОЇ Катерини Володимирівни",
-      "person_display": "НАГОРНА Катерина Володимирівна",
-      "name_status": "automatic_review",
+      "person_display": "НАГОРНОЇ Катерини Володимирівни",
       "degree": "PhD",
       "council": "РСВР 180",
       "specialty": "015 Професійна освіта (за спеціалізаціями)",
       "supervisor": "доктор педагогічних наук, професор БУЦИК Ігор Михайлович , професор кафедри педагогіки Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-vakulenka-vitaliya-leonidovycha-na-temu-rehulyuvannya-ahrarnoho-rynku-v",
@@ -234,13 +247,14 @@
       "time": "10:00",
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ВАКУЛЕНКА Віталія Леонідовича",
-      "person_display": "ВАКУЛЕНКО Віталій Леонідович",
-      "name_status": "automatic_review",
-      "degree": "",
+      "person_display": "ВАКУЛЕНКА Віталія Леонідовича",
+      "degree": "Доктор наук",
       "council": "Д 26.004.01",
       "specialty": "",
       "supervisor": "",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор економічних наук",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-bilyak-yuliyi-viktorivny-na-temu-finansova-bezpeka-subyektiv-hospodaryuvannya",
@@ -252,12 +266,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "БІЛЯК Юлії Вікторівни",
       "person_display": "БІЛЯК Юлії Вікторівни",
-      "name_status": "review",
-      "degree": "",
+      "degree": "Доктор наук",
       "council": "Д 26.004.01",
       "specialty": "",
       "supervisor": "",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор економічних наук",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-shevchenka-oleksandra-viktorovycha-na-temu-ekoloho-ekonomichni-zasady",
@@ -268,13 +283,14 @@
       "time": "12:00",
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ШЕВЧЕНКА Олександра Вікторовича",
-      "person_display": "ШЕВЧЕНКО Олександр Вікторович",
-      "name_status": "automatic_review",
-      "degree": "",
+      "person_display": "ШЕВЧЕНКА Олександра Вікторовича",
+      "degree": "Доктор наук",
       "council": "Д 26.004.20",
       "specialty": "",
       "supervisor": "",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор економічних наук",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-kryvosheya-oleksandra-vyacheslavovycha-na-temu-oblikovo-analitychne",
@@ -286,12 +302,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "КРИВОШЕЯ Олександра Вячеславовича",
       "person_display": "КРИВОШЕЯ Олександра Вячеславовича",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 179",
       "specialty": "071 Облік і оподаткування",
       "supervisor": "кандидат економічних наук, доцент ЛИТВИНЕНКО Володимир Сергійович , завідувач кафедри обліку та оподаткування Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-holodnyka-yuriya-andriyovycha-na-temu-administratyvno-pravove-zabezpechennya",
@@ -302,13 +319,14 @@
       "time": "13:30",
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ГОЛОДНИКА Юрія Андрійовича",
-      "person_display": "ГОЛОДНИК Юрій Андрійович",
-      "name_status": "automatic_review",
-      "degree": "",
+      "person_display": "ГОЛОДНИКА Юрія Андрійовича",
+      "degree": "Доктор наук",
       "council": "Д 26.004.16",
       "specialty": "",
       "supervisor": "",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор юридичних наук",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-zanizdry-artura-serhiyovycha-na-temu-orhanizatsiya-birzhovoyi-torhivli",
@@ -320,12 +338,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ЗАНІЗДРИ Артура Сергійовича",
       "person_display": "ЗАНІЗДРИ Артура Сергійовича",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 186",
       "specialty": "076 Підприємництво, торгівля та біржова діяльність",
       "supervisor": "доктор економічних наук, професор, член-кореспондент НААН ІЛЬЧУК Микола Максимович , завідувач кафедри організації підприємництва та біржової діяльності Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-kovalskoho-yuriya-vasylovycha-na-temu-ekonomichni-mekhanizmy-lohistychnoho",
@@ -336,13 +355,14 @@
       "time": "10:00",
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "КОВАЛЬСЬКОГО Юрія Васильовича",
-      "person_display": "КОВАЛЬСЬКИЙ Юрій Васильович",
-      "name_status": "automatic_review",
+      "person_display": "КОВАЛЬСЬКОГО Юрія Васильовича",
       "degree": "PhD",
       "council": "РСВР 188",
       "specialty": "051 Економіка",
       "supervisor": "доктор економічних наук, професор ДІБРОВА Анатолій Дмитрович , завідувач кафедри статистики та економічного аналізу Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-tomashevskoho-vladyslava-yuriyovycha-na-temu-efektyvnist-vyrobnytstva",
@@ -354,12 +374,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ТОМАШЕВСЬКОГО Владислава Юрійовича",
       "person_display": "ТОМАШЕВСЬКОГО Владислава Юрійовича",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 196",
       "specialty": "051 Економіка",
       "supervisor": "доктор економічних наук, професор МІРЗОЄВА Тетяна Володимирівна , професор кафедри економіки Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-shtanka-vadyma-ihorovycha-na-temu-informatsiyna-tekhnolohiya-dvorivnevoyi",
@@ -371,12 +392,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ШТАНЬКА Вадима Ігоровича",
       "person_display": "ШТАНЬКА Вадима Ігоровича",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 198",
       "specialty": "122 Комп’ютерні науки",
       "supervisor": "кандидат фізико-математичних наук, доцент НІКІТЕНКО Євгеній Васильович , доцент кафедри комп’ютерних систем, мереж та кібербезпеки Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-li-tszekhao-na-temu-formuvannya-marketynhu-partnerskykh-vidnosyn-mizh",
@@ -388,12 +410,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ЛІ Цзехао",
       "person_display": "ЛІ Цзехао",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 190",
       "specialty": "075 Маркетинг",
       "supervisor": "доктор економічних наук, професор БОНДАРЕНКО Валерій Михайлович , декан факультету аграрного менеджменту, професор кафедри маркетингу та міжнародної торгівлі Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-andrushchenka-andriya-valeriyovycha-na-temu-formuvannya",
@@ -404,13 +427,14 @@
       "time": "10:00",
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "АНДРУЩЕНКА Андрія Валерійовича",
-      "person_display": "АНДРУЩЕНКО Андрій Валерійович",
-      "name_status": "automatic_review",
+      "person_display": "АНДРУЩЕНКА Андрія Валерійовича",
       "degree": "PhD",
       "council": "РСВР 183",
       "specialty": "051 Економіка",
       "supervisor": "доктор економічних наук, професор ВДОВЕНКО Наталія Михайлівна , завідувач кафедри глобальної економіки Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-tyshechka-andriya-vasylovycha-na-temu-rehulyuvannya-rybnoho-hospodarstva",
@@ -421,13 +445,14 @@
       "time": "13:00",
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ТИШЕЧКА Андрія Васильовича",
-      "person_display": "ТИШЕЧК Андрій Васильович",
-      "name_status": "automatic_review",
+      "person_display": "ТИШЕЧКА Андрія Васильовича",
       "degree": "PhD",
       "council": "РСВР 195",
       "specialty": "051 Економіка",
       "supervisor": "доктор економічних наук, професор ВДОВЕНКО Наталія Михайлівна , завідувач кафедри глобальної економіки Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-klymenka-yevheniya-olehovycha-na-temu-informatsiyna-tekhnolohiya-osvitnoyi",
@@ -439,12 +464,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "КЛИМЕНКА Євгенія Олеговича",
       "person_display": "КЛИМЕНКА Євгенія Олеговича",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 187",
       "specialty": "122 Комп’ютерні науки",
       "supervisor": "доктор педагогічних наук, професор ГЛАЗУНОВА Олена Григорівна , проректор з науково-педагогічної роботи та цифрової трансформації, професор кафедри інформаційних систем і технологій Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-hlazunova-andriya-serhiyovycha-na-temu-kompyuterni-bayesivski-modeli",
@@ -455,13 +481,14 @@
       "time": "13:00",
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ГЛАЗУНОВА Андрія Сергійовича",
-      "person_display": "ГЛАЗУНОВ Андрій Сергійович",
-      "name_status": "automatic_review",
+      "person_display": "ГЛАЗУНОВА Андрія Сергійовича",
       "degree": "PhD",
       "council": "РСВР 185",
       "specialty": "122 Комп’ютерні науки",
       "supervisor": "доктор технічних наук, професор ГУРЖІЙ Андрій Миколайович , професор кафедри інформаційних систем і технологій Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-sadvari-vyacheslava-yuriyovycha-na-temu-bezpechnist-ta-yakist-tverdykh",
@@ -473,12 +500,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "САДВАРІ Вячеслава Юрійовича",
       "person_display": "САДВАРІ Вячеслава Юрійовича",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 194",
       "specialty": "212 Ветеринарна гігієна, санітарія і експертиза",
       "supervisor": "доктор ветеринарних наук, професор ШЕВЧЕНКО Лариса Василівна , професор кафедри гігієни тварин і харчових продуктів імені професора А. К. Скороходька Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-omelchun-yuliyi-anatoliyivny-na-temu-hihiyenichna-otsinka-produktiv",
@@ -490,12 +518,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ОМЕЛЬЧУН Юлії Анатоліївни",
       "person_display": "ОМЕЛЬЧУН Юлії Анатоліївни",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 192",
       "specialty": "212 Ветеринарна гігієна, санітарія і експертиза",
       "supervisor": "доктор ветеринарних наук, професор ШЕВЧЕНКО Лариса Василівна , професор кафедри гігієни тварин і харчових продуктів імені професора А. К. Скороходька Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-lebid-tetyany-ihorivny-na-temu-kodyfikatsiya-munitsypalnoho-zakonodavstva-v",
@@ -507,12 +536,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ЛЕБІДЬ Тетяни Ігорівни",
       "person_display": "ЛЕБІДЬ Тетяни Ігорівни",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 189",
       "specialty": "081 Право",
       "supervisor": "кандидат юридичних наук, професор КАЛМИКОВА Олена Вікторівна , професор кафедри адміністративного та фінансового права Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-lyu-tsina-na-temu-formuvannya-estetychnoyi-kompetentnosti-studentiv",
@@ -524,12 +554,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ЛЮ Ціна",
       "person_display": "ЛЮ Ціна",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 191",
       "specialty": "011 Освітні, педагогічні науки",
       "supervisor": "доктор педагогічних наук, професор ВАСЮК Оксана Вікторівна , професор кафедри педагогіки Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-butsmaka-artema-yuriyovycha-na-temu-pravove-zabezpechennya-ekolohichnoyi",
@@ -541,12 +572,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "БУЦМАКА Артема Юрійовича",
       "person_display": "БУЦМАКА Артема Юрійовича",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 184",
       "specialty": "081 Право",
       "supervisor": "доктор юридичних наук, професор, член-кореспондент НАПрН України ЄРМОЛЕНКО Володимир Михайлович , завідувач кафедри аграрного, земельного та екологічного права імені академіка В. З. Янчука юридичного факультету Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-pavlenko-maryny-mykolayivny-na-temu-formuvannya-i-funktsionuvannya-rynku-zerna",
@@ -558,12 +590,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ПАВЛЕНКО Марини Миколаївни",
       "person_display": "ПАВЛЕНКО Марини Миколаївни",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 193",
       "specialty": "051 Економіка",
       "supervisor": "доктор економічних наук, професор, академік НААН КВАША Сергій Миколайович , проректор з науково-педагогічної роботи та розвитку, професор кафедри глобальної економіки Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-chena-haotszyana-na-temu-marketynhove-upravlinnya-stratehichnym-rozvytkom",
@@ -575,12 +608,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ЧЕНА Гаоцзяна",
       "person_display": "ЧЕНА Гаоцзяна",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 210",
       "specialty": "075 Маркетинг",
       "supervisor": "доктор економічних наук, професор БОНДАРЕНКО Валерій Михайлович , декан факультету аграрного менеджменту, професор кафедри маркетингу та міжнародної торгівлі Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-oliynyka-vitaliya-ihorovycha-na-temu-adaptatsiyna-zdatnist-vysokoproduktyvnykh",
@@ -591,13 +625,14 @@
       "time": "13:00",
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ОЛІЙНИКА Віталія Ігоровича",
-      "person_display": "ОЛІЙНИК Віталій Ігорович",
-      "name_status": "automatic_review",
+      "person_display": "ОЛІЙНИКА Віталія Ігоровича",
       "degree": "PhD",
       "council": "РСВР 202",
       "specialty": "212 Ветеринарна гігієна, санітарія і експертиза",
       "supervisor": "доктор біологічних наук, професор, член-кореспондент НААН ЗАХАРЕНКО Микола Олександрович , професор кафедри технології м’ясних, рибних та морепродуктів Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-yaremenko-oksany-anatoliyivny-na-temu-obgruntuvannya-biotekhnolohichnoho",
@@ -609,12 +644,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ЯРЕМЕНКО Оксани Анатоліївни",
       "person_display": "ЯРЕМЕНКО Оксани Анатоліївни",
-      "name_status": "review",
-      "degree": "",
+      "degree": "Кандидат наук",
       "council": "Д 26.004.13",
       "specialty": "",
       "supervisor": "доктор технічних наук, професор ГОЛУБ Геннадій Анатолійович , професор кафедри технічного сервісу та інженерного менеджменту імені М. П. Момотенка Національного університету біоресурсів і природокористування України Міністерства освіти і науки України Офіційні опоненти – доктор технічних наук, доцент ГОЛУБ Наталія Борисівна , завідувач кафедри біое",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "кандидат технічних наук",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-filatovoyi-anny-volodymyrivny-na-temu-marketynh-u-vyrobnycho-zbutovykh",
@@ -625,13 +661,14 @@
       "time": "10:00",
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ФІЛАТОВОЇ Анни Володимирівни",
-      "person_display": "ФІЛАТОВА Анна Володимирівна",
-      "name_status": "automatic_review",
+      "person_display": "ФІЛАТОВОЇ Анни Володимирівни",
       "degree": "PhD",
       "council": "РСВР 203",
       "specialty": "075 Маркетинг",
       "supervisor": "доктор економічних наук, професор ЛАРІНА Ярослава Степанівна , професор кафедри маркетингу та міжнародної торгівлі Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-aloshyna-vladyslava-yevhenovycha-na-temu-audyt-bezperervnosti-diyalnosti",
@@ -643,12 +680,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "АЛЬОШИНА Владислава Євгеновича",
       "person_display": "АЛЬОШИНА Владислава Євгеновича",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 199",
       "specialty": "071 Облік і оподаткування",
       "supervisor": "доктор економічних наук, професор ГУЦАЛЕНКО Любов Василівна , професор кафедри обліку та оподаткування Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-burdyma-yuriya-mykolayovycha-na-temu-audyt-finansovoyi-zvitnosti-subyektiv",
@@ -659,13 +697,14 @@
       "time": "13:00",
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "БУРДИМА Юрія Миколайовича",
-      "person_display": "БУРДИМ Юрій Миколайович",
-      "name_status": "automatic_review",
+      "person_display": "БУРДИМА Юрія Миколайовича",
       "degree": "PhD",
       "council": "РСВР 205",
       "specialty": "071 Облік і оподаткування",
       "supervisor": "кандидат економічних наук, доцент ЛИТВИНЕНКО Володимир Сергійович , завідувач кафедри обліку та оподаткування Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-pylypenka-denysa-serhiyovycha-na-temu-rozvytok-systemy-finansovoyi-bezpeky",
@@ -676,13 +715,14 @@
       "time": "10:00",
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ПИЛИПЕНКА Дениса Сергійовича",
-      "person_display": "ПИЛИПЕНКО Денис Сергійович",
-      "name_status": "automatic_review",
+      "person_display": "ПИЛИПЕНКА Дениса Сергійовича",
       "degree": "PhD",
       "council": "РСВР 218",
       "specialty": "072 Фінанси, банківська справа, страхування та фондовий ринок",
       "supervisor": "кандидат економічних наук, доцент ШЕВЧЕНКО Наталія Юріївна , доцент кафедри фінансів Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-summara-dmytra-volodymyrovycha-na-temu-finansove-zabezpechennya-rozvytku",
@@ -693,13 +733,14 @@
       "time": "13:00",
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "СУММАРА Дмитра Володимировича",
-      "person_display": "СУММАР Дмитро Володимирович",
-      "name_status": "automatic_review",
+      "person_display": "СУММАРА Дмитра Володимировича",
       "degree": "PhD",
       "council": "РСВР 219",
       "specialty": "072 Фінанси, банківська справа та страхування",
       "supervisor": "доктор економічних наук, доцент БІЛЯК Юлія Вікторівна , доцент кафедри фінансів Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-malchyk-oksany-mykolayivny-na-temu-pravove-zabezpechennya-zakhystu-roslyn-v",
@@ -711,12 +752,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "МАЛЬЧИК Оксани Миколаївни",
       "person_display": "МАЛЬЧИК Оксани Миколаївни",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 209",
       "specialty": "081 Право",
       "supervisor": "доктор юридичних наук, професор ЄРМОЛЕНКО Володимир Михайлович , завідувач кафедри аграрного, земельного та екологічного права імені академіка В. З. Янчука юридичного факультету Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-kukhar-olhy-vitaliyivny-na-temu-pravove-rehulyuvannya-upravlinnya-vidkhodamy",
@@ -728,12 +770,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "КУХАР Ольги Віталіївни",
       "person_display": "КУХАР Ольги Віталіївни",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 208",
       "specialty": "081 Право",
       "supervisor": "доктор юридичних наук, професор ГАФУРОВА Олена Вікторівна , професор кафедри аграрного, земельного та екологічного права імені академіка В. З. Янчука Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-chentsova-mykhayla-mykolayovycha-na-temu-optymizatsiya-tekhnolohiyi",
@@ -744,13 +787,14 @@
       "time": "10:00",
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ЧЕНЦОВА Михайла Миколайовича",
-      "person_display": "ЧЕНЦОВ Михайло Миколайович",
-      "name_status": "automatic_review",
+      "person_display": "ЧЕНЦОВА Михайла Миколайовича",
       "degree": "PhD",
       "council": "РСВР 211",
       "specialty": "204 Технологія виробництва і переробки продукції тваринництва",
       "supervisor": "доктор сільськогосподарських наук, професор ЛИХАЧ Анна Василівна , професор кафедри прикладної біології, розведення та генетики тварин Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-bevz-nataliyi-leonidivny-na-temu-optymizatsiya-tekhnolohiyi-vyroshchuvannya",
@@ -762,12 +806,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "БЕВЗ Наталії Леонідівни",
       "person_display": "БЕВЗ Наталії Леонідівни",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 204",
       "specialty": "204 Технологія виробництва і переробки продукції тваринництва",
       "supervisor": "доктор сільськогосподарських наук, професор ЛИХАЧ Вадим Ярославович , завідувач кафедри технологій у тваринництві Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-kobtsya-oleksandra-borysovycha-na-temu-vplyv-syderalnykh-kultur-ta-obrobitku",
@@ -779,12 +824,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "КОБЦЯ Олександра Борисовича",
       "person_display": "КОБЦЯ Олександра Борисовича",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 207",
       "specialty": "201 Агрономія",
       "supervisor": "доктор сільськогосподарських наук, професор ЦЕНТИЛО Леонід Васильович , професор кафедри землеробства та гербології Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-hlukhenkoho-serhiya-leonidovycha-na-temu-produktyvnist-svynomatok-za",
@@ -795,13 +841,14 @@
       "time": "10:00",
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ГЛУХЕНЬКОГО Сергія Леонідовича",
-      "person_display": "ГЛУХЕНЬКИЙ Сергій Леонідович",
-      "name_status": "automatic_review",
+      "person_display": "ГЛУХЕНЬКОГО Сергія Леонідовича",
       "degree": "PhD",
       "council": "РСВР 206",
       "specialty": "204 Технологія виробництва і переробки продукції тваринництва",
       "supervisor": "доктор сільськогосподарських наук, професор ЛИХАЧ Вадим Ярославович , завідувач кафедри технологій у тваринництві Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-yaroshchuka-dmytra-anatoliyovycha-na-temu-pidvyshchennya-vidhodivelnykh-i",
@@ -812,13 +859,14 @@
       "time": "13:00",
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ЯРОЩУКА Дмитра Анатолійовича",
-      "person_display": "ЯРОЩУК Дмитро Анатолійович",
-      "name_status": "automatic_review",
+      "person_display": "ЯРОЩУКА Дмитра Анатолійовича",
       "degree": "PhD",
       "council": "РСВР 212",
       "specialty": "204 Технологія виробництва і переробки продукції тваринництва",
       "supervisor": "доктор сільськогосподарських наук, професор ЛИХАЧ Анна Василівна , професор кафедри прикладної біології, розведення та генетики тварин Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-shabasha-mykoly-leonidovycha-na-temu-otsinka-vplyvu-henetychnykh-ta",
@@ -829,13 +877,14 @@
       "time": "15:00",
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ШАБАША Миколи Леонідовича",
-      "person_display": "ШАБАШ Микола Леонідович",
-      "name_status": "automatic_review",
+      "person_display": "ШАБАША Миколи Леонідовича",
       "degree": "PhD",
       "council": "РСВР 220",
       "specialty": "204 Технологія виробництва і переробки продукції тваринництва",
       "supervisor": "доктор сільськогосподарських наук, професор РУБАН Сергій Юрійович , завідувач кафедри прикладної біології, розведення та генетики тварин Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-bohuta-oleha-mykhaylovycha-na-temu-informatsiyna-tekhnolohiya-upravlinnya",
@@ -846,13 +895,14 @@
       "time": "13:00",
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "БОГУТА Олега Михайловича",
-      "person_display": "БОГУТ Олег Михайлович",
-      "name_status": "automatic_review",
+      "person_display": "БОГУТА Олега Михайловича",
       "degree": "PhD",
       "council": "РСВР 213",
       "specialty": "",
       "supervisor": "кандидат педагогічних наук, доцент КАСАТКІН Дмитро Юрійович , завідувач кафедри комп’ютерних систем, мереж та кібербезпеки Національного університету біоресурсів і природокористування України Міністерства освіти і науки України Науковий керівник – кандидат технічних наук, доцент ЮСКОВИЧ-ЖУКОВСЬКА Валентина Іванівна , заступник декана факультету кіб",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-sydoruk-yelyzavety-oleksandrivny-na-temu-formuvannya-tsyfrovoyi-kompetentnosti",
@@ -864,12 +914,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "СИДОРУК Єлизавети Олександрівни",
       "person_display": "СИДОРУК Єлизавети Олександрівни",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 226",
       "specialty": "011 Освітні, педагогічні науки",
       "supervisor": "кандидат педагогічних наук, доцент ВОЛОШИНА Тетяна Володимирівна , доцент кафедри інформаційних систем і технологій Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-mirzoyeva-tymura-dzhabrailovycha-na-temu-ekonomichna-efektyvnist-vyrobnytstva",
@@ -881,12 +932,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "МІРЗОЄВА Тимура Джабраіловича",
       "person_display": "МІРЗОЄВА Тимура Джабраіловича",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 224",
       "specialty": "051 Економіка",
       "supervisor": "доктор економічних наук, професор БАЙДАЛА Вікторія Володимирівна , завідувач кафедри економіки Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-svystunova-yuriya-viktorovycha-na-temu-produktyvnist-kukurudzy-na-zerno",
@@ -897,13 +949,14 @@
       "time": "10:00",
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "СВИСТУНОВА Юрія Вікторовича",
-      "person_display": "СВИСТУНОВ Юрій Вікторович",
-      "name_status": "automatic_review",
-      "degree": "",
+      "person_display": "СВИСТУНОВА Юрія Вікторовича",
+      "degree": "Кандидат наук",
       "council": "Д 26.004.10",
       "specialty": "",
       "supervisor": "кандидат сільськогосподарських наук, доцент ЄРМАКОВА Людмила Михайлівна Офіційні опоненти – доктор сільськогосподарських наук, професор, академіка НААН КАМІНСЬКИЙ Віктор Францевич , віцепрезидент Національної академії аграрних наук України Офіційні опоненти – доктор сільськогосподарських наук, професор ГРАБОВСЬКИЙ Микола Борисович , професор кафедр",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "кандидат сільськогосподарських наук",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-slovikovskoho-oleksiya-mykolayovycha-na-temu-intelektualna-systema-keruvannya",
@@ -915,12 +968,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "СЛОВІКОВСЬКОГО Олексія Миколайовича",
       "person_display": "СЛОВІКОВСЬКОГО Олексія Миколайовича",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 228",
       "specialty": "151 Автоматизація та комп’ютерно-інтегровані технології",
       "supervisor": "доктор технічних наук, професор БОЛБОТ Ігор Михайлович , декан факультету інформаційних технологій Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-pavlova-serhiya-hryhorovycha-na-temu-intelektualna-kompyuterno-intehrovana",
@@ -931,13 +985,14 @@
       "time": "13:00",
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ПАВЛОВА Сергія Григоровича",
-      "person_display": "ПАВЛОВ Сергій Григорович",
-      "name_status": "automatic_review",
+      "person_display": "ПАВЛОВА Сергія Григоровича",
       "degree": "PhD",
       "council": "РСВР 227",
       "specialty": "151 Автоматизація та комп’ютерно-інтегровані технології",
       "supervisor": "доктор технічних наук, професор ЛИСЕНКО Віталій Пилипович , професор кафедри комп’ютерних систем, мереж і кібербезпеки Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-kachmarskoho-oleksy-ihorovycha-na-temu-intelektualni-informatsiyni",
@@ -949,12 +1004,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "КАЧМАРСЬКОГО Олекси Ігоровича",
       "person_display": "КАЧМАРСЬКОГО Олекси Ігоровича",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 248",
       "specialty": "122 Комп’ютерні науки",
       "supervisor": "кандидат технічних наук, доцент ГОЛУБ Белла Львівна , завідувач кафедри комп’ютерних наук Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-dudash-myroslavy-heorhiyivny-na-temu-pravove-rehulyuvannya-stymulyuvannya",
@@ -966,12 +1022,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ДУДАШ Мирослави Георгіївни",
       "person_display": "ДУДАШ Мирослави Георгіївни",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 275",
       "specialty": "081 Право",
       "supervisor": "кандидат юридичних наук, доцент НОВАК Тамара Сергіївна , доцент кафедри аграрного, земельного та екологічного права імені академіка В. З. Янчука Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-shpaka-yuriya-stanislavovycha-na-temu-administratyvno-pravove-zabezpechennya",
@@ -982,13 +1039,14 @@
       "time": "12:00",
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ШПАКА Юрія Станіславовича",
-      "person_display": "ШПАК Юрій Станіславович",
-      "name_status": "automatic_review",
+      "person_display": "ШПАКА Юрія Станіславовича",
       "degree": "PhD",
       "council": "РСВР 280",
       "specialty": "081 Право",
       "supervisor": "кандидат юридичних наук, професор КАЛМИКОВА Олена Вікторівна , професор кафедри адміністративного та фінансового права Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-harashchenka-dmytra-ruslanovycha-na-temu-suchasni-aspekty-vchynennya-ta",
@@ -999,13 +1057,14 @@
       "time": "14:00",
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ГАРАЩЕНКА Дмитра Руслановича",
-      "person_display": "ГАРАЩЕНКО Дмитро Русланович",
-      "name_status": "automatic_review",
+      "person_display": "ГАРАЩЕНКА Дмитра Руслановича",
       "degree": "PhD",
       "council": "РСВР 273",
       "specialty": "081 Право",
       "supervisor": "доктор юридичних наук, професор ПІДДУБНИЙ Олексій Юрійович , завідувач кафедри цивільного та господарського права Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-pryza-oleksandra-oleksandrovycha-na-temu-pravo-dovirchoyi-vlasnosti-yak-sposib",
@@ -1016,13 +1075,14 @@
       "time": "16:00",
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ПРИЗА Олександра Олександровича",
-      "person_display": "ПРИЗ Олександр Олександрович",
-      "name_status": "automatic_review",
+      "person_display": "ПРИЗА Олександра Олександровича",
       "degree": "PhD",
       "council": "РСВР 278",
       "specialty": "081 Право",
       "supervisor": "доктор філософії з галузі знань «Право» АДАМОВИЧ Оксана Вікторівна , доцент кафедри цивільного та господарського права Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-hrubskoyi-kseniyi-volodymyrivny-na-temu-administratyvno-pravovi-zasoby",
@@ -1033,13 +1093,14 @@
       "time": "10:00",
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ГРУБСЬКОЇ Ксенії Володимирівни",
-      "person_display": "ГРУБСЬКА Ксенія Володимирівна",
-      "name_status": "automatic_review",
+      "person_display": "ГРУБСЬКОЇ Ксенії Володимирівни",
       "degree": "PhD",
       "council": "РСВР 274",
       "specialty": "081 Право",
       "supervisor": "кандидат юридичних наук, доцент ГОЛОВІЙ Людмила Василівна , доцент кафедри адміністративного та фінансового права Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-serbinovoyi-aliny-andriyivny-na-temu-administratyvno-pravovi-zasady",
@@ -1050,13 +1111,14 @@
       "time": "12:00",
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "СЕРБІНОВОЇ Аліни Андріївни",
-      "person_display": "СЕРБІНОВА Аліна Андріївна",
-      "name_status": "automatic_review",
+      "person_display": "СЕРБІНОВОЇ Аліни Андріївни",
       "degree": "PhD",
       "council": "РСВР 279",
       "specialty": "081 Право",
       "supervisor": "кандидат юридичних наук, доцент ГОЛОВІЙ Людмила Василівна , доцент кафедри адміністративного та фінансового права Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-lozinskoho-illi-serhiyovycha-na-temu-teoretyko-pravovi-zasady-orhanizatsiyi-ta",
@@ -1068,12 +1130,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ЛОЗІНСЬКОГО Іллі Сергійовича",
       "person_display": "ЛОЗІНСЬКОГО Іллі Сергійовича",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 276",
       "specialty": "081 Право",
       "supervisor": "доктор юридичних наук, професор ЛАДИЧЕНКО Віктор Валерійович , професор кафедри міжнародного права та порівняльного правознавства Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-potomkina-serhiya-oleksiyovycha-na-temu-pravovyy-mekhanizm-sudovoho-kontrolyu",
@@ -1084,13 +1147,14 @@
       "time": "16:00",
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ПОТЬОМКІНА Сергія Олексійовича",
-      "person_display": "ПОТЬОМКІН Сергій Олексійович",
-      "name_status": "automatic_review",
+      "person_display": "ПОТЬОМКІНА Сергія Олексійовича",
       "degree": "PhD",
       "council": "РСВР 277",
       "specialty": "081 Право",
       "supervisor": "доктор юридичних наук, професор ЛАДИЧЕНКО Віктор Валерійович , професор кафедри міжнародного права та порівняльного правознавства Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-baydatskoho-mykoly-valeriyovycha-na-temu-upravlinnya-ryzykamy-lohistychnykh",
@@ -1101,13 +1165,14 @@
       "time": "09:00",
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "БАЙДАЦЬКОГО Миколи Валерійовича",
-      "person_display": "БАЙДАЦЬКИЙ Микола Валерійович",
-      "name_status": "automatic_review",
+      "person_display": "БАЙДАЦЬКОГО Миколи Валерійовича",
       "degree": "PhD",
       "council": "РСВР 251",
       "specialty": "073 Менеджмент",
       "supervisor": "доктор економічних наук, професор БУТЕНКО Віра Михайлівна , професор кафедри економічної теорії Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-kiricheka-antona-ruslanovycha-na-temu-rozvytok-rynku-zasobiv-zakhystu-roslyn-v",
@@ -1119,12 +1184,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "КІРІЧЕКА Антона Руслановича",
       "person_display": "КІРІЧЕКА Антона Руслановича",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 237",
       "specialty": "051 Економіка",
       "supervisor": "доктор економічних наук, професор БАЙДАЛА Вікторія Володимирівна , завідувач кафедри економіки Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-martynenko-olhy-anatoliyivny-na-temu-otsinka-intensyvnosti-peredachi-stiykosti",
@@ -1136,12 +1202,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "МАРТИНЕНКО Ольги Анатоліївни",
       "person_display": "МАРТИНЕНКО Ольги Анатоліївни",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 232",
       "specialty": "212 Ветеринарна гігієна, санітарія і експертиза",
       "supervisor": "доктор ветеринарних наук, професор ЯКУБЧАК Ольга Миколаївна , професор кафедри гігієни тварин і харчових продуктів імені професора А. К. Скороходька Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-tsi-kun-na-temu-formuvannya-u-zdobuvachiv-osvitnoho-stupenya-bakalavr",
@@ -1153,12 +1220,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ЦІ Кунь",
       "person_display": "ЦІ Кунь",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 197",
       "specialty": "011 Освітні, педагогічні науки",
       "supervisor": "кандидат педагогічних наук ЧЕРЕДНИК Лідія Миколаївна , завідувач кафедри педагогіки Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-chzhu-tszinkuana-na-temu-formuvannya-v-maybutnikh-bakalavriv-hotovnosti-do",
@@ -1170,12 +1238,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ЧЖУ Цзінькуана",
       "person_display": "ЧЖУ Цзінькуана",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 271",
       "specialty": "011 Освітні, педагогічні науки",
       "supervisor": "кандидат педагогічних наук, доцент ЧЕРЕДНИК Лідія Миколаївна , завідувач кафедри педагогіки Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-hrebinchaka-oleksandra-illicha-na-temu-formuvannya-diahnostuvalnoyi",
@@ -1187,12 +1256,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ГРЕБІНЧАКА Олександра Ілліча",
       "person_display": "ГРЕБІНЧАКА Олександра Ілліча",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 261",
       "specialty": "011 Освітні, педагогічні науки",
       "supervisor": "доктор педагогічних наук, професор БУЦИК Ігор Михайлович , професор кафедри педагогіки Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-bohdan-yaniny-anatoliyivny-na-temu-ekonomichne-stymulyuvannya-pidvyshchennya",
@@ -1204,12 +1274,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "БОГДАН Яніни Анатоліївни",
       "person_display": "БОГДАН Яніни Анатоліївни",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 240",
       "specialty": "051 Економіка",
       "supervisor": "доктор економічних наук, професор ОПЕНЬКО Іван Анатолійович , професор кафедри геодезії та картографії Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-hyultekin-oksany-oleksandrivny-na-temu-ekoloho-ekonomichne-zabezpechennya",
@@ -1221,12 +1292,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ГЮЛТЕКІН Оксани Олександрівни",
       "person_display": "ГЮЛТЕКІН Оксани Олександрівни",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 242",
       "specialty": "051 Економіка",
       "supervisor": "доктор економічних наук, професор МЕДИНСЬКА Наталія Василівна , завідувач кафедри земельного кадастру Національного університету біоресурсів і природокористування України Міністерства освіти і науки України Науковий керівник – доктор економічних наук, професор ГОЛЯН Василь Анатолійович , провідний науковий співробітник Відокремленого підрозділу Нац",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-butsenka-rostyslava-anatoliyovycha-na-temu-ekoloho-ekonomichne-rehulyuvannya",
@@ -1238,12 +1310,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "БУЦЕНКА Ростислава Анатолійовича",
       "person_display": "БУЦЕНКА Ростислава Анатолійовича",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 241",
       "specialty": "051 Економіка",
       "supervisor": "доктор економічних наук, професор КАРПУК Анатолій Іванович , директор Відокремленого підрозділу Національного університету біоресурсів і природокористування України «Боярська лісова дослідна станція» Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-samosiynoho-illi-serhiyovycha-na-temu-pidhotovka-maybutnikh-sotsialnykh",
@@ -1255,12 +1328,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "САМОСІЙНОГО Іллі Сергійовича",
       "person_display": "САМОСІЙНОГО Іллі Сергійовича",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 265",
       "specialty": "011 Освітні, педагогічні науки",
       "supervisor": "доктор педагогічних наук, професор ОСАДЧЕНКО Інна Іванівна , професор кафедри соціальної роботи та реабілітації Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-chzhou-hanvey-na-temu-rozvytok-pidpryyemnytskoyi-kompetentnosti-maybutnikh",
@@ -1272,12 +1346,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ЧЖОУ Ганвей",
       "person_display": "ЧЖОУ Ганвей",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 270",
       "specialty": "011 Освітні, педагогічні науки",
       "supervisor": "доктор педагогічних наук, професор ОСАДЧЕНКО Інна Іванівна , професор кафедри соціальної роботи та реабілітації Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-tsuy-syaoke-na-temu-formuvannya-proyektuvalnoyi-kompetentnosti-studentiv",
@@ -1289,12 +1364,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ЦУЙ Сяоке",
       "person_display": "ЦУЙ Сяоке",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 268",
       "specialty": "011 Освітні, педагогічні науки",
       "supervisor": "доктор педагогічних наук, професор ШУМІЛОВА Ірина Федорівна , професор кафедри управління та освітніх технологій Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-li-chuantsi-na-temu-orhanizatsiyno-pedahohichni-umovy-diyalnosti-zakladiv",
@@ -1306,12 +1382,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ЛІ Чуанці",
       "person_display": "ЛІ Чуанці",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 262",
       "specialty": "011 Освітні, педагогічні науки",
       "supervisor": "доктор педагогічних наук, професор ШУМІЛОВА Ірина Федорівна , професор кафедри управління та освітніх технологій Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-sichkarya-ivana-oleksandrovycha-na-temu-oblik-i-analiz-v-upravlinni-tovarnymy",
@@ -1323,12 +1400,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "СІЧКАРЯ Івана Олександровича",
       "person_display": "СІЧКАРЯ Івана Олександровича",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 257",
       "specialty": "071 Облік і оподаткування",
       "supervisor": "доктор економічних наук, професор ЛАЗАРИШИНА Інна Дмитрівна , професор кафедри статистики та економічного аналізу Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-sluchaka-vitaliya-olehovycha-na-temu-analiz-ta-audyt-vytrat-z-vykorystannyam",
@@ -1339,13 +1417,14 @@
       "time": "13:00",
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "СЛУЧАКА Віталія Олеговича",
-      "person_display": "СЛУЧАК Віталій Олегович",
-      "name_status": "automatic_review",
+      "person_display": "СЛУЧАКА Віталія Олеговича",
       "degree": "PhD",
       "council": "РСВР 258",
       "specialty": "071 Облік і оподаткування",
       "supervisor": "доктор економічних наук, професор ЛАЗАРИШИНА Інна Дмитрівна , професор кафедри статистики та економічного аналізу Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-korniychuka-tymofiya-andriyovycha-na-temu-marketynhovi-doslidzhennya",
@@ -1357,12 +1436,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "КОРНІЙЧУКА Тимофія Андрійовича",
       "person_display": "КОРНІЙЧУКА Тимофія Андрійовича",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 215",
       "specialty": "075 Маркетинг",
       "supervisor": "кандидат економічних наук, професор ЛУЦІЙ Олександр Павлович , професор кафедри маркетингу та міжнародної торгівлі факультету аграрного менеджменту Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-lutsiya-ivana-oleksandrovycha-na-temu-formuvannya-prybutkovykh-brendiv",
@@ -1374,12 +1454,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ЛУЦІЯ Івана Олександровича",
       "person_display": "ЛУЦІЯ Івана Олександровича",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 216",
       "specialty": "075 Маркетинг",
       "supervisor": "доктор економічних наук, професор ЗБАРСЬКИЙ Василь Кузьмич",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-skakuna-oleksandra-mykhaylovycha-na-temu-formuvannya-systemy-internet",
@@ -1390,13 +1471,14 @@
       "time": "15:00",
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "СКАКУНА Олександра Михайловича",
-      "person_display": "СКАКУН Олександр Михайлович",
-      "name_status": "automatic_review",
+      "person_display": "СКАКУНА Олександра Михайловича",
       "degree": "PhD",
       "council": "РСВР 250",
       "specialty": "075 Маркетинг",
       "supervisor": "кандидат економічних наук, професор ЛУЦІЙ Олександр Павлович , професор кафедри маркетингу та міжнародної торгівлі факультету аграрного менеджменту Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-van-khunmina-na-temu-doslidzhennya-ta-praktyka-profesiynoyi-pidhotovky",
@@ -1408,12 +1490,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ВАН Хунміна",
       "person_display": "ВАН Хунміна",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 200",
       "specialty": "011 Освітні, педагогічні науки",
       "supervisor": "доктор педагогічних наук, професор ТАРАСЕНКО Ростислав Олександрович , професор кафедри соціальної роботи та реабілітації Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-li-tszyuntana-na-temu-formuvannya-osnov-profesiynoyi-maysternosti-maybutnikh",
@@ -1425,12 +1508,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ЛІ Цзюньтана",
       "person_display": "ЛІ Цзюньтана",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 222",
       "specialty": "015 Професійна освіта (за спеціалізаціями)",
       "supervisor": "доктор педагогічних наук, професор ДЕМЧЕНКО Ірина Іванівна , професор кафедри соціальної роботи та реабілітації Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-van-tsyana-na-temu-profesiyna-pidhotovka-maybutnikh-fakhivtsiv-inzhenernykh",
@@ -1442,12 +1526,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ВАН Цяна",
       "person_display": "ВАН Цяна",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 221",
       "specialty": "011 Освітні, педагогічні науки",
       "supervisor": "доктор педагогічних наук, професор ВАСЮК Оксана Вікторівна , професор кафедри педагогіки Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-zavodyanoyi-mariyi-volodymyrivny-na-temu-ekoloho-ekonomichni-faktory",
@@ -1458,13 +1543,14 @@
       "time": "10:00",
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ЗАВОДЯНОЇ Марії Володимирівни",
-      "person_display": "ЗАВОДЯНА Марія Володимирівна",
-      "name_status": "automatic_review",
+      "person_display": "ЗАВОДЯНОЇ Марії Володимирівни",
       "degree": "PhD",
       "council": "РСВР 243",
       "specialty": "051 Економіка",
       "supervisor": "доктор економічних наук, професор, академік НААН ДОРОШ Йосип Мирославович , директор Інституту землекористування Національної академії аграрних наук України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-timchenka-oleksandra-ivanovycha-na-temu-osoblyvosti-produktyvnosti-hibrydiv",
@@ -1475,13 +1561,14 @@
       "time": "13:00",
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ТІМЧЕНКА Олександра Івановича",
-      "person_display": "ТІМЧЕНКО Олександр Іванович",
-      "name_status": "automatic_review",
+      "person_display": "ТІМЧЕНКА Олександра Івановича",
       "degree": "PhD",
       "council": "РСВР 233",
       "specialty": "207 Водні біоресурси та аквакультура",
       "supervisor": "доктор біологічних наук, професор РУДИК-ЛЕУСЬКА Наталія Ярославівна , завідувач кафедри гідробіології та іхтіології Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-vasylenko-oleny-hryhorivny-na-temu-finansovyy-mekhanizm-zastosuvannya",
@@ -1493,12 +1580,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ВАСИЛЕНКО Олени Григорівни",
       "person_display": "ВАСИЛЕНКО Олени Григорівни",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 287",
       "specialty": "",
       "supervisor": "доктор економічних наук, професор ЛАБЕНКО Олександр Миколайович , проректор з науково-педагогічної роботи та міжнародної діяльності, професор кафедри фінансів Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-olifera-ivana-oleksandrovycha-na-temu-rozvytok-bikheviorystychnykh",
@@ -1509,13 +1597,14 @@
       "time": "13:00",
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ОЛІФЕРА Івана Олександровича",
-      "person_display": "ОЛІФЕР Іван Олександрович",
-      "name_status": "automatic_review",
+      "person_display": "ОЛІФЕРА Івана Олександровича",
       "degree": "PhD",
       "council": "РСВР 286",
       "specialty": "072 Фінанси, банківська справа та страхування",
       "supervisor": "доктор економічних наук, доцент ЛЕМІШКО Олена Олександрівна , професор кафедри фінансів Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-kulebyakina-heorhiya-anatoliyovycha-na-temu-pozytyvna-filosofiya-yak",
@@ -1527,12 +1616,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "КУЛЕБЯКІНА Георгія Анатолійовича",
       "person_display": "КУЛЕБЯКІНА Георгія Анатолійовича",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 284",
       "specialty": "033 Філософія",
       "supervisor": "доктор філософських наук, професор ДОДОНОВА Віра Іванівна , професор кафедри філософії та міжнародної комунікації Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-hromova-serhiya-serhiyovycha-na-temu-finansuvannya-terytoriy-pryrodno",
@@ -1543,13 +1633,14 @@
       "time": "10:00",
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ГРОМОВА Сергія Сергійовича",
-      "person_display": "ГРОМОВ Сергій Сергійович",
-      "name_status": "automatic_review",
+      "person_display": "ГРОМОВА Сергія Сергійовича",
       "degree": "PhD",
       "council": "РСВР 285",
       "specialty": "072 Фінанси, банківська справа та страхування",
       "supervisor": "доктор економічних наук, доцент БІЛЯК Юлія Вікторівна , доцент кафедри фінансів Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-zamlynskoho-oleksandra-stepanovycha-na-temu-finansove-rehulyuvannya",
@@ -1560,13 +1651,14 @@
       "time": "13:00",
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ЗАМЛИНСЬКОГО Олександра Степановича",
-      "person_display": "ЗАМЛИНСЬКИЙ Олександр Степанович",
-      "name_status": "automatic_review",
+      "person_display": "ЗАМЛИНСЬКОГО Олександра Степановича",
       "degree": "PhD",
       "council": "РСВР 244",
       "specialty": "051 Економіка",
       "supervisor": "доктор економічних наук, професор МЕДИНСЬКА Наталія Василівна , завідувач кафедри земельного кадастру Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-zamlynskoho-serhiya-stepanovycha-na-temu-ekoloho-ekonomichna-efektyvnist",
@@ -1577,13 +1669,14 @@
       "time": "15:00",
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ЗАМЛИНСЬКОГО Сергія Степановича",
-      "person_display": "ЗАМЛИНСЬКИЙ Сергій Степанович",
-      "name_status": "automatic_review",
+      "person_display": "ЗАМЛИНСЬКОГО Сергія Степановича",
       "degree": "PhD",
       "council": "РСВР 245",
       "specialty": "051 Економіка",
       "supervisor": "доктор економічних наук, доцент ГУНЬКО Людмила Анатоліївна , професор кафедри землевпорядного проектування Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-ivashkivskoho-andriya-olehovycha-na-temu-formuvannya-pravovoyi-kultury",
@@ -1594,13 +1687,14 @@
       "time": "17:00",
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ІВАШКІВСЬКОГО Андрія Олеговича",
-      "person_display": "ІВАШКІВСЬКИЙ Андрій Олегович",
-      "name_status": "automatic_review",
+      "person_display": "ІВАШКІВСЬКОГО Андрія Олеговича",
       "degree": "PhD",
       "council": "РСВР 282",
       "specialty": "015 Професійна освіта (за спеціалізаціями)",
       "supervisor": "доктор педагогічних наук, професор АМЕЛІНА Світлана Миколаївна , завідувач кафедри іноземної філології і перекладу Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-yanenka-vladyslava-serhiyovycha-na-temu-otsinka-vplyvu-ekspluatatsiyi",
@@ -1612,12 +1706,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ЯНЕНКА Владислава Сергійовича",
       "person_display": "ЯНЕНКА Владислава Сергійовича",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 235",
       "specialty": "101 Екологія",
       "supervisor": "доктор біологічних наук, професор КЛЕПКО Алла Володимирівна , завідувач кафедри загальної екології, радіобіології та безпеки життєдіяльності Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-u-zhofanya-na-temu-kompleksna-otsinka-naslidkiv-zatoplennya-dolyny-richky",
@@ -1629,12 +1724,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "У Жофаня",
       "person_display": "У Жофаня",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 234",
       "specialty": "101 Екологія",
       "supervisor": "кандидат сільськогосподарських наук, доцент ЛАДИКА Марина Миколаївна , доцент кафедри екології агросфери та екологічного контролю Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-vaskivskoho-bohdana-serhiyovycha-na-temu-efektyvnist-vyroshchuvannya-kukurudzy",
@@ -1645,13 +1741,14 @@
       "time": "09:00",
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ВАСЬКІВСЬКОГО Богдана Сергійовича",
-      "person_display": "ВАСЬКІВСЬКИЙ Богдан Сергійович",
-      "name_status": "automatic_review",
+      "person_display": "ВАСЬКІВСЬКОГО Богдана Сергійовича",
       "degree": "PhD",
       "council": "РСВР 229",
       "specialty": "201 Агрономія",
       "supervisor": "кандидат сільськогосподарських науки, доцент ГАРБАР Леся Анатоліївна , доцент кафедри рослинництва Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-rakova-andriya-yuriyovycha-na-temu-selektsiyna-tsinnist-kolektsiynykh-zrazkiv",
@@ -1662,13 +1759,14 @@
       "time": "12:00",
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "РАКОВА Андрія Юрійовича",
-      "person_display": "РАКОВ Андрій Юрійович",
-      "name_status": "automatic_review",
+      "person_display": "РАКОВА Андрія Юрійовича",
       "degree": "PhD",
       "council": "РСВР 231",
       "specialty": "201 Агрономія",
       "supervisor": "кандидат сільськогосподарських наук, доцент ДМИТРЕНКО Юлія Михайлівна , доцент кафедри генетики, селекції і насінництва імені професора М. О. Зеленського Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-pavlovoyi-yany-stanislavivny-na-temu-optymizatsiya-osnovnoho-obrobitku-gruntu",
@@ -1679,13 +1777,14 @@
       "time": "14:00",
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ПАВЛОВОЇ Яни Станіславівни",
-      "person_display": "ПАВЛОВА Яна Станіславівна",
-      "name_status": "automatic_review",
+      "person_display": "ПАВЛОВОЇ Яни Станіславівни",
       "degree": "PhD",
       "council": "РСВР 230",
       "specialty": "201 Агрономія",
       "supervisor": "доктор сільськогосподарських наук, професор ТАНЧИК Семен Петрович , завідувач кафедри землеробства та гербології Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-medvedyeva-yuriya-hryhorovycha-na-temu-udoskonalennya-tekhnolohiyi",
@@ -1696,13 +1795,14 @@
       "time": "10:00",
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "МЕДВЕДЄВА Юрія Григоровича",
-      "person_display": "МЕДВЕДЄВ Юрій Григорович",
-      "name_status": "automatic_review",
+      "person_display": "МЕДВЕДЄВА Юрія Григоровича",
       "degree": "PhD",
       "council": "РСВР 291",
       "specialty": "181 Харчові технології",
       "supervisor": "доктор технічних наук, професор БАЛЬ-ПРИЛИПКО Лариса Вацлавівна , в. о. декана факультету харчових наук, нутриціології та управління якістю, професор кафедри громадського здоров’я та нутриціології Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-toloka-semena-volodymyrovycha-na-temu-udoskonalennya-tekhnolohiyi-molochno",
@@ -1714,12 +1814,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ТОЛОКА Семена Володимировича",
       "person_display": "ТОЛОКА Семена Володимировича",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 295",
       "specialty": "181 Харчові технології",
       "supervisor": "доктор технічних наук, професор БАЛЬ-ПРИЛИПКО Лариса Вацлавівна , в. о. декана факультету харчових наук, нутриціології та управління якістю, професор кафедри громадського здоров’я та нутриціології Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-panasyuka-oleksandra-hryhorovycha-na-temu-rozrobka-tekhnolohiyi",
@@ -1730,13 +1831,14 @@
       "time": "15:00",
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ПАНАСЮКА Олександра Григоровича",
-      "person_display": "ПАНАСЮК Олександр Григорович",
-      "name_status": "automatic_review",
+      "person_display": "ПАНАСЮКА Олександра Григоровича",
       "degree": "PhD",
       "council": "РСВР 293",
       "specialty": "181 Харчові технології",
       "supervisor": "доктор технічних наук, професор БАЛЬ-ПРИЛИПКО Лариса Вацлавівна , в. о. декана факультету харчових наук, нутриціології та управління якістю, професор кафедри громадського здоров’я та нутриціології Національного університету біоресурсів і природокористування України Міністерства освіти і науки України Науковий керівник – кандидат технічних наук, доц",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-petrychenka-kyryla-oleksiyovycha-na-temu-udoskonalennya-tekhnolohiyi-konserviv",
@@ -1748,12 +1850,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ПЕТРИЧЕНКА Кирила Олексійовича",
       "person_display": "ПЕТРИЧЕНКА Кирила Олексійовича",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 294",
       "specialty": "181 Харчові технології",
       "supervisor": "доктор технічних наук, професор БАЛЬ-ПРИЛИПКО Лариса Вацлавівна , в. о. декана факультету харчових наук, нутриціології та управління якістю, професор кафедри громадського здоров’я та нутриціології Національного університету біоресурсів і природокористування України Міністерства освіти і науки України Науковий керівник – кандидат технічних наук, доц",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-kyslytsi-yaroslava-oleksandrovycha-na-temu-udoskonalennya-tekhnolohiyi-ryby",
@@ -1765,12 +1868,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "КИСЛИЦІ Ярослава Олександровича",
       "person_display": "КИСЛИЦІ Ярослава Олександровича",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 289",
       "specialty": "181 Харчові технології",
       "supervisor": "кандидат сільськогосподарських наук, професор СЛОБОДЯНЮК Наталія Михайлівна , професор кафедри технології м’ясних, рибних та морепродуктів Національного університету біоресурсів і природокористування України Міністерства освіти і науки України Науковий керівник – кандидат технічних наук, доцент МЕНЧИНСЬКА Аліна Анатоліївна , доцент кафедри технолог",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-kulyk-viktoriyi-kostyantynivny-na-temu-udoskonalennya-tekhnolohiyi-myasnykh",
@@ -1782,12 +1886,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "КУЛИК Вікторії Костянтинівни",
       "person_display": "КУЛИК Вікторії Костянтинівни",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 290",
       "specialty": "181 Харчові технології",
       "supervisor": "кандидат технічних наук, доцент ШТОНДА Оксана Анатоліївна , доцент кафедри технології м’ясних, рибних та морепродуктів Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-mushtruk-nataliyi-mykhaylivny-na-temu-obgruntuvannya-konstruktyvno",
@@ -1799,12 +1904,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "МУШТРУК Наталії Михайлівни",
       "person_display": "МУШТРУК Наталії Михайлівни",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 292",
       "specialty": "181 Харчові технології",
       "supervisor": "кандидат технічних наук, доцент ВАСИЛІВ Володимир Павлович , завідувач кафедри процесів і обладнання переробки продукції АПК Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-drachuka-ihorya-olehovycha-na-temu-udoskonalennya-protsesu-ultrazvukovoyi",
@@ -1815,13 +1921,14 @@
       "time": "17:00",
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ДРАЧУКА Ігоря Олеговича",
-      "person_display": "ДРАЧУК Ігор Олегович",
-      "name_status": "automatic_review",
+      "person_display": "ДРАЧУКА Ігоря Олеговича",
       "degree": "PhD",
       "council": "РСВР 288",
       "specialty": "181 Харчові технології",
       "supervisor": "доктор технічних наук, доцент БЕРНИК Ірина Миколаївна , професор кафедри процесів і обладнання переробки продукції АПК Національного університету біоресурсів і природокористування України Міністерства освіти і науки України Науковий керівник – кандидат сільськогосподарських наук, професор СЛОБОДЯНЮК Наталія Михайлівна , професор кафедри технології ",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-dudnyka-yuriya-ihorovycha-na-temu-psykholohichni-osoblyvosti-navchalnoyi",
@@ -1832,13 +1939,14 @@
       "time": "10:00",
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ДУДНИКА Юрія Ігоровича",
-      "person_display": "ДУДНИК Юрій Ігорович",
-      "name_status": "automatic_review",
+      "person_display": "ДУДНИКА Юрія Ігоровича",
       "degree": "PhD",
       "council": "РСВР 214",
       "specialty": "053 Психологія",
       "supervisor": "кандидат психологічних наук, доцент МАРТИНЮК Ірина Анатоліївна , завідувач кафедри психології Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-yatsenko-oleny-yuriyivny-na-temu-formuvannya-natsionalno-patriotychnykh",
@@ -1850,12 +1958,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ЯЦЕНКО Олени Юріївни",
       "person_display": "ЯЦЕНКО Олени Юріївни",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 272",
       "specialty": "011 Освітні, педагогічні науки",
       "supervisor": "доктор педагогічних наук, професор СОПІВНИК Ірина Віталіївна , професор кафедри соціальної роботи та реабілітації Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-stepasyuka-maksyma-oleksandrovycha-na-temu-formuvannya-lantsyuhiv-dodanoyi",
@@ -1866,13 +1975,14 @@
       "time": "15:00",
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "СТЕПАСЮКА Максима Олександровича",
-      "person_display": "СТЕПАСЮК Максим Олександрович",
-      "name_status": "automatic_review",
+      "person_display": "СТЕПАСЮКА Максима Олександровича",
       "degree": "PhD",
       "council": "РСВР 238",
       "specialty": "051 Економіка",
       "supervisor": "доктор економічних наук, професор МІРЗОЄВА Тетяна Володимирівна , професор кафедри економіки Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-babaka-denysa-olehovycha-na-temu-elektrotekhnichnyy-kompleks-monitorynhu-ta",
@@ -1883,13 +1993,14 @@
       "time": "17:00",
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "БАБАКА Дениса Олеговича",
-      "person_display": "БАБАК Денис Олегович",
-      "name_status": "automatic_review",
+      "person_display": "БАБАКА Дениса Олеговича",
       "degree": "PhD",
       "council": "РСВР 246",
       "specialty": "141 Електроенергетика, електротехніка та електромеханіка",
       "supervisor": "доктор технічних наук, професор ЗАБЛОДСЬКИЙ Микола Миколайович , професор кафедри електротехніки, електромеханіки та електротехнологій Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-davydyuka-mykoly-vadymovycha-na-temu-ekonomichnyy-mekhanizm-zabezpechennya",
@@ -1900,13 +2011,14 @@
       "time": "10:00",
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ДАВИДЮКА Миколи Вадимовича",
-      "person_display": "ДАВИДЮК Микола Вадимович",
-      "name_status": "automatic_review",
+      "person_display": "ДАВИДЮКА Миколи Вадимовича",
       "degree": "PhD",
       "council": "РСВР 236",
       "specialty": "051 Економіка",
       "supervisor": "доктор економічних наук, професор, член-кореспондент НААН ТКАЧУК Вадим Анатолійович , ректор, професор кафедри економіки Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-tsvyakha-oleha-mykolayovycha-na-temu-formuvannya-finansovoho-mekhanizmu",
@@ -1917,13 +2029,14 @@
       "time": "13:00",
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ЦВЯХА Олега Миколайовича",
-      "person_display": "ЦВЯХ Олег Миколайович",
-      "name_status": "automatic_review",
-      "degree": "",
+      "person_display": "ЦВЯХА Олега Миколайовича",
+      "degree": "Доктор наук",
       "council": "Д 26.004.20",
       "specialty": "",
       "supervisor": "",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор економічних наук",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-markushyna-oleksandra-hryhorovycha-na-temu-publichne-upravlinnya-vidbudovoyu",
@@ -1934,13 +2047,14 @@
       "time": "16:00",
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "МАРКУШИНА Олександра Григоровича",
-      "person_display": "МАРКУШИН Олександр Григорович",
-      "name_status": "automatic_review",
+      "person_display": "МАРКУШИНА Олександра Григоровича",
       "degree": "PhD",
       "council": "РСВР 217",
       "specialty": "281 Публічне управління та адміністрування",
       "supervisor": "доктор наук з державного управління, доцент ПРИЛІПКО Сергій Михайлович , професор кафедри публічного управління, менеджменту інноваційної діяльності та дорадництва Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-khymyntsya-pavla-stepanovycha-na-temu-vplyv-avtonomnoyi-nervovoyi-systemy-na",
@@ -1952,12 +2066,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ХИМИНЦЯ Павла Степановича",
       "person_display": "ХИМИНЦЯ Павла Степановича",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 256",
       "specialty": "211 Ветеринарна медицина",
       "supervisor": "доктор ветеринарних наук, професор КАРПОВСЬКИЙ Валентин Іванович , професор кафедри фізіології хребетних і фармакології Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-kravchuk-svitlany-volodymyrivny-na-temu-vehetatyvna-rehulyatsiya",
@@ -1969,12 +2084,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "КРАВЧУК Світлани Володимирівни",
       "person_display": "КРАВЧУК Світлани Володимирівни",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 255",
       "specialty": "211 Ветеринарна медицина",
       "supervisor": "доктор ветеринарних наук, професор ЖУРЕНКО Олена Василівна , завідувач кафедри фізіології хребетних і фармакології Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-ilchyshyn-mariyi-mykhaylivny-na-temu-avtonomna-nervova-rehulyatsiya-molochnoyi",
@@ -1986,12 +2102,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ІЛЬЧИШИН Марії Михайлівни",
       "person_display": "ІЛЬЧИШИН Марії Михайлівни",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 254",
       "specialty": "211 Ветеринарна медицина",
       "supervisor": "доктор ветеринарних наук, професор КАРПОВСЬКИЙ Валентин Іванович , професор кафедри фізіології хребетних і фармакології Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-prytyky-oksany-ivanivny-na-temu-formuvannya-motyvatsiyi-maybutnikh",
@@ -2002,13 +2119,14 @@
       "time": "10:00",
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ПРИТИКИ Оксани Іванівни",
-      "person_display": "ПРИТИКА Оксана Іванівна",
-      "name_status": "automatic_review",
+      "person_display": "ПРИТИКИ Оксани Іванівни",
       "degree": "PhD",
       "council": "РСВР 225",
       "specialty": "015 Професійна освіта (за спеціалізаціями)",
       "supervisor": "доктор педагогічних наук, професор АМЕЛІНА Світлана Миколаївна , завідувач кафедри іноземної філології і перекладу Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-ren-hosi-na-temu-formuvannya-profesiynoyi-kompetentnosti-studentiv-vyshchykh",
@@ -2020,12 +2138,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "РЕНЬ Госі",
       "person_display": "РЕНЬ Госі",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 263",
       "specialty": "011 Освітні, педагогічні науки",
       "supervisor": "доктор педагогічних наук, професор ГРЕЧАНИК Наталія Ігорівна , професор кафедри управління та освітніх технологій Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-ren-hoyuan-na-temu-funktsionuvannya-i-rozvytok-vyshchykh-profesiynykh",
@@ -2037,12 +2156,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "РЕНЬ Гоюань",
       "person_display": "РЕНЬ Гоюань",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 264",
       "specialty": "011 Освітні, педагогічні науки",
       "supervisor": "доктор педагогічних наук, професор ГРЕЧАНИК Наталія Ігорівна , професор кафедри управління та освітніх технологій Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-chzhen-yantszya-na-temu-formuvannya-systemy-upravlinnya-yakistyu-osvitnikh",
@@ -2054,12 +2174,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ЧЖЕН Яньцзя",
       "person_display": "ЧЖЕН Яньцзя",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 253",
       "specialty": "073 Менеджмент",
       "supervisor": "кандидат економічних наук, професор БАЛАНОВСЬКА Тетяна Іванівна , завідувач кафедри менеджменту імені професора Й. С. Завадського Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-van-yi-na-temu-formuvannya-systemy-ryzyk-menedzhmentu-vyrobnychykh",
@@ -2071,12 +2192,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ВАН Ї",
       "person_display": "ВАН Ї",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 252",
       "specialty": "073 Менеджмент",
       "supervisor": "доктор економічних наук, професор ДЄЛІНІ Марина Миколаївна , професор кафедри виробничого та інвестиційного менеджменту Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-shkarbana-vitaliya-valeriyovycha-na-temu-vykorystannya-vysokoproteyinovoho",
@@ -2087,13 +2209,14 @@
       "time": "10:00",
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ШКАРБАНА Віталія Валерійовича",
-      "person_display": "ШКАРБАН Віталій Валерійович",
-      "name_status": "automatic_review",
+      "person_display": "ШКАРБАНА Віталія Валерійовича",
       "degree": "PhD",
       "council": "РСВР 283",
       "specialty": "204 Технологія виробництва і переробки продукції тваринництва",
       "supervisor": "доктор сільськогосподарських наук, професор СИЧОВ Михайло Юрійович , завідувач кафедри годівлі тварин та технології кормів імені П. Д. Пшеничного Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-mykhaylenko-tetyany-yuriyivny-na-temu-produktyvnist-perepeliv-za-riznykh",
@@ -2105,12 +2228,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "МИХАЙЛЕНКО Тетяни Юріївни",
       "person_display": "МИХАЙЛЕНКО Тетяни Юріївни",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 223",
       "specialty": "204 Технологія виробництва і переробки продукції тваринництва",
       "supervisor": "доктор сільськогосподарських наук, професор СИЧОВ Михайло Юрійович , завідувача кафедри годівлі тварин та технології кормів імені П. Д. Пшеничного Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-honchara-serhiya-mykolayovycha-na-temu-formuvannya-hotovnosti-treneriv",
@@ -2121,13 +2245,14 @@
       "time": "10:00",
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ГОНЧАРА Сергія Миколайовича",
-      "person_display": "ГОНЧАР Сергій Миколайович",
-      "name_status": "automatic_review",
+      "person_display": "ГОНЧАРА Сергія Миколайовича",
       "degree": "PhD",
       "council": "РСВР 281",
       "specialty": "015 Професійна освіта (за спеціалізаціями)",
       "supervisor": "кандидат педагогічних наук, професор КУБІЦЬКИЙ Сергій Олегович , завідувач кафедри управління та освітніх технологій Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-turitsynoyi-oleny-mykolayivny-na-temu-formuvannya-kros-kulturnoyi",
@@ -2138,13 +2263,14 @@
       "time": "13:00",
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ТУРІЦИНОЇ Олени Миколаївни",
-      "person_display": "ТУРІЦИНА Олена Миколаївна",
-      "name_status": "automatic_review",
+      "person_display": "ТУРІЦИНОЇ Олени Миколаївни",
       "degree": "PhD",
       "council": "РСВР 266",
       "specialty": "011 Освітні, педагогічні науки",
       "supervisor": "доктор педагогічних наук, доцент ЯШНИК Світлана Валеріївна , професор кафедри психології Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-storozhuk-vladyslavy-ivanivny-na-temu-poshyrennya-vydove-riznomanittya-i",
@@ -2156,12 +2282,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "СТОРОЖУК Владислави Іванівни",
       "person_display": "СТОРОЖУК Владислави Іванівни",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 247",
       "specialty": "211 Ветеринарна медицина",
       "supervisor": "доктор ветеринарних наук, професор ГАЛАТ Марина Владиславівна , професор кафедри ветеринарної епідеміології та охорони здоров’я тварин Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-burdika-vladyslava-ihorovycha-na-temu-administratyvna-vidpovidalnist-za",
@@ -2173,12 +2300,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "БУРДІКА Владислава Ігоровича",
       "person_display": "БУРДІКА Владислава Ігоровича",
-      "name_status": "review",
-      "degree": "",
+      "degree": "Кандидат наук",
       "council": "Д 26.004.16",
       "specialty": "",
       "supervisor": "доктор юридичних наук, професор ТЕРЕМЕЦЬКИЙ Владислав Іванович , завідувач сектору проблем реалізації господарського законодавства відділу проблем модернізації господарського права та законодавства Державної установи «Інститут економіко-правових досліджень імені В. К. Мамутова Національної академії наук України»",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "кандидат юридичних наук",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-kinakh-yany-valeriyivny-na-temu-administratyvno-pravovi-zasady-realizatsiyi",
@@ -2190,12 +2318,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "КІНАХ Яни Валеріївни",
       "person_display": "КІНАХ Яни Валеріївни",
-      "name_status": "review",
-      "degree": "",
+      "degree": "Кандидат наук",
       "council": "Д 26.004.16",
       "specialty": "",
       "supervisor": "доктор юридичних наук, професор КУРИЛО Володимир Іванович , професор кафедри адміністративного та господарського права Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "кандидат юридичних наук",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-chzhan-bo-na-temu-pidhotovka-maybutnikh-fakhivtsiv-z-tekhnolohiyi-ohlyadu-ta",
@@ -2207,12 +2336,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ЧЖАН Бо",
       "person_display": "ЧЖАН Бо",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 269",
       "specialty": "011 Освітні, педагогічні науки",
       "supervisor": "доктор педагогічних наук, професор БУЦИК Ігор Михайлович , професор кафедри педагогіки Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-chernyavskoho-ivana-yuriyovycha-na-temu-rozvytok-intelektualnoho-kapitalu",
@@ -2223,13 +2353,14 @@
       "time": "10:00",
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ЧЕРНЯВСЬКОГО Івана Юрійовича",
-      "person_display": "ЧЕРНЯВСЬКИЙ Іван Юрійович",
-      "name_status": "automatic_review",
-      "degree": "",
+      "person_display": "ЧЕРНЯВСЬКОГО Івана Юрійовича",
+      "degree": "Доктор наук",
       "council": "Д 26.004.17",
       "specialty": "",
       "supervisor": "",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор економічних наук",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-se-syaokhana-na-temu-rozrobka-ta-osoblyvosti-vprovadzhennya-v-ukrayini",
@@ -2241,12 +2372,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "СЕ Сяохана",
       "person_display": "СЕ Сяохана",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 249",
       "specialty": "075 Маркетинг",
       "supervisor": "кандидат економічних наук, доцент РЯБЧИК Алла Володимирівна , доцент кафедри економіки Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-bay-dunshena-na-temu-dydaktychni-stratehiyi-formuvannya-kompyuternoyi",
@@ -2258,12 +2390,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "БАЙ Дуншена",
       "person_display": "БАЙ Дуншена",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 259",
       "specialty": "011 Освітні, педагогічні науки",
       "supervisor": "доктор педагогічних наук, професор ОСАДЧЕНКО Інна Іванівна , професор кафедри соціальної роботи та реабілітації Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-u-yanchana-na-temu-upravlinnya-osvitoyu-maybutnikh-spetsialistiv-u-vyshchykh",
@@ -2275,12 +2408,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "У Яньчана",
       "person_display": "У Яньчана",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 267",
       "specialty": "011 Освітні, педагогічні науки",
       "supervisor": "доктор педагогічних наук, професор ОСАДЧЕНКО Інна Іванівна , професор кафедри соціальної роботи та реабілітації Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-hao-chzhena-na-temu-profesiyna-pidhotovka-maybutnikh-fakhivtsiv-inzhenernykh",
@@ -2292,12 +2426,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ГАО Чжена",
       "person_display": "ГАО Чжена",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 260",
       "specialty": "011 Освітні, педагогічні науки",
       "supervisor": "доктор педагогічних наук, професор ТВЕРЕЗОВСЬКА Ніна Трохимівна , професор кафедри соціальної роботи та реабілітації Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-tsiomalchuka-oleksandra-leonidovycha-na-temu-ekonomichnyy-mekhanizm",
@@ -2308,13 +2443,14 @@
       "time": "10:00",
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ЦІОМАЛЬЧУКА Олександра Леонідовича",
-      "person_display": "ЦІОМАЛЬЧУК Олександр Леонідович",
-      "name_status": "automatic_review",
+      "person_display": "ЦІОМАЛЬЧУКА Олександра Леонідовича",
       "degree": "PhD",
       "council": "РСВР 239",
       "specialty": "051 Економіка",
       "supervisor": "кандидат економічних наук, доцент КІРЕЙЦЕВА Олена Василівна , доцент кафедри глобальної економіки Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-vivycha-artema-yuriyovycha-na-temu-bezpechnist-ta-yakist-myasa-kurchat",
@@ -2326,12 +2462,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ВІВИЧА Артема Юрійовича",
       "person_display": "ВІВИЧА Артема Юрійовича",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 201",
       "specialty": "212 Ветеринарна гігієна, санітарія і експертиза",
       "supervisor": "доктор ветеринарних наук, професор ЯКУБЧАК Ольга Миколаївна , професор кафедри гігієни тварин і харчових продуктів імені професора А. К. Скороходька Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-shevchenka-oleksiya-borysovycha-na-temu-sanitarno-hihiyenichne-obgruntuvannya",
@@ -2343,12 +2480,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ШЕВЧЕНКА Олексія Борисовича",
       "person_display": "ШЕВЧЕНКА Олексія Борисовича",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 296",
       "specialty": "211 Ветеринарна медицина",
       "supervisor": "доктор ветеринарних наук, професор ЗАСЄКІН Дмитро Адамович , професор кафедри гігієни тварин і харчових продуктів імені професора А. К. Скороходька Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-shevelya-oleksandra-oleksandrovycha-na-temu-rehulyuvannya-rynku-produktsiyi",
@@ -2360,12 +2498,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ШЕВЕЛЯ Олександра Олександровича",
       "person_display": "ШЕВЕЛЯ Олександра Олександровича",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 302",
       "specialty": "051 Економіка",
       "supervisor": "доктор економічних наук, професор ВДОВЕНКО Наталія Михайлівна , професор кафедри економічної теорії Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-kyrychenko-yuliyi-vladyslavivny-na-temu-formuvannya-ekonomichnoho-mekhanizmu",
@@ -2377,12 +2516,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "КИРИЧЕНКО Юлії Владиславівни",
       "person_display": "КИРИЧЕНКО Юлії Владиславівни",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 297",
       "specialty": "051 Економіка",
       "supervisor": "доктор економічних наук, професор ВДОВЕНКО Наталія Михайлівна , професор кафедри економічної теорії Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-chzhan-li-na-temu-rozvytok-profesiynoyi-it-osvity-v-kytayskiy-narodniy",
@@ -2394,12 +2534,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ЧЖАН Лі",
       "person_display": "ЧЖАН Лі",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 301",
       "specialty": "011 Освітні, педагогічні науки",
       "supervisor": "кандидат філософських наук, доцент КРАВЧЕНКО Алла Григорівна , доцент кафедри філософії та міжнародної комунікації Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-khan-tszyaye-na-temu-formuvannya-tsinnisnoho-svitohlyadu-u-studentiv-koledzhiv",
@@ -2411,12 +2552,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ХАНЬ Цзяє",
       "person_display": "ХАНЬ Цзяє",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 300",
       "specialty": "011 Освітні, педагогічні науки",
       "supervisor": "кандидат філософських наук, доцент КРАВЧЕНКО Алла Григорівна , доцент кафедри філософії та міжнародної комунікації Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-pey-khao-na-temu-innovatsiynyy-rozvytok-tsyfrovoyi-hramotnosti-vykladachiv",
@@ -2428,12 +2570,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ПЕЙ Хао",
       "person_display": "ПЕЙ Хао",
-      "name_status": "review",
       "degree": "PhD",
       "council": "РСВР 298",
       "specialty": "011 Освітні, педагогічні науки",
       "supervisor": "доктор педагогічних наук, професор ШУМІЛОВА Ірина Федорівна , професор кафедри управління та освітніх технологій Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-parenyuk-oleny-yuriyivny-na-temu-kompleksna-otsinka-mikrobiomiv-zabrudnenykh",
@@ -2445,12 +2588,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ПАРЕНЮК Олени Юріївни",
       "person_display": "ПАРЕНЮК Олени Юріївни",
-      "name_status": "review",
-      "degree": "",
+      "degree": "Доктор наук",
       "council": "Д 26.004.08",
       "specialty": "",
       "supervisor": "",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор біологічних наук",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-holyaky-dmytriya-mykolayovycha-na-temu-prostorove-i-temporalne-otsinyuvannya",
@@ -2462,12 +2606,13 @@
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ГОЛЯКИ Дмитрія Миколайовича",
       "person_display": "ГОЛЯКИ Дмитрія Миколайовича",
-      "name_status": "review",
-      "degree": "",
+      "degree": "Доктор наук",
       "council": "Д 26.004.08",
       "specialty": "",
       "supervisor": "",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор біологічних наук",
+      "degree_version": 4
     },
     {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-pustovoyi-svitlany-oleksandrivny-na-temu-formuvannya-ekolohichnykh-tsinnostey",
@@ -2478,13 +2623,14 @@
       "time": "10:00",
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ПУСТОВОЇ Світлани Олександрівни",
-      "person_display": "ПУСТОВА Світлана Олександрівна",
-      "name_status": "automatic_review",
+      "person_display": "ПУСТОВОЇ Світлани Олександрівни",
       "degree": "PhD",
       "council": "РСВР 299",
       "specialty": "011 Освітні, педагогічні науки",
       "supervisor": "доктор педагогічних наук, професор МІРОШНІЧЕНКО Валентина Іванівна , професор кафедри педагогіки Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
-      "details_checked": true
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     }
   ]
 }
