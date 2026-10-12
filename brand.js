@@ -11,7 +11,7 @@
   document.head.appendChild(css);
   const header=document.querySelector('header');if(!header)return;
   const brand=document.createElement('div');brand.className='nubip-brand';
-  const img=document.createElement('img');img.src='./nubip-logo-blue.png';img.alt='Логотип НУБіП України';
+  const img=document.createElement('img');img.src='./nubip-logo-blue.png?v=2';img.alt='Логотип НУБіП України';
   const name=document.createElement('div');name.className='nubip-brand-name';name.textContent='НАЦІОНАЛЬНИЙ УНІВЕРСИТЕТ БІОРЕСУРСІВ І ПРИРОДОКОРИСТУВАННЯ УКРАЇНИ';
   brand.append(img,name);header.prepend(brand);
 })();
