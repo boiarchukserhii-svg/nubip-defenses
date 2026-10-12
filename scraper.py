@@ -5,7 +5,6 @@ from pathlib import Path
 from urllib.parse import urljoin, urlparse
 import requests
 from bs4 import BeautifulSoup
-from names import person_nominative
 
 ROOT = 'https://nubip.edu.ua/defend'
 BASE = Path(__file__).resolve().parent
@@ -42,21 +41,47 @@ def listing(html):
     return list(records.values())
 
 
+def degree_from_text(text):
+    """Only classify when the degree is explicitly associated with the defense.
+
+    Never infer candidate/doctor from the permanent council's D prefix.
+    """
+    normalized = re.sub(r'\s+', ' ', text)
+    patterns = [
+        ('PhD', r'на\s+здобуття\s+(?:наукового\s+)?ступеня\s+доктора\s+філософії'),
+        ('Кандидат наук', r'на\s+здобуття\s+наукового\s+ступеня\s+кандидата\s+([а-яіїєґ\- ]{2,85}?)\s+наук\b'),
+        ('Доктор наук', r'на\s+здобуття\s+наукового\s+ступеня\s+доктора\s+([а-яіїєґ\- ]{2,85}?)\s+наук\b'),
+    ]
+    for category, pattern in patterns:
+        match = re.search(pattern, normalized, re.I)
+        if match:
+            if category == 'PhD': return category, 'доктор філософії'
+            field = re.sub(r'\s+', ' ', match.group(1)).strip().lower()
+            return category, ('кандидат ' if category == 'Кандидат наук' else 'доктор ') + field + ' наук'
+    # Some notices omit the word "наукового" or use "ступінь".
+    alternative = re.search(r'на\s+здобуття\s+(?:наукового\s+)?ступеня\s+(кандидата|доктора)\s+([а-яіїєґ\- ]{2,85}?)\s+наук\b', normalized, re.I)
+    if alternative:
+        cat = 'Кандидат наук' if alternative.group(1).lower() == 'кандидата' else 'Доктор наук'
+        return cat, ('кандидат ' if cat == 'Кандидат наук' else 'доктор ') + alternative.group(2).strip().lower() + ' наук'
+    return '', ''
+
+
 def enrich(session, item):
     response = session.get(item['url'], timeout=35)
     response.raise_for_status()
     soup = BeautifulSoup(response.text, 'html.parser')
-    text = soup.get_text(' ', strip=True)
-    degree = ''
-    if re.search(r'на\s+здобуття\s+(?:наукового\s+)?ступеня\s+доктора\s+філософії', text, re.I): degree = 'PhD'
-    elif re.search(r'на\s+здобуття\s+(?:наукового\s+)?ступеня\s+доктора\s+наук', text, re.I): degree = 'Доктор наук'
+    # Use the article content rather than menu/sidebar, where unrelated degree titles may appear.
+    content = soup.select_one('main article, article, main, .field--name-body, .node__content') or soup
+    text = content.get_text(' ', strip=True)
+    degree, degree_full = degree_from_text(text)
     council = re.search(r'(?:разової\s+спеціалізованої\s+вченої\s+ради\s+|спеціалізованої\s+вченої\s+ради\s+)([А-ЯІЇЄҐA-Z]{0,8}\s*[А-ЯІЇЄҐA-Z0-9.\-]{2,20})', text, re.I)
     specialty = re.search(r'(?:зі|за)\s+спеціальност[іи]\s+([A-ZА-ЯІЇЄҐ]?\d{2,3})\s*[«"]([^»"]+)', text, re.I)
     supervisor = re.search(r'Науков(?:ий|а)\s+керівник\s*[–—:-]\s*(.+?)(?=Голова\s+ради|Рецензент|Офіційний\s+опонент|Дисертація|$)', text, re.I)
     item['degree'] = degree
-    item['council'] = council.group(1).strip() if council else ''
-    item['specialty'] = (specialty.group(1)+' '+specialty.group(2)).strip() if specialty else ''
-    item['supervisor'] = supervisor.group(1).strip()[:350] if supervisor else ''
+    item['degree_full'] = degree_full
+    item['council'] = council.group(1).strip() if council else item.get('council', '')
+    item['specialty'] = (specialty.group(1)+' '+specialty.group(2)).strip() if specialty else item.get('specialty', '')
+    item['supervisor'] = supervisor.group(1).strip()[:350] if supervisor else item.get('supervisor', '')
     item['details_checked'] = True
     return item
 
@@ -94,16 +119,19 @@ def main():
             break
         time.sleep(.2)
     if not complete: raise RuntimeError('Перевищено ліміт сторінок')
-    # Preserve source form and calculate a separate display form on every refresh.
+    # Always use the exact genitive form from the official listing.
     for item in items.values():
-        original = item.get('person_original') or item.get('person', '')
-        item['person_original'] = original
-        item['person_display'], item['name_status'] = person_nominative(original)
+        item['person_original'] = item.get('person', item.get('person_original', ''))
+        item['person_display'] = item['person_original']
+        item.pop('name_status', None)
+    # Re-check old records that used a two-category degree classifier.
+    # Once classified with v4, subsequent runs need only check new/unclassified entries.
     failures = 0
     for item in items.values():
-        if item.get('details_checked'): continue
+        if item.get('degree_version') == 4 and item.get('degree'): continue
         try:
             enrich(session, item)
+            item['degree_version'] = 4
         except requests.RequestException as exc:
             failures += 1
             print('Не вдалося перевірити деталі:', item['url'], exc)
