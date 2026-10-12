@@ -1,0 +1,12 @@
+ЕТАП 1 — підключення телефона до Firebase (НЕ автоматичне надсилання нагадувань).
+
+1. Завантажте push.js у корінь репозиторію GitHub.
+2. Замініть service-worker.js на надану версію (збережено наявну PWA-логіку).
+3. В index.html перед рядком <script src="./brand.js"></script> додайте:
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-messaging-compat.js"></script>
+<script src="./push.js?v=1"></script>
+4. Commit changes. На Samsung закрийте застосунок і відкрийте повторно; натисніть «Увімкнути сповіщення».
+
+УВАГА: ЦЕ ЛИШЕ ПЕРШИЙ ЕТАП. Потрібні серверна база токенів і планувальник відправки. До їх налаштування повідомлення не надходитимуть.
+Не публікуйте токени пристроїв, приватні VAPID-ключі та service-account JSON.
