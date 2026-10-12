@@ -51,6 +51,23 @@ footer{text-align:center;font-size:12px;color:#5c7390;padding:18px}
 .next-defense{margin-top:16px;padding:15px 16px;background:linear-gradient(110deg,#e6f1ff,#f5f9ff);border:1px solid #bad6f6;border-radius:13px}
 .next-defense h2{margin:0 0 8px;font-size:17px;color:#163b71}
 .next-defense p{margin:6px 0;line-height:1.5}.next-defense .countdown{font-size:14px}
+
+/* Експорт події в календар та нагадування */
+.event-actions{margin-top:14px;padding-top:12px;border-top:1px solid #e0eaf6}
+.event-actions summary{cursor:pointer;display:list-item;color:#185caa;font-weight:750;padding:8px 0;line-height:1.5}
+.event-actions summary:focus-visible,.event-buttons a:focus-visible,.event-buttons button:focus-visible{outline:3px solid #f0ae43;outline-offset:3px}
+.event-tools{margin-top:10px;padding:13px;background:#f5f9ff;border:1px solid #dce8f8;border-radius:10px}
+.reminder-options{border:0;margin:0;padding:0;min-width:0}
+.reminder-options legend{font-weight:700;font-size:14px;margin-bottom:6px}
+.reminder-checks{display:flex;flex-wrap:wrap;gap:7px 18px}
+.reminder-checks label{display:inline-flex;align-items:center;gap:6px;min-height:36px;font-size:14px;cursor:pointer}
+.reminder-checks input[type=checkbox]{appearance:auto;accent-color:#185caa;min-width:18px;width:18px;height:18px;margin:0;padding:0;border:0;border-radius:3px}
+.reminder-checks label:has(input:disabled){opacity:.6;cursor:not-allowed}
+.event-buttons{display:flex;gap:9px;flex-wrap:wrap;margin-top:11px}
+.event-buttons button,.event-buttons a{font:inherit;font-size:14px;font-weight:700;text-decoration:none;min-height:44px;display:inline-flex;align-items:center;justify-content:center;border-radius:9px;padding:10px 12px;cursor:pointer}
+.event-buttons .download-ics{background:#185caa;color:white;border:1px solid #185caa}
+.event-buttons .google-event{background:#fff;border:1px solid #aac8ef;color:#185caa}
+.event-help{font-size:12px;color:#536d8c;line-height:1.5;margin:9px 0 0}
 @media(max-width:790px){.layout{grid-template-columns:1fr}.calendar{position:static;order:-1}header{padding:24px 20px 45px}}
 </style>
 </head>
@@ -144,6 +161,131 @@ function countdown(date, time='') {
   return {style:days<=7?'soon':'far',text:`До захисту залишилося ${days} ${dayWord(days)}`};
 }
 function countdownMarkup(x) {const c=countdown(x.date,x.time);return `<div class="countdown ${c.style}">${esc(c.text)}</div>`;}
+// Календарний запис: початок за київським часом, орієнтовна тривалість 1 год.
+const KYIV_TZ = 'Europe/Kyiv';
+function validEventTime(t) {
+  const m=/^(\d{1,2}):(\d{2})$/.exec(String(t||'').trim());
+  return !!m && Number(m[1])<24 && Number(m[2])<60;
+}
+// Для файлу .ics використовуємо UTC — це коректно враховує літній/зимовий час у Києві.
+function kyivTimeToUtcMs(date, hour, minute){
+  const wall=dateAsUTC(date)+(hour*60+minute)*60000;
+  const formatter=new Intl.DateTimeFormat('en-GB',{timeZone:KYIV_TZ,
+    year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hourCycle:'h23'});
+  let candidate=wall;
+  for(let i=0;i<4;i++){
+    const parts=Object.fromEntries(formatter.formatToParts(new Date(candidate)).map(p=>[p.type,p.value]));
+    const local=Date.UTC(Number(parts.year),Number(parts.month)-1,Number(parts.day),Number(parts.hour),Number(parts.minute));
+    const difference=wall-local;
+    if(!difference)break;
+    candidate+=difference;
+  }
+  return candidate;
+}
+function icsUtc(ms){return new Date(ms).toISOString().replace(/[-:]/g,'').replace(/\.\d{3}Z$/,'Z');}
+function calendarRange(x) {
+  const date=String(x.date||'');
+  if(!/^\d{4}-\d{2}-\d{2}$/.test(date)) return null;
+  const d=date.replace(/-/g,'');
+  if (!validEventTime(x.time)) {
+    const following=new Date(dateAsUTC(date)+86400000).toISOString().slice(0,10).replace(/-/g,'');
+    return {timed:false,start:d,end:following};
+  }
+  const [hour,min]=x.time.split(':').map(Number);
+  const start=d+'T'+String(hour).padStart(2,'0')+String(min).padStart(2,'0')+'00';
+  const end=new Date(dateAsUTC(date)+(hour*60+min+60)*60000).toISOString().replace(/[-:]/g,'').slice(0,15);
+  const utcStart=kyivTimeToUtcMs(date,hour,min);
+  return {timed:true,start,end,utcStart:icsUtc(utcStart),utcEnd:icsUtc(utcStart+3600000)};
+}
+function eventTitle(x){return 'Захист дисертації '+(x.person_original||x.person||x.title||'НУБіП України');}
+function officialUrl(x){try{const u=new URL(x.url);return u.protocol==='https:'&&['nubip.edu.ua','www.nubip.edu.ua'].includes(u.hostname)?u.href:'';}catch{return '';}}
+function eventDetails(x, range){
+  return [x.topic?'Тема: '+x.topic:'',x.degree_full?'Науковий ступінь: '+x.degree_full:'',
+    x.specialty?'Спеціальність: '+x.specialty:'',x.council?'Спеціалізована вчена рада: '+x.council:'',
+    range.timed?'Орієнтовна тривалість у календарі — 1 година.':'Час захисту не вказано; подію додано на весь день.',
+    officialUrl(x)?'Офіційне повідомлення: '+officialUrl(x):''].filter(Boolean).join('\n');
+}
+function googleEventLink(x){
+  const range=calendarRange(x);if(!range)return '#';
+  const params=new URLSearchParams({action:'TEMPLATE',text:eventTitle(x),dates:range.start+'/'+range.end,
+    details:eventDetails(x,range),ctz:KYIV_TZ});
+  if(x.place)params.set('location',x.place);
+  return 'https://calendar.google.com/calendar/render?'+params.toString();
+}
+function calendarControls(x){
+  const index=items.indexOf(x), range=calendarRange(x);
+  if(index<0||!range)return '';
+  const future=x.date>=today();
+  const hourDisabled=(!future||!range.timed)?'disabled':'';
+  return `<details class="event-actions" data-event-index="${index}">
+    <summary>📅 Додати до календаря та нагадування</summary>
+    <div class="event-tools">
+      ${future?`<fieldset class="reminder-options"><legend>Нагадування для файлу календаря:</legend><div class="reminder-checks">
+        <label><input type="checkbox" data-alarm="P7D"> За 7 днів</label>
+        <label><input type="checkbox" data-alarm="P1D" checked> За 1 день</label>
+        <label><input type="checkbox" data-alarm="PT1H" ${range.timed?'checked':''} ${hourDisabled}> За 1 годину</label>
+      </div></fieldset>`:'<p class="muted">Дата минула — нагадування не додаються.</p>'}
+      ${!range.timed?'<p class="event-help">Час на сайті не вказано: це подія на весь день, нагадування за годину недоступне.</p>':''}
+      <div class="event-buttons">
+        <button type="button" class="download-ics" aria-label="Завантажити подію з обраними нагадуваннями">⬇ Зберегти у календар (.ics)</button>
+        <a class="google-event" href="${esc(googleEventLink(x))}" target="_blank" rel="noopener noreferrer">Google Календар ↗</a>
+      </div>
+      <p class="event-help">Обрані нагадування додаються до файлу .ics; їх підтримка залежить від календаря та дозволу на сповіщення. У Google Календарі налаштуйте нагадування під час збереження події.</p>
+    </div>
+  </details>`;
+}
+function icsText(v){return String(v||'').replace(/\\/g,'\\\\').replace(/\r\n|\r|\n/g,'\\n').replace(/;/g,'\\;').replace(/,/g,'\\,');}
+function foldIcs(line){
+  let chunk='',bytes=0,result='';
+  const encoder=new TextEncoder();
+  for(const ch of line){
+    const size=encoder.encode(ch).length;
+    if(bytes+size>75){result+=chunk+'\r\n ';chunk='';bytes=1;}
+    chunk+=ch;bytes+=size;
+  }
+  return result+chunk;
+}
+function eventUid(x){
+  let hash=2166136261;
+  for(const ch of (officialUrl(x)||eventTitle(x))){hash^=ch.codePointAt(0);hash=Math.imul(hash,16777619);}
+  return (hash>>>0).toString(16)+'@nubip-defenses.github.io';
+}
+function icsEvent(x, reminders){
+  const range=calendarRange(x);if(!range)throw Error('Некоректна дата захисту');
+  const timestamp=new Date().toISOString().replace(/[-:]/g,'').replace(/\.\d{3}Z$/,'Z');
+  const lines=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//NUBiP Ukraine//Defense Calendar//UK',
+    'CALSCALE:GREGORIAN','BEGIN:VEVENT','UID:'+eventUid(x),'DTSTAMP:'+timestamp];
+  if(range.timed){lines.push('DTSTART:'+range.utcStart,'DTEND:'+range.utcEnd);}
+  else {lines.push('DTSTART;VALUE=DATE:'+range.start,'DTEND;VALUE=DATE:'+range.end);}
+  lines.push('SUMMARY:'+icsText(eventTitle(x)),'DESCRIPTION:'+icsText(eventDetails(x,range)));
+  if(x.place)lines.push('LOCATION:'+icsText(x.place));
+  if(officialUrl(x))lines.push('URL:'+officialUrl(x));
+  const valid=['P7D','P1D',...(range.timed?['PT1H']:[])];
+  if(x.date>=today())for(const r of reminders){if(valid.includes(r))lines.push('BEGIN:VALARM','ACTION:DISPLAY','DESCRIPTION:'+icsText('Нагадування про захист дисертації'),'TRIGGER:-'+r,'END:VALARM');}
+  lines.push('END:VEVENT','END:VCALENDAR');
+  return lines.map(foldIcs).join('\r\n')+'\r\n';
+}
+function downloadCalendarEvent(x,reminders){
+  const content=icsEvent(x,reminders);
+  const blob=new Blob([content],{type:'text/calendar;charset=utf-8'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');a.href=url;
+  a.download='zakhyst-'+x.date+'-'+eventUid(x).split('@')[0]+'.ics';
+  document.body.appendChild(a);a.click();a.remove();
+  setTimeout(()=>URL.revokeObjectURL(url),30000);
+}
+function onCalendarDownload(ev){
+  const btn=ev.target.closest('button.download-ics');
+  if(!btn)return;
+  const block=btn.closest('[data-event-index]');
+  const index=Number(block?.dataset.eventIndex);
+  if(!Number.isInteger(index)||index<0||index>=items.length)return;
+  const reminders=[...block.querySelectorAll('input[data-alarm]:checked:not(:disabled)')].map(el=>el.dataset.alarm);
+  downloadCalendarEvent(items[index],reminders);
+}
+$('cards').addEventListener('click',onCalendarDownload);
+$('nextDefense').addEventListener('click',onCalendarDownload);
+
 function setTabs() { document.querySelectorAll('[data-tab]').forEach(b => b.classList.toggle('active',b.dataset.tab===tab)); }
 function nextDefense() {
   const now = today();
@@ -152,7 +294,7 @@ function nextDefense() {
   if (!future.length) {box.hidden=true;box.innerHTML='';return;}
   const x=future[0];
   box.hidden=false;
-  box.innerHTML=`<h2>Найближчий захист</h2><div>${countdownMarkup(x)}</div><p><strong>${nice(x.date)}${x.time?' · '+esc(x.time):''}</strong></p><p>Захист дисертації ${esc(x.person_original||x.person||x.title)}</p><p><a href="${esc(x.url)}" target="_blank" rel="noopener noreferrer">Переглянути повідомлення ↗</a></p>`;
+  box.innerHTML=`<h2>Найближчий захист</h2><div>${countdownMarkup(x)}</div><p><strong>${nice(x.date)}${x.time?' · '+esc(x.time):''}</strong></p><p>Захист дисертації ${esc(x.person_original||x.person||x.title)}</p><p><a href="${esc(x.url)}" target="_blank" rel="noopener noreferrer">Переглянути повідомлення ↗</a></p>${calendarControls(x)}`;
 }
 function render() {
   const now=today();
@@ -187,6 +329,7 @@ function render() {
     ${x.council?`<p><strong>Рада:</strong> ${esc(x.council)}</p>`:''}
     ${x.place?`<p><strong>Місце:</strong> ${esc(x.place)}</p>`:''}
     <p><a href="${esc(x.url)}" target="_blank" rel="noopener noreferrer">Офіційна сторінка та документи ↗</a></p>
+    ${calendarControls(x)}
   </article>`).join(''):'<div class="empty">За вибраними умовами записів немає. Спробуйте змінити фільтри.</div>';
   nextDefense();calendar();
 }
