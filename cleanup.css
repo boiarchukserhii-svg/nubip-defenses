@@ -1,0 +1,4 @@
+/* NUBiP Defenses: hide duplicate tabs and .ics controls; keep Google Calendar */
+.tabs { display: none !important; }
+.reminder-options, .event-help, .event-buttons .download-ics { display: none !important; }
+.event-buttons .google-event { display: inline-flex !important; }
