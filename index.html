@@ -384,5 +384,6 @@ window.addEventListener('appinstalled',()=>{installButton.hidden=true;installHel
 if(window.matchMedia('(display-mode: standalone)').matches){installButton.hidden=true;installHelp.hidden=true;}
 if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js').catch(err=>console.warn('Service Worker:',err)));}
 </script>
+<script src="./brand.js"></script>
 </body>
 </html>
