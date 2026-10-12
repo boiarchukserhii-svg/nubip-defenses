@@ -69,6 +69,15 @@ footer{text-align:center;font-size:12px;color:#5c7390;padding:18px}
 .event-buttons .google-event{background:#fff;border:1px solid #aac8ef;color:#185caa}
 .event-help{font-size:12px;color:#536d8c;line-height:1.5;margin:9px 0 0}
 @media(max-width:790px){.layout{grid-template-columns:1fr}.calendar{position:static;order:-1}header{padding:24px 20px 45px}}
+/* Приховуємо старий календар */
+.layout > aside.calendar {
+    display: none !important;
+}
+
+/* Прибираємо порожнє місце після старого календаря */
+.layout {
+    display: block !important;
+}
 </style>
 </head>
 <body>
