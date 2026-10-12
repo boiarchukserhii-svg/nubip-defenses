@@ -1,7 +1,7 @@
 /* NUBiP Defenses: FCM registration, no automatic sending yet. */
 (() => {
   const config = {
-    apiKey: 'AIzaSyAaZnClBaIXQDj6gxdS5KYlFHZKTiHutc',
+    apiKey: 'apiKey: 'AIzaSyAaZnClBaIXQDj6gxdS5KYlFH7ZKTiHutc',
     authDomain: 'nubip-dissertation-defenses.firebaseapp.com',
     projectId: 'nubip-dissertation-defenses',
     storageBucket: 'nubip-dissertation-defenses.firebasestorage.app',
