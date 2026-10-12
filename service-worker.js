@@ -1,6 +1,6 @@
 /* Offline-capable PWA: network-first for data; cache-first for static shell. */
-const VERSION='nubip-defenses-pwa-v5-20261012';
-const SHELL=['./','./index.html','./manifest.webmanifest','./icons/icon-192.png','./icons/icon-512.png'];
+const VERSION='nubip-defenses-pwa-v6-20261012';
+const SHELL=['./','./index.html','./manifest.webmanifest','./icon-192.png','./icon-512.png'];
 self.addEventListener('install',event=>{event.waitUntil(caches.open(VERSION).then(cache=>cache.addAll(SHELL)).then(()=>self.skipWaiting()));});
 self.addEventListener('activate',event=>{event.waitUntil(Promise.all([caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('nubip-defenses-pwa-')&&k!==VERSION).map(k=>caches.delete(k)))),self.clients.claim()]));});
 self.addEventListener('fetch',event=>{
