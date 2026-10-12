@@ -4,7 +4,7 @@
   css.textContent=`
     header{position:relative}
     header .nubip-brand{display:flex;align-items:center;gap:17px;margin-bottom:19px}
-    header .nubip-brand img{display:block;width:68px;height:88px;object-fit:contain;background:#fff;border-radius:10px;padding:5px;box-shadow:0 3px 12px #09294b44}
+    header .nubip-brand img{display:block;width:68px;height:88px;object-fit:contain}
     header .nubip-brand-name{font-size:clamp(12px,1.6vw,17px);line-height:1.35;font-weight:750;letter-spacing:.02em;max-width:590px}
     @media(max-width:520px){header .nubip-brand img{width:53px;height:69px}header .nubip-brand{gap:12px}}
   `;
