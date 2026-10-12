@@ -1,5 +1,5 @@
 /* Offline-capable PWA and Firebase background messaging. */
-const VERSION='nubip-defenses-pwa-v8-20261013';
+const VERSION='nubip-defenses-pwa-v9-20261013';
 const SHELL=['./','./index.html','./manifest.webmanifest','./icon-192.png','./icon-512.png'];
 self.addEventListener('install',event=>{event.waitUntil(caches.open(VERSION).then(cache=>cache.addAll(SHELL)).then(()=>self.skipWaiting()));});
 self.addEventListener('activate',event=>{event.waitUntil(Promise.all([caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('nubip-defenses-pwa-')&&k!==VERSION).map(k=>caches.delete(k)))),self.clients.claim()]));});
@@ -14,7 +14,7 @@ self.addEventListener('fetch',event=>{
 importScripts('https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js');
 importScripts('https://www.gstatic.com/firebasejs/10.14.1/firebase-messaging-compat.js');
 firebase.initializeApp({
- apiKey:'AIzaSyAaZnClBaIXQDj6gxdS5KYlFHZKTiHutc',
+ apiKey:'AIzaSyAaZnClBaIXQDj6gxdS5KYlFH7ZKTiHutc',
  authDomain:'nubip-dissertation-defenses.firebaseapp.com',
  projectId:'nubip-dissertation-defenses',
  storageBucket:'nubip-dissertation-defenses.firebasestorage.app',
