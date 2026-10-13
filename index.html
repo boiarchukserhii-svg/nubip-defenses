@@ -309,14 +309,58 @@ function searchTokens(value) {
   return String(value || '').normalize('NFC').toLocaleLowerCase('uk-UA')
     .replace(/[’ʼ']/g, '').match(/[\p{L}\p{N}]+/gu) || [];
 }
+// Generate common Ukrainian surname case forms, preserving exact/partial search.
+function surnameForms(name) {
+  const forms = new Set([name]);
+  const add = (stem, endings) => { if (stem.length >= 3) endings.forEach(end => forms.add(stem + end)); };
+  if (/[о]$/.test(name)) add(name.slice(0,-1), ['о','а','у','ом','ові']);
+  if (/[а]$/.test(name)) {
+    add(name.slice(0,-1), ['о','а','и','і','ою']);
+    forms.add(name.slice(0,-1));
+  }
+  if (/[я]$/.test(name)) {
+    add(name.slice(0,-1), ['ь','я','ю','ем','еві']);
+  }
+  if (/ь$/.test(name)) add(name.slice(0,-1), ['ь','я','ю','ем','еві']);
+  if (/й$/.test(name)) add(name.slice(0,-1), ['й','я','ю','єм','єві']);
+  if (/[бвгґджзклмнпрстфхцчшщ]$/.test(name))
+    add(name, ['','а','у','ом','ові']);
+  for (const [ending, replacements] of [
+    ['ський',['ський','ського','ському','ським']],
+    ['цький',['цький','цького','цькому','цьким']],
+    ['зький',['зький','зького','зькому','зьким']],
+    ['ець',['ець','ця','цю','цем','цеві']],
+    ['єць',['єць','йця','йцю','йцем','йцеві']],
+    ['ій',['ій','ія','ію','ієм','ієві']],
+    ['ий',['ий','ого','ому','им']],
+    ['а',['а','и','і','ою']],
+    ['я',['я','і','ею']]
+  ]) {
+    for (const suffix of replacements) if (name.endsWith(suffix))
+      add(name.slice(0,-suffix.length), replacements);
+  }
+  // Restore nominative consonant surnames from common oblique forms.
+  for (const ending of ['ові','еві','єві','ом','ем','єм','у','ю']) {
+    if (name.endsWith(ending)) {
+      const stem=name.slice(0,-ending.length);
+      if (stem.length >= 3) { forms.add(stem); forms.add(stem+'о'); forms.add(stem+'ь'); forms.add(stem+'й'); }
+    }
+  }
+  return forms;
+}
+function surnameMatches(a, b) {
+  if (a.length < 4 || b.length < 4) return a === b;
+  const forms = surnameForms(a);
+  return [...surnameForms(b)].some(form => forms.has(form));
+}
 function matchesSearch(entry, query) {
   const tokens = searchTokens(query);
   const words = searchTokens([entry.title,entry.person,entry.person_original,entry.person_display,
     entry.topic,entry.place,entry.degree,entry.degree_full,entry.council,entry.specialty].join(' '));
-  const names = searchTokens([entry.person,entry.person_original,entry.person_display].join(' '));
+  const names = [entry.person,entry.person_original,entry.person_display]
+    .filter(Boolean).map(name => searchTokens(name)[0]).filter(Boolean);
   return tokens.every(token => words.some(word => word.includes(token)) ||
-    (token.length >= 5 && /[оа]$/.test(token) && names.some(name =>
-      /[оа]$/.test(name) && name.slice(0,-1) === token.slice(0,-1))));
+    names.some(name => surnameMatches(token, name)));
 }
 
 function render() {
