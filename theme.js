@@ -291,6 +291,48 @@ body.calendar-mode .layout,body.calendar-mode #nextDefense{display:none!importan
   }
   document.querySelector('.tabs')?.addEventListener('click', syncStatistics);
 
+  const homeStyle = document.createElement('style');
+  homeStyle.textContent = `#nextDefense[hidden]{display:none!important}#nextDefense .home-actions{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}#nextDefense button{min-height:44px;background:#fff;font-size:13px}#nextDefense .home-row{display:block;width:100%;text-align:left;margin-top:8px;padding:12px}#nextDefense .home-row strong,#nextDefense .home-row small{display:block;overflow-wrap:anywhere}#nextDefense .home-row small{color:#637681;margin-top:5px}#nextDefense .home-topic{font-size:14px;line-height:1.5}#nextDefense button:focus-visible{outline:3px solid #138d78;outline-offset:2px}`;
+  document.head.append(homeStyle);
+  nextDefense = function () {
+    const box = document.getElementById('nextDefense');
+    const filtered = day || ['q','degree','year'].some(id => document.getElementById(id)?.value);
+    box.hidden = tab !== 'future' || !!filtered;
+    if (box.hidden) { box.innerHTML = ''; return; }
+    const upcoming = items.filter(x => x.date >= today()).slice().sort((a,b) =>
+      (a.date + ' ' + (a.time || '23:59')).localeCompare(b.date + ' ' + (b.time || '23:59')));
+    if (!upcoming.length) {
+      box.innerHTML = '<h2>Найближчі захисти</h2><p>Запланованих захистів поки немає.</p>';
+      return;
+    }
+    const x = upcoming[0];
+    const name = x => escapeHTML(x.person_original || x.person || x.title || 'Захист дисертації');
+    const degree = x => escapeHTML(x.degree_full || x.degree || 'Ступінь уточнюється');
+    box.innerHTML = `<h2>Найближчий захист</h2>
+      <p><b>${escapeHTML(prettyDate(x.date))} · ${escapeHTML(x.time || 'час не вказано')}</b></p>
+      ${countdownMarkup(x)}
+      <h3>${name(x)}</h3><p>${degree(x)}</p>
+      ${x.topic ? `<p class="home-topic">${escapeHTML(x.topic)}</p>` : ''}
+      <div class="home-actions"><button type="button" data-home-event="${items.indexOf(x)}">Деталі захисту →</button>
+      <button type="button" data-home-all>Усі найближчі (${upcoming.length}) →</button></div>
+      ${calendarControls(x)}
+      ${upcoming.length > 1 ? `<h2 style="margin-top:18px">Наступні захисти</h2>${upcoming.slice(1,4).map(e =>
+        `<button type="button" class="home-row" data-home-event="${items.indexOf(e)}"><strong>${name(e)}</strong><small>${escapeHTML(prettyDate(e.date))} · ${escapeHTML(e.time || 'час не вказано')} · ${degree(e)}</small></button>`).join('')}` : ''}`;
+  };
+  document.getElementById('nextDefense')?.addEventListener('click', event => {
+    const button = event.target.closest('[data-home-event], [data-home-all]');
+    if (!button) return;
+    const entry = button.hasAttribute('data-home-event') ? items[Number(button.dataset.homeEvent)] : null;
+    if (button.hasAttribute('data-home-event') && !entry) return;
+    for (const id of ['q','degree','year']) document.getElementById(id).value = '';
+    tab = 'future'; day = entry ? entry.date : '';
+    setTabs(); render();
+    const matching = entry ? items.filter(x => x.date === entry.date).slice().sort((a,b) =>
+      (a.time || '').localeCompare(b.time || '')) : [];
+    const target = entry ? document.getElementById('cards')?.children[matching.indexOf(entry)] : document.getElementById('heading');
+    if (target) { target.tabIndex = -1; target.focus({preventScroll:true}); target.scrollIntoView({behavior:'smooth',block:'start'}); }
+  });
+
   const originalRender = render;
   render = function () {
     originalRender();
