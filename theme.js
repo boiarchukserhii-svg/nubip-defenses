@@ -37,7 +37,9 @@ body.calendar-mode .layout,body.calendar-mode #nextDefense{display:none!importan
 #calendar-screen .cal-weekday{text-align:center;color:#81929a;font-size:12px;padding:8px 0}
 #calendar-screen .cal-blank{min-height:48px}
 #calendar-screen .cal-day{border:1px solid transparent;background:#f3f6f7;border-radius:12px;min-width:0;min-height:54px;padding:7px 2px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;font-weight:700;font-size:14px;color:#344b58;cursor:pointer}
-#calendar-screen .cal-day.has.upcoming{background:#e3f2ed;color:#176c5d}
+#calendar-screen .cal-day.has.upcoming{background:#159b74;color:#fff;border-color:#0c805e;box-shadow:0 2px 5px #117d6a22}
+#calendar-screen .cal-day.has.upcoming.selected{border-color:#075542;box-shadow:inset 0 0 0 1px #075542}
+#calendar-screen .cal-day.has.upcoming.today{outline-color:#fff}
 #calendar-screen .cal-day.has.completed{background:#edf0f2;color:#697983}
 #calendar-screen .cal-day.has.current-defense{background:#fff0da;color:#905200}
 #calendar-screen .cal-day.selected{border:2px solid #138d78;box-shadow:inset 0 0 0 1px #138d78}
@@ -561,6 +563,7 @@ body.calendar-mode .layout,body.calendar-mode #nextDefense{display:none!importan
   render();
   syncNavigation();
 })();
+
 
 
 
