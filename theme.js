@@ -150,7 +150,6 @@ body.calendar-mode .layout,body.calendar-mode #nextDefense{display:none!importan
     const topic = x.topic || x.title || '';
     const degree = x.degree_full || x.degree || 'Ступінь не визначено';
     const url = /^https:\/\/(?:www\.)?nubip\.edu\.ua\//i.test(x.url || '') ? x.url : '';
-    const google = typeof googleEventLink === 'function' ? googleEventLink(x) : '';
     return `<article class="cal-event">
       ${dateLabel}
       <div class="cal-event-main ${kind(x)}">
@@ -160,10 +159,9 @@ body.calendar-mode .layout,body.calendar-mode #nextDefense{display:none!importan
         ${x.specialty ? `<small><b>Спеціальність:</b> ${escapeHTML(x.specialty)}</small>` : ''}
         ${x.council ? `<small><b>Рада:</b> ${escapeHTML(x.council)}</small>` : ''}
         <div class="cal-event-links">
-          ${shareButton(x)}
           ${url ? `<a href="${escapeHTML(url)}" target="_blank" rel="noopener noreferrer">Документи ↗</a>` : ''}
-          ${google && google !== '#' ? `<a href="${escapeHTML(google)}" target="_blank" rel="noopener noreferrer">Google Календар ↗</a>` : ''}
         </div>
+        ${calendarControls(x)}
       </div>
     </article>`;
   }
@@ -419,8 +417,16 @@ body.calendar-mode .layout,body.calendar-mode #nextDefense{display:none!importan
   function shareButton(x) {
     return '<button type="button" data-share-index="' + items.indexOf(x) + '">Поділитися ↗</button>';
   }
-  const baseCalendarControls = calendarControls;
-  calendarControls = x => baseCalendarControls(x) + '<div class="home-actions">' + shareButton(x) + '</div>';
+  calendarControls = function (x) {
+    const google = googleEventLink(x);
+    return '<div class="defense-actions">' +
+      (google && google !== '#' ? '<a class="google-calendar-button" href="' +
+        escapeHTML(google) + '" target="_blank" rel="noopener noreferrer">Гугл Календар ↗</a>' : '') +
+      shareButton(x) + '</div>';
+  };
+  const actionStyle = document.createElement('style');
+  actionStyle.textContent = '.defense-actions{display:flex;flex-direction:column;align-items:stretch;gap:8px;margin-top:14px;max-width:320px}.defense-actions .google-calendar-button,.defense-actions [data-share-index]{box-sizing:border-box;display:flex;align-items:center;justify-content:center;min-height:44px;padding:10px 12px;border:1px solid #dfe9eb;border-radius:14px!important;font:inherit;font-size:14px;font-weight:700;text-decoration:none;margin:0!important}.defense-actions .google-calendar-button{background:#e8f5ee;color:#157b70!important}.defense-actions .google-calendar-button:focus-visible{outline:3px solid #138d78;outline-offset:2px}';
+  document.head.append(actionStyle);
   const shareStyle = document.createElement('style');
   shareStyle.textContent = '[data-share-index]{min-height:44px;margin-top:8px;color:#157b70;font-weight:700}.share-feedback{padding:12px;overflow-wrap:anywhere}.share-feedback input{display:block;width:100%;margin-top:8px}.shared-defense{outline:3px solid #138d78;outline-offset:3px}';
   document.head.append(shareStyle);
@@ -555,6 +561,7 @@ body.calendar-mode .layout,body.calendar-mode #nextDefense{display:none!importan
   render();
   syncNavigation();
 })();
+
 
 
 
