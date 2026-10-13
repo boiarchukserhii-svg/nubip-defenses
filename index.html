@@ -305,6 +305,36 @@ function nextDefense() {
   box.hidden=false;
   box.innerHTML=`<h2>Найближчий захист</h2><div>${countdownMarkup(x)}</div><p><strong>${nice(x.date)}${x.time?' · '+esc(x.time):''}</strong></p><p>Захист дисертації ${esc(x.person_original||x.person||x.title)}</p><p><a href="${esc(x.url)}" target="_blank" rel="noopener noreferrer">Переглянути повідомлення ↗</a></p>${calendarControls(x)}`;
 }
+// Shared token search: case, apostrophes, inflections and one-letter typos.
+function searchWords(value) {
+  return String(value || '').normalize('NFC').toLocaleLowerCase('uk-UA')
+    .replace(/[’ʼ`']/g, '').match(/[\p{L}\p{N}]+/gu) || [];
+}
+function oneLetterApart(a, b) {
+  if (Math.abs(a.length - b.length) > 1) return false;
+  let i = 0, j = 0, edits = 0;
+  while (i < a.length && j < b.length) {
+    if (a[i] === b[j]) { i++; j++; continue; }
+    if (++edits > 1) return false;
+    if (a.length >= b.length) i++;
+    if (b.length >= a.length) j++;
+  }
+  return edits + (i < a.length || j < b.length ? 1 : 0) <= 1;
+}
+const searchIndex = new WeakMap();
+function matchesSearch(x, query) {
+  const tokens = searchWords(query);
+  if (!tokens.length) return true;
+  let words = searchIndex.get(x);
+  if (!words) {
+    words = searchWords([x.title,x.person,x.person_original,x.person_display,x.topic,
+      x.place,x.degree,x.degree_full,x.council,x.specialty].join(' '));
+    searchIndex.set(x, words);
+  }
+  return tokens.every(token => words.some(word => word.includes(token) ||
+    (token.length >= 5 && word.length >= 5 && oneLetterApart(token, word))));
+}
+
 function render() {
   const now=today();
   const years=[...new Set(items.map(x=>x.date.slice(0,4)))].sort().reverse();
@@ -322,7 +352,7 @@ function render() {
     (tab==='all'||tab==='calendar'||(tab==='future'?x.date>=now:x.date<now)) &&
     (!day||x.date===day) && (!current||x.date.startsWith(current)) &&
     (!degree||(degree==='unknown'?!x.degree:x.degree===degree)) &&
-    (!q||[x.title,x.person,x.person_original,x.person_display,x.topic,x.place,x.degree,x.degree_full,x.council,x.specialty].join(' ').toLocaleLowerCase('uk-UA').includes(q))
+    matchesSearch(x, q)
   );
   filtered.sort((a,b)=>(a.date+' '+(a.time||'')).localeCompare(b.date+' '+(b.time||''))*(tab==='past'?-1:1));
   $('heading').textContent=({future:'Найближчі захисти',past:'Архів захистів',all:'Усі захисти',calendar:'Календар захистів'})[tab]+(day?' · '+nice(day):'');
@@ -394,7 +424,8 @@ if(window.matchMedia('(display-mode: standalone)').matches){installButton.hidden
 if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js').catch(err=>console.warn('Service Worker:',err)));}
 </script>
 <script src="./brand.js"></script>
-<script src="./theme.js?v=2"></script>
+<script src="./theme.js?v=3"></script>
 <link rel="stylesheet" href="./cleanup.css?v=1">
+<script src="./bottom-search.js?v=1"></script>
 </body>
 </html>

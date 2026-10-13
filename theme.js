@@ -139,9 +139,7 @@ body.calendar-mode .layout,body.calendar-mode #nextDefense{display:none!importan
     return items.filter(x =>
       (!year || (x.date || '').startsWith(year)) &&
       (!degree || (degree === 'unknown' ? !x.degree : x.degree === degree)) &&
-      (!query || [x.title, x.person, x.person_original, x.person_display, x.topic, x.place, x.degree,
-        x.degree_full, x.council, x.specialty]
-        .join(' ').toLocaleLowerCase('uk-UA').includes(query))
+      matchesSearch(x, query)
     );
   }
 
@@ -357,7 +355,7 @@ body.calendar-mode .layout,body.calendar-mode #nextDefense{display:none!importan
       x.date < today() && (!day || x.date === day) &&
       (!year || x.date.startsWith(year)) &&
       (!degree || (degree === 'unknown' ? !x.degree : x.degree === degree)) &&
-      (!query || [x.title,x.person,x.person_original,x.person_display,x.topic,x.place,x.degree,x.degree_full,x.council,x.specialty].join(' ').toLocaleLowerCase('uk-UA').includes(query))
+      matchesSearch(x, query)
     ).sort((a,b) => (b.date+' '+(b.time || '')).localeCompare(a.date+' '+(a.time || '')));
     if (entries.length !== cards.length) return;
     const groups = new Map();
@@ -421,7 +419,7 @@ body.calendar-mode .layout,body.calendar-mode #nextDefense{display:none!importan
     const google = googleEventLink(x);
     return '<div class="defense-actions">' +
       (google && google !== '#' ? '<a class="google-calendar-button" href="' +
-        escapeHTML(google) + '" target="_blank" rel="noopener noreferrer">Гугл Календар ↗</a>' : '') +
+        escapeHTML(google) + '" target="_blank" rel="noopener noreferrer">Google Календар ↗</a>' : '') +
       shareButton(x) + '</div>';
   };
   const actionStyle = document.createElement('style');
