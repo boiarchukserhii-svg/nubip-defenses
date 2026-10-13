@@ -1,5 +1,5 @@
 /* Offline shell, fresh interface assets, and existing background messaging. */
-const VERSION='nubip-defenses-pwa-v19-without-statistics-20261013';
+const VERSION='nubip-defenses-pwa-v20-identity-20261014';
 const SHELL=['./','./index.html','./manifest.webmanifest','./icon-192.png','./icon-512.png',
  './theme.js?v=5','./brand.js','./cleanup.css?v=1'];
 self.addEventListener('install',event=>{
@@ -17,7 +17,7 @@ self.addEventListener('fetch',event=>{
  if(url.origin!==self.location.origin)return;
  const data=url.pathname.endsWith('/data.json');
  const navigation=req.mode==='navigate';
- const fresh=data||navigation||/\.(?:js|css)$/.test(url.pathname);
+ const fresh=data||navigation||url.pathname.endsWith('/manifest.webmanifest')||/\.(?:js|css)$/.test(url.pathname);
  const key=data?'./data.json':navigation?'./index.html':req;
  const task=(async()=>{
   const cache=await caches.open(VERSION);
@@ -69,6 +69,7 @@ self.addEventListener('notificationclick',event=>{
  const target=event.notification.data?.url||'./';
  event.waitUntil(clients.openWindow(target));
 });
+
 
 
 

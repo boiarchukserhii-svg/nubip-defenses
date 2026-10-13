@@ -1,11 +1,11 @@
 {
-  "id": "./",
+  "id": "/nubip-defenses/",
   "name": "Захисти дисертацій НУБіП України",
   "short_name": "Захисти НУБіП",
   "description": "Календар, пошук та архів захистів дисертацій НУБіП України.",
   "lang": "uk",
-  "start_url": "./",
-  "scope": "./",
+  "start_url": "/nubip-defenses/",
+  "scope": "/nubip-defenses/",
   "display": "standalone",
   "background_color": "#f3f7fd",
   "theme_color": "#103b75",
@@ -24,3 +24,4 @@
     }
   ]
 }
+
