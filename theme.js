@@ -239,9 +239,63 @@ body.calendar-mode .layout,body.calendar-mode #nextDefense{display:none!importan
   $cal('cal-today').onclick = () => {selected = today(); monthView = atMonth(selected); drawCalendar();};
 
   // Original render updates data/counters; this wrapper makes the actual calendar visible.
+  // Interactive statistics reflect the complete data set.
+  const statFilters = [
+    ['all', 'all', ''], ['future', 'future', ''], ['past', 'past', ''],
+    ['phd', 'all', 'PhD'], ['doctor', 'all', 'Доктор наук'],
+    ['candidate', 'all', 'Кандидат наук']
+  ];
+  function syncStatistics() {
+    for (const [id, targetTab, degree] of statFilters) {
+      const tile = document.getElementById(id)?.closest('.stat');
+      if (!tile) continue;
+      const active = tab === targetTab &&
+        (document.getElementById('degree')?.value || '') === degree &&
+        !(document.getElementById('q')?.value || '') &&
+        !(document.getElementById('year')?.value || '') && !day;
+      tile.classList.toggle('stat-selected', active);
+      tile.setAttribute('aria-pressed', String(active));
+    }
+  }
+  const statStyle = document.createElement('style');
+  statStyle.textContent = '.stat[role="button"]{cursor:pointer;transition:box-shadow .15s}.stat[role="button"]:hover{box-shadow:0 0 0 2px #7abbaa}.stat.stat-selected{box-shadow:inset 0 0 0 2px #138d78}.stat[role="button"]:focus-visible{outline:3px solid #138d78;outline-offset:3px}';
+  document.head.append(statStyle);
+  for (const [id, targetTab, degree] of statFilters) {
+    const tile = document.getElementById(id)?.closest('.stat');
+    if (!tile) continue;
+    tile.setAttribute('role', 'button');
+    tile.tabIndex = 0;
+    tile.setAttribute('aria-label', 'Показати захисти: ' + tile.querySelector('small').textContent);
+    function activate() {
+      document.getElementById('q').value = '';
+      document.getElementById('year').value = '';
+      document.getElementById('degree').value = degree;
+      day = '';
+      tab = targetTab;
+      setTabs();
+      render();
+      syncNavigation();
+      document.getElementById('heading')?.scrollIntoView({behavior:'smooth', block:'start'});
+    }
+    tile.addEventListener('click', activate);
+    tile.addEventListener('keydown', event => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        activate();
+      }
+    });
+  }
+  for (const id of ['q', 'degree', 'year', 'clear', 'resetDay']) {
+    const el = document.getElementById(id);
+    el?.addEventListener(id === 'q' ? 'input' : ['degree', 'year'].includes(id) ? 'change' : 'click', syncStatistics);
+  }
+  document.querySelector('.tabs')?.addEventListener('click', syncStatistics);
+
   const originalRender = render;
   render = function () {
     originalRender();
+    syncStatistics();
+    syncNavigation();
     document.body.classList.toggle('calendar-mode', tab === 'calendar');
     if (tab === 'calendar') drawCalendar();
   };
@@ -289,3 +343,4 @@ body.calendar-mode .layout,body.calendar-mode #nextDefense{display:none!importan
   render();
   syncNavigation();
 })();
+
