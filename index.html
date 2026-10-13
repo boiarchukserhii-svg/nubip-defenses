@@ -419,7 +419,11 @@ async function load() {
     const r=await fetch('./data.json?ts='+Date.now(),{cache:'no-store'});
     if(!r.ok)throw Error('Не вдалося отримати data.json');
     const data=await r.json();items=data.items||[];
-    $('status').textContent=`Захистів: ${items.length} · Перевірено сторінок: ${data.pages_scanned||0} · Оновлено: ${data.updated_at?new Date(data.updated_at).toLocaleString('uk-UA'):'ще не виконано'}`;
+    $('status').textContent = data.updated_at
+  ? 'Оновлено: ' + new Date(data.updated_at).toLocaleString('uk-UA', {
+      timeZone: 'Europe/Kyiv'
+    }) + ' (за київським часом)'
+  : 'Дані ще не оновлено'; ${items.length} · Перевірено сторінок: ${data.pages_scanned||0} · Оновлено: ${data.updated_at?new Date(data.updated_at).toLocaleString('uk-UA'):'ще не виконано'}`;
     const msg=!data.complete?'Синхронізацію ще не завершено.':data.detail_failures?'Не вдалося перевірити частину детальних сторінок: '+data.detail_failures:'';
     $('notice').hidden=!msg;$('notice').textContent=msg;render();
   } catch(e) {
