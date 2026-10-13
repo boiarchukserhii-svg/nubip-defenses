@@ -227,7 +227,7 @@ function calendarControls(x){
   const future=x.date>=today();
   const hourDisabled=(!future||!range.timed)?'disabled':'';
   return `<details class="event-actions" data-event-index="${index}">
-    <summary>📅 Додати до календаря та нагадування</summary>
+    <summary>📅 Додати до календаря</summary>
     <div class="event-tools">
       ${future?`<fieldset class="reminder-options"><legend>Нагадування для файлу календаря:</legend><div class="reminder-checks">
         <label><input type="checkbox" data-alarm="P7D"> За 7 днів</label>
