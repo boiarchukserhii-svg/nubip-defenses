@@ -333,9 +333,93 @@ body.calendar-mode .layout,body.calendar-mode #nextDefense{display:none!importan
     if (target) { target.tabIndex = -1; target.focus({preventScroll:true}); target.scrollIntoView({behavior:'smooth',block:'start'}); }
   });
 
+
+  // Group the already rendered archive cards; keep their calendar controls intact.
+  const archiveOpen = new Map();
+  const archiveStyle = document.createElement('style');
+  archiveStyle.textContent = `
+.archive-year,.archive-month{min-width:0}
+.archive-year{border:1px solid #e0ebe6;border-radius:20px;background:#fff;padding:12px}
+.archive-year>summary,.archive-month>summary{cursor:pointer;min-height:44px;padding:12px 8px;color:#274b57;font-weight:750;overflow-wrap:anywhere}
+.archive-year>summary{font-size:20px}
+.archive-month{margin-top:8px;border-top:1px solid #edf1ef;padding-top:5px}
+.archive-month>summary{font-size:15px}
+.archive-count{font-size:12px;font-weight:500;color:#647e88;margin-left:8px}
+.archive-list{display:grid;gap:12px;padding:8px 0}
+.archive-year>summary:focus-visible,.archive-month>summary:focus-visible{outline:3px solid #138d78;outline-offset:2px;border-radius:8px}
+`;
+  document.head.append(archiveStyle);
+  function groupArchive() {
+    if (tab !== 'past') return;
+    const container = document.getElementById('cards');
+    if (!container || container.querySelector('.archive-year')) return;
+    const cards = [...container.children].filter(el => el.classList.contains('card'));
+    if (!cards.length) return;
+    const query = (document.getElementById('q').value || '').toLocaleLowerCase('uk-UA').trim();
+    const degree = document.getElementById('degree').value;
+    const year = document.getElementById('year').value;
+    const entries = items.filter(x =>
+      x.date < today() && (!day || x.date === day) &&
+      (!year || x.date.startsWith(year)) &&
+      (!degree || (degree === 'unknown' ? !x.degree : x.degree === degree)) &&
+      (!query || [x.title,x.person,x.person_original,x.person_display,x.topic,x.place,x.degree,x.degree_full,x.council,x.specialty].join(' ').toLocaleLowerCase('uk-UA').includes(query))
+    ).sort((a,b) => (b.date+' '+(b.time || '')).localeCompare(a.date+' '+(a.time || '')));
+    if (entries.length !== cards.length) return;
+    const groups = new Map();
+    entries.forEach((entry,index) => {
+      const yearKey = entry.date.slice(0,4), monthKey = entry.date.slice(0,7);
+      if (!groups.has(yearKey)) groups.set(yearKey,new Map());
+      const months = groups.get(yearKey);
+      if (!months.has(monthKey)) months.set(monthKey,[]);
+      months.get(monthKey).push(cards[index]);
+    });
+    const fragment = document.createDocumentFragment();
+    let newest = true;
+    const searching = !!(query || degree || year || day);
+    for (const [yearKey,months] of groups) {
+      const yearGroup = document.createElement('details');
+      yearGroup.className = 'archive-year';
+      yearGroup.dataset.archiveKey = yearKey;
+      yearGroup.open = searching || (archiveOpen.get(yearKey) ?? newest);
+      const total = [...months.values()].reduce((sum,list) => sum + list.length,0);
+      const heading = document.createElement('summary');
+      heading.innerHTML = yearKey + '<span class="archive-count">' + total + ' ' + plural(total) + '</span>';
+      yearGroup.append(heading);
+      for (const [monthKey,list] of months) {
+        const monthGroup = document.createElement('details');
+        monthGroup.className = 'archive-month';
+        monthGroup.dataset.archiveKey = monthKey;
+        monthGroup.open = searching || (archiveOpen.get(monthKey) ?? newest);
+        const title = new Date(monthKey+'-01T12:00:00').toLocaleDateString('uk-UA',{month:'long'});
+        const summary = document.createElement('summary');
+        summary.innerHTML = escapeHTML(title.charAt(0).toLocaleUpperCase('uk-UA')+title.slice(1)) +
+          '<span class="archive-count">' + list.length + ' ' + plural(list.length) + '</span>';
+        const content = document.createElement('div');
+        content.className = 'archive-list';
+        content.append(...list);
+        monthGroup.append(summary,content);
+        yearGroup.append(monthGroup);
+        newest = false;
+      }
+      fragment.append(yearGroup);
+    }
+    container.replaceChildren(fragment);
+  }
+  document.getElementById('cards')?.addEventListener('toggle', event => {
+    const group = event.target;
+    if (group.dataset.archiveKey && group.isConnected)
+      archiveOpen.set(group.dataset.archiveKey, group.open);
+  }, true);
+  // Existing input handlers call the original renderer, so group after those handlers too.
+  for (const id of ['q','degree','year','clear','resetDay']) {
+    document.getElementById(id)?.addEventListener(id === 'q' ? 'input' :
+      ['degree','year'].includes(id) ? 'change' : 'click', groupArchive);
+  }
+
   const originalRender = render;
   render = function () {
     originalRender();
+    groupArchive();
     syncStatistics();
     syncNavigation();
     document.body.classList.toggle('calendar-mode', tab === 'calendar');
@@ -385,4 +469,5 @@ body.calendar-mode .layout,body.calendar-mode #nextDefense{display:none!importan
   render();
   syncNavigation();
 })();
+
 
