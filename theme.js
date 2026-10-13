@@ -139,7 +139,9 @@ body.calendar-mode .layout,body.calendar-mode #nextDefense{display:none!importan
     return items.filter(x =>
       (!year || (x.date || '').startsWith(year)) &&
       (!degree || (degree === 'unknown' ? !x.degree : x.degree === degree)) &&
-      matchesSearch(x, query)
+      (!query || [x.title, x.person, x.person_original, x.person_display, x.topic, x.place, x.degree,
+        x.degree_full, x.council, x.specialty]
+        .join(' ').toLocaleLowerCase('uk-UA').includes(query))
     );
   }
 
@@ -355,7 +357,7 @@ body.calendar-mode .layout,body.calendar-mode #nextDefense{display:none!importan
       x.date < today() && (!day || x.date === day) &&
       (!year || x.date.startsWith(year)) &&
       (!degree || (degree === 'unknown' ? !x.degree : x.degree === degree)) &&
-      matchesSearch(x, query)
+      (!query || [x.title,x.person,x.person_original,x.person_display,x.topic,x.place,x.degree,x.degree_full,x.council,x.specialty].join(' ').toLocaleLowerCase('uk-UA').includes(query))
     ).sort((a,b) => (b.date+' '+(b.time || '')).localeCompare(a.date+' '+(a.time || '')));
     if (entries.length !== cards.length) return;
     const groups = new Map();

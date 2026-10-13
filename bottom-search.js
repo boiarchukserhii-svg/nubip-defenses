@@ -10,9 +10,6 @@
   panel.className = 'bottom-search';
   const summary = document.createElement('summary');
   summary.textContent = 'Пошук і фільтри';
-  const badge = document.createElement('span');
-  badge.className = 'filter-status';
-  summary.append(badge);
   panel.append(summary, filters);
   dock.append(panel, nav);
   document.body.append(dock);
@@ -35,20 +32,8 @@ html{scroll-padding-bottom:var(--search-dock-height,160px)}
   document.head.append(style);
   const resize = () => document.documentElement.style.setProperty('--search-dock-height', `${dock.getBoundingClientRect().height + 32}px`);
   new ResizeObserver(resize).observe(dock);
-  const update = () => {
-    const count = ['q','degree','year'].filter(id => document.getElementById(id).value.trim()).length;
-    badge.textContent = count ? `· активних: ${count}` : '';
-    resize();
-  };
-  const previousRender = render;
-  render = function () { previousRender(); update(); };
-  document.getElementById('clear').onclick = () => {
-    for (const id of ['q','degree','year']) document.getElementById(id).value = '';
-    day = '';
-    render();
-  };
   panel.addEventListener('keydown', event => {
     if (event.key === 'Escape') { panel.open = false; summary.focus(); }
   });
-  update();
+  resize();
 })();
