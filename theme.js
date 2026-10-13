@@ -35,10 +35,44 @@ body.calendar-mode .layout{display:none!important}body.calendar-mode #nextDefens
 #calendar-screen .cal-empty{color:#788a94;background:#f5f8f9;border-radius:15px;padding:20px;text-align:center}#calendar-screen .cal-legend{display:flex;flex-wrap:wrap;gap:13px;margin-top:16px;font-size:12px;color:#71838d}#calendar-screen .cal-legend i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:5px;background:#68b9aa}#calendar-screen .cal-legend i.doctor{background:#b6a0dd}#calendar-screen .cal-legend i.candidate{background:#efbc79}
 @media(max-width:790px){header{padding:21px 20px 26px!important}main{padding:0 14px!important}.panel{padding:19px!important}.card{padding:19px!important}.stat{min-height:107px;padding:12px 9px}.stat b{font-size:26px!important}.stats{gap:8px!important}.mobile-nav{bottom:12px}}
 @media(min-width:900px){.mobile-nav{width:440px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+/* Майбутні захисти — зелений */
+#calendar-screen .cal-day.has.upcoming {
+    background: #e3f2ed;
+    color: #176c5d;
+}
+
+/* Проведені захисти — сірий */
+#calendar-screen .cal-day.has.completed {
+    background: #edf0f2;
+    color: #697983;
+}
+
+/* Захисти сьогодні — помаранчевий */
+#calendar-screen .cal-day.has.current-defense {
+    background: #fff0da;
+    color: #905200;
+}
+
+/* Виділена дата */
+#calendar-screen .cal-day.has.selected {
+    border: 2px solid #138d78;
+    box-shadow: inset 0 0 0 1px #138d78;
+}
 `;document.head.append(css);
 const layout=document.querySelector('.layout');if(!layout)return;
 const screen=document.createElement('section');screen.id='calendar-screen';screen.className='panel';screen.innerHTML='<div class="cal-head"><h2>Календар захистів</h2><div class="cal-switch"><button id="cal-prev" type="button" aria-label="Попередній місяць">‹</button><span class="cal-month" id="cal-month"></span><button id="cal-next" type="button" aria-label="Наступний місяць">›</button></div></div><div class="cal-grid" id="cal-grid"></div><div class="cal-legend"><span><i></i>PhD</span><span><i class="doctor"></i>Доктор наук</span><span><i class="candidate"></i>Кандидат наук</span></div><div class="cal-agenda"><h3 class="cal-agenda-title" id="cal-agenda-title"></h3><div id="cal-agenda-items"></div></div>';
 layout.before(screen);
+// Пояснення кольорів дат у календарі
+screen.querySelector('.cal-legend').insertAdjacentHTML(
+    'beforebegin',
+    `<div class="cal-status-legend"
+         style="display:flex;flex-wrap:wrap;gap:10px 16px;
+                margin:14px 0 4px;font-size:12px;color:#637681">
+        <span>🟢 Майбутні захисти</span>
+        <span>🟠 Сьогодні</span>
+        <span>⚪ Минулі захисти</span>
+    </div>`
+);
 let selected='';let monthView=new Date();monthView.setDate(1);
 const pad=n=>String(n).padStart(2,'0');const iso=(y,m,d)=>`${y}-${pad(m+1)}-${pad(d)}`;
 const htmlSafe=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&quot;'}[c]));
@@ -50,6 +84,18 @@ document.getElementById('cal-month').textContent=monthView.toLocaleDateString('u
 let markup=['Пн','Вт','Ср','Чт','Пт','Сб','Нд'].map(s=>`<span class="cal-weekday">${s}</span>`).join('')+'<span class="cal-blank"></span>'.repeat(offset);
 for(let d=1;d<=days;d++){const date=iso(y,m,d),events=byDate.get(date)||[];const dots=[...new Set(events.map(kind))].slice(0,3).map(k=>`<i class="cal-dot ${k}"></i>`).join('');markup+=`<button type="button" class="cal-day ${events.length?'has':''} ${selected===date?'selected':''} ${today()===date?'today':''}" data-cal-date="${date}" aria-label="${date}, захистів: ${events.length}"><span>${d}</span><span class="cal-dots">${dots}</span></button>`;}
 document.getElementById('cal-grid').innerHTML=markup;
+// Автоматичне визначення статусу дати захисту
+const todayKey = today();
+
+document.querySelectorAll('#cal-grid .cal-day.has').forEach(button => {
+    const date = button.dataset.calDate;
+
+    button.classList.add(
+        date < todayKey ? 'completed' :
+        date === todayKey ? 'current-defense' :
+        'upcoming'
+    );
+});
 const date=selected||today();const chosen=byDate.get(date)||[];
 const pretty=new Date(date+'T12:00:00').toLocaleDateString('uk-UA',{day:'numeric',month:'long',year:'numeric'});
 document.getElementById('cal-agenda-title').textContent=`${pretty} · ${chosen.length} ${chosen.length===1?'захист':chosen.length>=2&&chosen.length<=4?'захисти':'захистів'}`;
