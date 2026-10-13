@@ -1,7 +1,7 @@
 /* Offline shell, fresh interface assets, and existing background messaging. */
-const VERSION='nubip-defenses-pwa-v15-20261013';
+const VERSION='nubip-defenses-pwa-v16-20261013';
 const SHELL=['./','./index.html','./manifest.webmanifest','./icon-192.png','./icon-512.png',
- './theme.js?v=4','./brand.js','./cleanup.css?v=1'];
+ './theme.js?v=5','./brand.js','./cleanup.css?v=1'];
 self.addEventListener('install',event=>{
  event.waitUntil(caches.open(VERSION).then(cache=>cache.addAll(SHELL)).then(()=>self.skipWaiting()));
 });
