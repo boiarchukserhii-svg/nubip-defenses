@@ -396,5 +396,10 @@ if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.se
 <script src="./brand.js"></script>
 <script src="./theme.js?v=4"></script>
 <link rel="stylesheet" href="./cleanup.css?v=1">
+<script>
+// Keep the original search controls and handlers; only move their panel.
+const searchPanel = document.querySelector('.filters').closest('.panel');
+document.querySelector('main > footer').before(searchPanel);
+</script>
 </body>
 </html>
