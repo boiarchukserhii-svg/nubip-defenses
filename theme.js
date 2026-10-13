@@ -531,7 +531,7 @@ body.calendar-mode .layout,body.calendar-mode #nextDefense{display:none!importan
   nav.setAttribute('aria-label', 'Основна навігація');
   const destinations = [
     ['future', '⌂', 'Зараз'], ['calendar', '▦', 'Календар'],
-    ['past', '◷', 'Архів'], ['search', '🔍', 'Пошук'], ['all', '☷', 'Усі']
+    ['past', '◷', 'Архів'], ['search', '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"></circle><path d="m15.5 15.5 5 5"></path></svg>', 'Пошук'], ['all', '☷', 'Усі']
   ];
   const buttons = [];
   let searchNavigation = false;
@@ -573,6 +573,7 @@ body.calendar-mode .layout,body.calendar-mode #nextDefense{display:none!importan
   render();
   syncNavigation();
 })();
+
 
 
 
