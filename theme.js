@@ -23,7 +23,7 @@ button,select,input{border-radius:14px!important;border-color:#dfe9eb!important}
 .tabs button{background:#f3f7f6!important;border:0!important;font-weight:700!important}.tabs button.active{background:#e0f3e9!important;color:#087d69!important}
 #heading{color:#263d49;font-size:23px!important}#pwaPanel{max-width:1160px!important}
 .mobile-nav{position:fixed;z-index:999;bottom:12px;left:50%;transform:translateX(-50%);width:min(calc(100% - 24px),560px);display:flex;justify-content:space-around;gap:6px;background:#fffffff2;border:1px solid #edf0f0;border-radius:27px;box-shadow:0 8px 35px #273a4d22;padding:9px;backdrop-filter:blur(18px)}
-.mobile-nav button{border:0!important;background:transparent!important;box-shadow:none!important;flex:1;min-width:0;display:flex;flex-direction:column;align-items:center;gap:3px;font-size:12px;font-weight:700;padding:9px 4px!important;color:#82929a!important}.mobile-nav button .nav-icon{font-size:22px;line-height:1.3}.filters{scroll-margin-bottom:110px}html{scroll-padding-bottom:110px}.mobile-nav button.current{background:#e4f4ec!important;color:#147d6b!important}
+.mobile-nav button{border:0!important;background:transparent!important;box-shadow:none!important;flex:1;min-width:0;display:flex;flex-direction:column;align-items:center;gap:3px;font-size:12px;font-weight:700;padding:9px 4px!important;color:#82929a!important}.mobile-nav button .nav-icon{display:flex;align-items:center;justify-content:center;width:24px;height:24px;flex-shrink:0;line-height:1}.mobile-nav .nav-icon svg{display:block;width:24px;height:24px}.filters{scroll-margin-bottom:110px}html{scroll-padding-bottom:110px}.mobile-nav button.current{background:#e4f4ec!important;color:#147d6b!important}
 /* The dedicated calendar replaces the cards in the calendar tab. */
 #calendar-screen{display:none}body.calendar-mode #calendar-screen{display:block}
 body.calendar-mode .layout,body.calendar-mode #nextDefense{display:none!important}
@@ -529,9 +529,13 @@ body.calendar-mode .layout,body.calendar-mode #nextDefense{display:none!importan
   const nav = document.createElement('nav');
   nav.className = 'mobile-nav';
   nav.setAttribute('aria-label', 'Основна навігація');
+  const navIcon = content => '<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + content + '</svg>';
   const destinations = [
-    ['future', '⌂', 'Зараз'], ['calendar', '▦', 'Календар'],
-    ['past', '◷', 'Архів'], ['search', '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"></circle><path d="m15.5 15.5 5 5"></path></svg>', 'Пошук'], ['all', '☷', 'Усі']
+    ['future', navIcon('<path d="m3 10 9-7 9 7v10H15v-7H9v7H3Z"></path>'), 'Зараз'],
+    ['calendar', navIcon('<rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M7 3v4m10-4v4M3 10h18M7 14h2m6 0h2M7 17h2m6 0h2"></path>'), 'Календар'],
+    ['past', navIcon('<circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l4 2"></path>'), 'Архів'],
+    ['search', navIcon('<circle cx="10.5" cy="10.5" r="7.5"></circle><path d="m16 16 5 5"></path>'), 'Пошук'],
+    ['all', navIcon('<path d="M9 5h12M9 12h12M9 19h12M3 5h1M3 12h1M3 19h1"></path>'), 'Усі']
   ];
   const buttons = [];
   let searchNavigation = false;
@@ -573,6 +577,7 @@ body.calendar-mode .layout,body.calendar-mode #nextDefense{display:none!importan
   render();
   syncNavigation();
 })();
+
 
 
 
