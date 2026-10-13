@@ -8,8 +8,10 @@ from bs4 import BeautifulSoup
 
 ROOT = 'https://nubip.edu.ua/defend'
 BASE = Path(__file__).resolve().parent
-MONTHS = {'січ':1,'лют':2,'бер':3,'кві':4,'трав':5,'чер':6,'лип':7,'сер':8,'вер':9,'жов':10,'лис':11,'гру':12}
-DATE_RE = re.compile(r'(\d{1,2})\s+(січ\w*|лют\w*|бер\w*|кві\w*|трав\w*|чер\w*|лип\w*|сер\w*|вер\w*|жов\w*|лис\w*|гру\w*)\s+(20\d{2})(?:\s*[-–]\s*(\d{1,2}:\d{2}))?', re.I)
+# The NUBiP website abbreviates May as "тра" (e.g. "15 тра 2026").
+# DATE_RE and MONTHS use the same 3-character prefixes for all months.
+MONTHS = {'січ':1,'лют':2,'бер':3,'кві':4,'тра':5,'чер':6,'лип':7,'сер':8,'вер':9,'жов':10,'лис':11,'гру':12}
+DATE_RE = re.compile(r'(\d{1,2})\s+(січ\w*|лют\w*|бер\w*|кві\w*|тра\w*|чер\w*|лип\w*|сер\w*|вер\w*|жов\w*|лис\w*|гру\w*)\s+(20\d{2})(?:\s*[-–]\s*(\d{1,2}:\d{2}))?', re.I)
 TITLE_RE = re.compile(r'^Захист\s+дисертації\s+(.+?)\s+на\s+тему\s*:\s*«(.*)»\s*$', re.I | re.S)
 
 
@@ -30,7 +32,15 @@ def listing(html):
         url = urljoin(ROOT, a['href']).split('#')[0].split('?')[0]
         if urlparse(url).hostname not in ('nubip.edu.ua', 'www.nubip.edu.ua') or urlparse(url).path in ('/', '/defend'): continue
         ancestors = [a, *list(a.parents)[:9]]
-        candidates = [node.get_text(' ', strip=True) for node in ancestors if len(node.get_text(' ', strip=True)) < 2600 and date_in(node.get_text(' ', strip=True))]
+        # Do not borrow a date from the neighboring defense when this card
+        # has an unrecognized or missing date.
+        candidates = []
+        for node in ancestors:
+            snippet = node.get_text(' ', strip=True)
+            if len(snippet) >= 2600 or not date_in(snippet): continue
+            defense_links = [link for link in node.select('a[href]') if link.get_text(' ', strip=True).lower().startswith('захист дисертації ')]
+            if len(defense_links) != 1 or defense_links[0] is not a: continue
+            candidates.append(snippet)
         if not candidates: continue
         snippet = min(candidates, key=len)
         dt = date_in(snippet)
