@@ -287,7 +287,7 @@ body.calendar-mode .layout,body.calendar-mode #nextDefense{display:none!importan
 
 
   const homeStyle = document.createElement('style');
-  homeStyle.textContent = `#nextDefense[hidden]{display:none!important}#nextDefense .home-actions{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}#nextDefense button{min-height:44px;background:#fff;font-size:13px}#nextDefense .home-row{display:block;width:100%;text-align:left;margin-top:8px;padding:12px}#nextDefense .home-row strong,#nextDefense .home-row small{display:block;overflow-wrap:anywhere}#nextDefense .home-row small{color:#637681;margin-top:5px}#nextDefense .home-topic{font-size:14px;line-height:1.5}#nextDefense button:focus-visible{outline:3px solid #138d78;outline-offset:2px}`;
+  homeStyle.textContent = `#nextDefense .next-defense-badge{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:10px 14px;border:1px solid #d5ebe3;border-radius:14px;background:#e8f5ee;color:#157b70;font-size:14px;font-weight:750;margin-bottom:8px}#nextDefense h3{overflow-wrap:anywhere}#nextDefense[hidden]{display:none!important}#nextDefense .home-actions{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}#nextDefense button{min-height:44px;background:#fff;font-size:13px}#nextDefense .home-row{display:block;width:100%;text-align:left;margin-top:8px;padding:12px}#nextDefense .home-row strong,#nextDefense .home-row small{display:block;overflow-wrap:anywhere}#nextDefense .home-row small{color:#637681;margin-top:5px}#nextDefense .home-topic{font-size:14px;line-height:1.5}#nextDefense button:focus-visible{outline:3px solid #138d78;outline-offset:2px}`;
   document.head.append(homeStyle);
   nextDefense = function () {
     const box = document.getElementById('nextDefense');
@@ -303,10 +303,10 @@ body.calendar-mode .layout,body.calendar-mode #nextDefense{display:none!importan
     const x = upcoming[0];
     const name = x => escapeHTML(x.person_original || x.person || x.title || 'Захист дисертації');
     const degree = x => escapeHTML(x.degree_full || x.degree || 'Ступінь уточнюється');
-    box.innerHTML = `<h2>Найближчий захист</h2>
+    box.innerHTML = `<div class="next-defense-badge">📅 Найближчий захист</div>
       <p><b>${escapeHTML(prettyDate(x.date))} · ${escapeHTML(x.time || 'час не вказано')}</b></p>
       ${countdownMarkup(x)}
-      <h3>${name(x)}</h3><p>${degree(x)}</p>
+      <h3>Захист дисертації ${name(x)}</h3><p>${degree(x)}</p>
       ${x.topic ? `<p class="home-topic">${escapeHTML(x.topic)}</p>` : ''}
       <div class="home-actions"><button type="button" data-home-event="${items.indexOf(x)}">Деталі захисту →</button>
       <button type="button" data-home-all>Усі найближчі (${upcoming.length}) →</button></div>
@@ -561,6 +561,7 @@ body.calendar-mode .layout,body.calendar-mode #nextDefense{display:none!importan
   render();
   syncNavigation();
 })();
+
 
 
 
