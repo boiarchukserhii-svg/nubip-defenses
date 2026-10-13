@@ -97,7 +97,7 @@ footer{text-align:center;font-size:12px;color:#5c7390;padding:18px}
         <div class="stat"><b id="all">—</b><small>Усього</small></div>
         <div class="stat"><b id="future">—</b><small>Майбутні</small></div>
         <div class="stat"><b id="past">—</b><small>Архів</small></div>
-        <div class="stat"><b id="phd">—</b><small>PhD (визначено)</small></div>
+        <div class="stat"><b id="phd">—</b><small>PhD</small></div>
         <div class="stat"><b id="doctor">—</b><small>Доктор наук</small></div>
         <div class="stat"><b id="candidate">—</b><small>Кандидат наук</small></div>
       </div>
@@ -146,7 +146,7 @@ footer{text-align:center;font-size:12px;color:#5c7390;padding:18px}
       <button id="resetDay" type="button" style="width:100%">Усі дати</button>
     </aside>
   </div>
-  <footer>Джерело: <a href="https://nubip.edu.ua/defend" target="_blank" rel="noopener noreferrer">офіційний сайт НУБіП України</a>. Оновлення даних — кожні 3 години. Ступінь визначається за формулюванням на офіційній сторінці, а не за номером ради.</footer>
+  <footer>Джерело: <a href="https://nubip.edu.ua/defend" target="_blank" rel="noopener noreferrer">офіційний сайт НУБіП України</a>. Оновлення даних — кожні 3 години.</footer>
 </main>
 <script>
 const $ = id => document.getElementById(id);
@@ -420,10 +420,10 @@ async function load() {
     if(!r.ok)throw Error('Не вдалося отримати data.json');
     const data=await r.json();items=data.items||[];
     $('status').textContent = data.updated_at
-  ? 'Оновлено: ' + new Date(data.updated_at).toLocaleString('uk-UA', {
-      timeZone: 'Europe/Kyiv'
-    }) + ' (за київським часом)'
-  : 'Дані ще не оновлено'; ${items.length} · Перевірено сторінок: ${data.pages_scanned||0} · Оновлено: ${data.updated_at?new Date(data.updated_at).toLocaleString('uk-UA'):'ще не виконано'}`;
+      ? 'Оновлено: ' + new Date(data.updated_at).toLocaleString('uk-UA', {
+          timeZone: 'Europe/Kyiv'
+        }) + ' (за київським часом)'
+      : 'Дані ще не оновлено';
     const msg=!data.complete?'Синхронізацію ще не завершено.':data.detail_failures?'Не вдалося перевірити частину детальних сторінок: '+data.detail_failures:'';
     $('notice').hidden=!msg;$('notice').textContent=msg;render();
   } catch(e) {
@@ -467,3 +467,4 @@ document.querySelector('main > footer').before(searchPanel);
 </script>
 </body>
 </html>
+
