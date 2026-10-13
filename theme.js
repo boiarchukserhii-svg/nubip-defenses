@@ -160,6 +160,7 @@ body.calendar-mode .layout,body.calendar-mode #nextDefense{display:none!importan
         ${x.specialty ? `<small><b>Спеціальність:</b> ${escapeHTML(x.specialty)}</small>` : ''}
         ${x.council ? `<small><b>Рада:</b> ${escapeHTML(x.council)}</small>` : ''}
         <div class="cal-event-links">
+          ${shareButton(x)}
           ${url ? `<a href="${escapeHTML(url)}" target="_blank" rel="noopener noreferrer">Документи ↗</a>` : ''}
           ${google && google !== '#' ? `<a href="${escapeHTML(google)}" target="_blank" rel="noopener noreferrer">Google Календар ↗</a>` : ''}
         </div>
@@ -406,17 +407,107 @@ body.calendar-mode .layout,body.calendar-mode #nextDefense{display:none!importan
     if (group.dataset.archiveKey && group.isConnected)
       archiveOpen.set(group.dataset.archiveKey, group.open);
   }, true);
+
+  function defenseKey(x) {
+    return officialUrl(x) || [x.date,x.person_original || x.person || x.title,x.topic || ''].join('|');
+  }
+  function defenseLink(x) {
+    const url = new URL(location.href);
+    url.hash = new URLSearchParams({defense:defenseKey(x)}).toString();
+    return url.href;
+  }
+  function shareButton(x) {
+    return '<button type="button" data-share-index="' + items.indexOf(x) + '">Поділитися ↗</button>';
+  }
+  const baseCalendarControls = calendarControls;
+  calendarControls = x => baseCalendarControls(x) + '<div class="home-actions">' + shareButton(x) + '</div>';
+  const shareStyle = document.createElement('style');
+  shareStyle.textContent = '[data-share-index]{min-height:44px;margin-top:8px;color:#157b70;font-weight:700}.share-feedback{padding:12px;overflow-wrap:anywhere}.share-feedback input{display:block;width:100%;margin-top:8px}.shared-defense{outline:3px solid #138d78;outline-offset:3px}';
+  document.head.append(shareStyle);
+  const feedback = document.createElement('div');
+  feedback.className = 'share-feedback panel';
+  feedback.hidden = true;
+  feedback.setAttribute('role','status');
+  layout.before(feedback);
+  function shareMessage(message, link) {
+    feedback.replaceChildren();
+    feedback.hidden = false;
+    const text = document.createElement('span');
+    text.textContent = message;
+    feedback.append(text);
+    if (link) {
+      const input = document.createElement('input');
+      input.readOnly = true;
+      input.value = link;
+      input.setAttribute('aria-label','Посилання на захист');
+      feedback.append(input);
+      input.focus(); input.select();
+    }
+  }
+  document.addEventListener('click', async event => {
+    const button = event.target.closest('[data-share-index]');
+    if (!button) return;
+    const x = items[Number(button.dataset.shareIndex)];
+    if (!x) return;
+    const link = defenseLink(x);
+    const title = 'Захист дисертації — НУБіП України';
+    const text = (x.person_original || x.person || x.title || '') + ' · ' + prettyDate(x.date);
+    if (typeof navigator.share === 'function') {
+      try { await navigator.share({title,text,url:link}); return; }
+      catch (error) { if (error.name === 'AbortError') return; }
+    }
+    try {
+      await navigator.clipboard.writeText(link);
+      shareMessage('Посилання скопійовано. Його можна надіслати.');
+    } catch (error) { shareMessage('Скопіюйте це посилання:',link); }
+  });
+  let pendingDefense = new URLSearchParams(location.hash.slice(1)).get('defense');
+  let sharedEntry = null;
+  function resolveSharedDefense() {
+    sharedEntry = null;
+    if (!pendingDefense) return;
+    const x = items.find(entry => defenseKey(entry) === pendingDefense);
+    if (!x) {
+      shareMessage('Захист за посиланням поки не знайдено. Спробуйте натиснути «Оновити».');
+      return;
+    }
+    pendingDefense = null;
+    sharedEntry = x;
+    feedback.hidden = true;
+    tab = 'all'; day = x.date;
+    for (const id of ['q','degree','year']) document.getElementById(id).value = '';
+    setTabs();
+  }
+  function focusSharedDefense() {
+    if (!sharedEntry) return;
+    const list = items.filter(x => x.date === sharedEntry.date).slice().sort((a,b) =>
+      (a.time || '').localeCompare(b.time || ''));
+    const card = document.getElementById('cards').children[list.indexOf(sharedEntry)];
+    if (!card) return;
+    card.classList.add('shared-defense');
+    card.tabIndex = -1;
+    card.focus({preventScroll:true});
+    card.scrollIntoView({behavior:'smooth',block:'start'});
+    sharedEntry = null;
+  }
+  window.addEventListener('hashchange', () => {
+    pendingDefense = new URLSearchParams(location.hash.slice(1)).get('defense');
+    render();
+  });
+
   // The original sidebar calendar is hidden and superseded by drawCalendar.
   calendar = function () {};
   const originalRender = render;
   render = function () {
     clearTimeout(searchTimer);
+    resolveSharedDefense();
     originalRender();
     groupArchive();
     syncStatistics();
     syncNavigation();
     document.body.classList.toggle('calendar-mode', tab === 'calendar');
     if (tab === 'calendar') drawCalendar();
+    focusSharedDefense();
   };
   // Route filters through the current renderer and coalesce fast typing.
   let searchTimer;
@@ -464,6 +555,7 @@ body.calendar-mode .layout,body.calendar-mode #nextDefense{display:none!importan
   render();
   syncNavigation();
 })();
+
 
 
 
