@@ -139,7 +139,7 @@ body.calendar-mode .layout,body.calendar-mode #nextDefense{display:none!importan
     return items.filter(x =>
       (!year || (x.date || '').startsWith(year)) &&
       (!degree || (degree === 'unknown' ? !x.degree : x.degree === degree)) &&
-      (!query || [x.title, x.person, x.person_original, x.topic, x.place, x.degree,
+      (!query || [x.title, x.person, x.person_original, x.person_display, x.topic, x.place, x.degree,
         x.degree_full, x.council, x.specialty]
         .join(' ').toLocaleLowerCase('uk-UA').includes(query))
     );
@@ -285,11 +285,7 @@ body.calendar-mode .layout,body.calendar-mode #nextDefense{display:none!importan
       }
     });
   }
-  for (const id of ['q', 'degree', 'year', 'clear', 'resetDay']) {
-    const el = document.getElementById(id);
-    el?.addEventListener(id === 'q' ? 'input' : ['degree', 'year'].includes(id) ? 'change' : 'click', syncStatistics);
-  }
-  document.querySelector('.tabs')?.addEventListener('click', syncStatistics);
+
 
   const homeStyle = document.createElement('style');
   homeStyle.textContent = `#nextDefense[hidden]{display:none!important}#nextDefense .home-actions{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}#nextDefense button{min-height:44px;background:#fff;font-size:13px}#nextDefense .home-row{display:block;width:100%;text-align:left;margin-top:8px;padding:12px}#nextDefense .home-row strong,#nextDefense .home-row small{display:block;overflow-wrap:anywhere}#nextDefense .home-row small{color:#637681;margin-top:5px}#nextDefense .home-topic{font-size:14px;line-height:1.5}#nextDefense button:focus-visible{outline:3px solid #138d78;outline-offset:2px}`;
@@ -410,14 +406,11 @@ body.calendar-mode .layout,body.calendar-mode #nextDefense{display:none!importan
     if (group.dataset.archiveKey && group.isConnected)
       archiveOpen.set(group.dataset.archiveKey, group.open);
   }, true);
-  // Existing input handlers call the original renderer, so group after those handlers too.
-  for (const id of ['q','degree','year','clear','resetDay']) {
-    document.getElementById(id)?.addEventListener(id === 'q' ? 'input' :
-      ['degree','year'].includes(id) ? 'change' : 'click', groupArchive);
-  }
-
+  // The original sidebar calendar is hidden and superseded by drawCalendar.
+  calendar = function () {};
   const originalRender = render;
   render = function () {
+    clearTimeout(searchTimer);
     originalRender();
     groupArchive();
     syncStatistics();
@@ -425,12 +418,14 @@ body.calendar-mode .layout,body.calendar-mode #nextDefense{display:none!importan
     document.body.classList.toggle('calendar-mode', tab === 'calendar');
     if (tab === 'calendar') drawCalendar();
   };
-  // Original filter handlers reference their first render function. Redraw calendar on changes too.
-  for (const id of ['q', 'degree', 'year']) {
-    document.getElementById(id)?.addEventListener(id === 'q' ? 'input' : 'change', () => {
-      if (tab === 'calendar') drawCalendar();
-    });
-  }
+  // Route filters through the current renderer and coalesce fast typing.
+  let searchTimer;
+  const searchInput = document.getElementById('q');
+  searchInput.oninput = () => {
+    clearTimeout(searchTimer);
+    searchTimer = setTimeout(() => render(), 120);
+  };
+  for (const id of ['degree', 'year']) document.getElementById(id).onchange = () => render();
 
   const nav = document.createElement('nav');
   nav.className = 'mobile-nav';
@@ -464,10 +459,11 @@ body.calendar-mode .layout,body.calendar-mode #nextDefense{display:none!importan
     buttons.push(button);
   }
   document.body.append(nav);
-  document.querySelector('.tabs')?.addEventListener('click', () => setTimeout(syncNavigation, 0));
+
   // Data may already have loaded when this script is attached.
   render();
   syncNavigation();
 })();
+
 
 
