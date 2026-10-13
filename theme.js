@@ -23,7 +23,7 @@ button,select,input{border-radius:14px!important;border-color:#dfe9eb!important}
 .tabs button{background:#f3f7f6!important;border:0!important;font-weight:700!important}.tabs button.active{background:#e0f3e9!important;color:#087d69!important}
 #heading{color:#263d49;font-size:23px!important}#pwaPanel{max-width:1160px!important}
 .mobile-nav{position:fixed;z-index:999;bottom:12px;left:50%;transform:translateX(-50%);width:min(calc(100% - 24px),560px);display:flex;justify-content:space-around;gap:6px;background:#fffffff2;border:1px solid #edf0f0;border-radius:27px;box-shadow:0 8px 35px #273a4d22;padding:9px;backdrop-filter:blur(18px)}
-.mobile-nav button{border:0!important;background:transparent!important;box-shadow:none!important;flex:1;min-width:0;display:flex;flex-direction:column;align-items:center;gap:3px;font-size:12px;font-weight:700;padding:9px 4px!important;color:#82929a!important}.mobile-nav button .nav-icon{font-size:22px;line-height:1.3}.mobile-nav button.current{background:#e4f4ec!important;color:#147d6b!important}
+.mobile-nav button{border:0!important;background:transparent!important;box-shadow:none!important;flex:1;min-width:0;display:flex;flex-direction:column;align-items:center;gap:3px;font-size:12px;font-weight:700;padding:9px 4px!important;color:#82929a!important}.mobile-nav button .nav-icon{font-size:22px;line-height:1.3}.filters{scroll-margin-bottom:110px}html{scroll-padding-bottom:110px}.mobile-nav button.current{background:#e4f4ec!important;color:#147d6b!important}
 /* The dedicated calendar replaces the cards in the calendar tab. */
 #calendar-screen{display:none}body.calendar-mode #calendar-screen{display:block}
 body.calendar-mode .layout,body.calendar-mode #nextDefense{display:none!important}
@@ -74,8 +74,8 @@ body.calendar-mode .layout,body.calendar-mode #nextDefense{display:none!importan
 #calendar-screen .cal-event-main a{color:#157b70;font-size:13px;font-weight:750}
 #calendar-screen .cal-empty{color:#788a94;background:#f5f8f9;border-radius:15px;padding:20px;text-align:center}
 @media(max-width:790px){header{padding:21px 20px 26px!important}main{padding:0 14px!important}.panel{padding:19px!important}.card{padding:19px!important}.stat{min-height:107px;padding:12px 9px}.stat b{font-size:26px!important}.stats{gap:8px!important}.mobile-nav{bottom:12px}}
-@media(min-width:900px){.mobile-nav{width:440px}}
-@media(max-width:370px){#calendar-screen .cal-switch{gap:3px;grid-template-columns:auto 38px minmax(0,1fr) 38px}#calendar-screen .cal-switch button{min-width:38px}#calendar-screen .cal-month{font-size:12px}#calendar-screen .cal-grid{gap:3px}#calendar-screen .cal-day{min-height:49px}}
+@media(min-width:900px){.mobile-nav{width:480px}}
+@media(max-width:370px){.mobile-nav{gap:3px;padding:7px}.mobile-nav button{font-size:11px}.mobile-nav button .nav-icon{font-size:20px}#calendar-screen .cal-switch{gap:3px;grid-template-columns:auto 38px minmax(0,1fr) 38px}#calendar-screen .cal-switch button{min-width:38px}#calendar-screen .cal-month{font-size:12px}#calendar-screen .cal-grid{gap:3px}#calendar-screen .cal-day{min-height:49px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 `;
   document.head.append(css);
@@ -531,12 +531,13 @@ body.calendar-mode .layout,body.calendar-mode #nextDefense{display:none!importan
   nav.setAttribute('aria-label', 'Основна навігація');
   const destinations = [
     ['future', '⌂', 'Зараз'], ['calendar', '▦', 'Календар'],
-    ['past', '◷', 'Архів'], ['all', '☷', 'Усі']
+    ['past', '◷', 'Архів'], ['search', '🔍', 'Пошук'], ['all', '☷', 'Усі']
   ];
   const buttons = [];
+  let searchNavigation = false;
   function syncNavigation() {
     buttons.forEach(b => {
-      const active = b.dataset.tab === tab;
+      const active = searchNavigation && tab === 'all' ? b.dataset.tab === 'search' : b.dataset.tab === tab;
       b.classList.toggle('current', active);
       b.setAttribute('aria-current', active ? 'page' : 'false');
     });
@@ -547,6 +548,15 @@ body.calendar-mode .layout,body.calendar-mode #nextDefense{display:none!importan
     button.dataset.tab = name;
     button.innerHTML = `<span class="nav-icon" aria-hidden="true">${icon}</span><span>${label}</span>`;
     button.onclick = () => {
+      searchNavigation = name === 'search';
+      if (name === 'search') {
+        tab = 'all'; day = ''; setTabs(); render(); syncNavigation();
+        const input = document.getElementById('q');
+        const panel = input?.closest('.panel');
+        input?.focus({preventScroll:true});
+        panel?.scrollIntoView({behavior:'smooth', block:'center'});
+        return;
+      }
       const target = document.querySelector(`.tabs button[data-tab="${name}"]`);
       if (!target) return;
       target.click();
@@ -563,6 +573,7 @@ body.calendar-mode .layout,body.calendar-mode #nextDefense{display:none!importan
   render();
   syncNavigation();
 })();
+
 
 
 
