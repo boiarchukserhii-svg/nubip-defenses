@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-15T21:43:18+00:00",
+  "updated_at": "2026-10-17T19:27:39.107Z",
   "pages_scanned": 17,
   "complete": true,
   "detail_failures": 0,
@@ -2631,6 +2631,29 @@
       "details_checked": true,
       "degree_full": "доктор філософії",
       "degree_version": 4
+    },
+    {
+      "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-shao-chao-na-temu-upravlinnya-profesiynym-rozvytkom-vykladacha-tekhnichnoho",
+      "title": "Захист дисертації ШАО Чао на тему: «Управління професійним розвитком викладача технічного коледжу в Китайській Народній Республіці»",
+      "person": "ШАО Чао",
+      "person_original": "ШАО Чао",
+      "person_display": "ШАО Чао",
+      "topic": "Управління професійним розвитком викладача технічного коледжу в Китайській Народній Республіці",
+      "date": "2026-11-17",
+      "time": "10:00",
+      "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
+      "degree": "PhD",
+      "degree_full": "доктор філософії",
+      "council": "РСВР 303",
+      "specialty": "011 Освітні, педагогічні науки",
+      "supervisor": "доктор педагогічних наук, професор ТВЕРЕЗОВСЬКА Ніна Трохимівна, професор кафедри соціальної роботи та реабілітації Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
+      "details_checked": true,
+      "degree_version": 4
     }
-  ]
+  ],
+  "last_automatic_update_at": "2026-10-15T21:43:18+00:00",
+  "manual_update": {
+    "scope": "Додано один захист за офіційною карткою; повне автоматичне сканування не виконувалося",
+    "source": "https://nubip.edu.ua/zakhyst-dysertatsiyi-shao-chao-na-temu-upravlinnya-profesiynym-rozvytkom-vykladacha-tekhnichnoho"
+  }
 }
