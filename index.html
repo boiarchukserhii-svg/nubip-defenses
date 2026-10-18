@@ -84,16 +84,16 @@ footer{text-align:center;font-size:12px;color:#5c7390;padding:18px}
 </head>
 <body>
 <header>
-  <div class="tag">НУБіП УКРАЇНИ · ІНФОРМАЦІЙНИЙ ВЕБЗАСТОСУНОК</div>
+  <div class="tag">НУБіП УКРАЇНИ</div>
   <h1>Захисти дисертацій</h1>
-  <p>Найближчі захисти, календар і архів з 2026 року</p>
+  
 </header>
 <aside id="pwaPanel" style="max-width:1140px;margin:12px auto 0;padding:0 18px">
   <button id="installApp" class="install-app" type="button">📲 Встановити застосунок</button>
   <p class="install-help" id="installHelp">Android: відкрийте меню Chrome → «Встановити застосунок» або «Додати на головний екран». iPhone: Safari → «Поділитися» → «На початковий екран». Windows: скористайтеся меню Chrome або Edge.</p>
 </aside>
 <main>
-  <section class="panel">
+  <section class="panel dashboard" aria-label="Огляд захистів">
     <div class="row">
       <div class="stats">
         <div class="stat"><b id="all">—</b><small>Усього</small></div>
@@ -103,13 +103,14 @@ footer{text-align:center;font-size:12px;color:#5c7390;padding:18px}
         <div class="stat"><b id="doctor">—</b><small>Доктор наук</small></div>
         <div class="stat"><b id="candidate">—</b><small>Кандидат наук</small></div>
       </div>
-      <button id="sync" class="primary" type="button">↻ Оновити</button>
+
     </div>
-    <div id="status" class="muted" style="margin-top:12px">Завантаження…</div>
+
     <div id="notice" class="notice" hidden></div>
     <div id="nextDefense" class="next-defense" hidden aria-live="polite"></div>
   </section>
-  <section class="panel">
+  <section class="panel search-panel" aria-labelledby="search-title">
+    <h2 id="search-title">Пошук захистів</h2>
     <div class="tabs">
       <button data-tab="future" class="active" type="button">Найближчі</button>
       <button data-tab="calendar" type="button">Календар</button>
@@ -117,15 +118,15 @@ footer{text-align:center;font-size:12px;color:#5c7390;padding:18px}
       <button data-tab="all" type="button">Усі захисти</button>
     </div>
     <div class="filters">
-      <input id="q" placeholder="Пошук: здобувач, тема, спеціальність, рада…" aria-label="Пошук">
-      <select id="degree" aria-label="Науковий ступінь">
+      <label class="search-query"><span>Здобувач, тема, спеціальність або рада</span><div class="query-field"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="10.5" cy="10.5" r="7.5"/><path d="m16 16 5 5"/></svg><input id="q" type="search" placeholder="Введіть прізвище або ключове слово" autocomplete="off"></div></label>
+      <label class="degree-filter"><span>Науковий ступінь</span><select id="degree" aria-label="Науковий ступінь">
         <option value="">Усі ступені</option>
         <option value="PhD">Доктор філософії (PhD)</option>
         <option value="Доктор наук">Доктор наук</option>
         <option value="Кандидат наук">Кандидат наук</option>
         <option value="unknown">Ступінь не визначено</option>
-      </select>
-      <select id="year" aria-label="Рік"><option value="">Усі роки</option></select>
+      </select></label>
+      <label class="year-filter"><span>Рік захисту</span><select id="year" aria-label="Рік"><option value="">Усі роки</option></select></label>
       <button id="clear" type="button">Скинути</button>
     </div>
   </section>
@@ -148,11 +149,11 @@ footer{text-align:center;font-size:12px;color:#5c7390;padding:18px}
       <button id="resetDay" type="button" style="width:100%">Усі дати</button>
     </aside>
   </div>
-  <footer>Джерело: <a href="https://nubip.edu.ua/defend" target="_blank" rel="noopener noreferrer">офіційний сайт НУБіП України</a>. Оновлення даних — кожні 3 години.<div class="app-owner">Власник застосунку: <strong>Сергій БОЯРЧУК</strong></div></footer>
+  <footer><div class="footer-line"><span class="app-owner">© <strong>Сергій БОЯРЧУК</strong>, 2026</span><a class="official-page-button" href="https://nubip.edu.ua/defend" target="_blank" rel="noopener noreferrer">Офіційний сайт <span aria-hidden="true">↗</span></a></div><p id="status" class="updated-date" role="status">Завантаження даних…</p></footer>
 </main>
 <script>
 const $ = id => document.getElementById(id);
-let items = [], tab = 'future', day = '', view = new Date();
+let items = [], tab = 'home', day = '', view = new Date();
 view.setDate(1);
 // Дати захистів трактуємо як календарні дати за Києвом.
 function today() {
@@ -380,14 +381,14 @@ function render() {
   $('candidate').textContent=items.filter(x=>x.degree==='Кандидат наук').length;
   const q=$('q').value.toLocaleLowerCase('uk-UA').trim(), degree=$('degree').value;
   const filtered=items.filter(x=>
-    (tab==='all'||tab==='calendar'||(tab==='future'?x.date>=now:x.date<now)) &&
+    (tab==='all'||tab==='calendar'||(tab==='future'?x.date>=now:tab==='past'?x.date<now:false)) &&
     (!day||x.date===day) && (!current||x.date.startsWith(current)) &&
     (!degree||(degree==='unknown'?!x.degree:x.degree===degree)) &&
     matchesSearch(x, q)
   );
   filtered.sort((a,b)=>(a.date+' '+(a.time||'')).localeCompare(b.date+' '+(b.time||''))*(tab==='past'?-1:1));
-  $('heading').textContent=({future:'Найближчі захисти',past:'Архів захистів',all:'Усі захисти',calendar:'Календар захистів'})[tab]+(day?' · '+nice(day):'');
-  if(q) $('heading').textContent='Пошук серед усіх захистів';
+  $('heading').textContent=({home:'Головна',future:'Майбутні захисти',past:'Архів захистів',all:'Усі захисти',calendar:'Календар захистів'})[tab]+(day?' · '+nice(day):'');
+  if(tab==='all') $('heading').textContent='Результати пошуку';
   $('count').textContent=filtered.length+' записів';
   $('cards').innerHTML=filtered.length?filtered.map(x=>`<article class="card">
     <div class="row"><span class="date">${nice(x.date)} · ${esc(x.time||'час не вказано')}</span>
@@ -418,7 +419,7 @@ function calendar() {
 }
 async function load() {
   try {
-    const r=await fetch('./data.json?ts='+Date.now(),{cache:'no-store'});
+    const r=await fetch('./data.json',{cache:'no-cache'});
     if(!r.ok)throw Error('Не вдалося отримати data.json');
     const data=await r.json();items=data.items||[];
     $('status').textContent = data.updated_at
@@ -426,7 +427,7 @@ async function load() {
           timeZone: 'Europe/Kyiv'
         }) + ' (за київським часом)'
       : 'Дані ще не оновлено';
-    const msg=!data.complete?'Синхронізацію ще не завершено.':data.detail_failures?'Не вдалося перевірити частину детальних сторінок: '+data.detail_failures:'';
+    const msg='';
     $('notice').hidden=!msg;$('notice').textContent=msg;render();
   } catch(e) {
     $('status').textContent='Не вдалося завантажити дані';
@@ -439,8 +440,7 @@ $('clear').onclick=()=>{$('q').value='';$('year').value='';$('degree').value='';
 $('prev').onclick=()=>{view.setMonth(view.getMonth()-1);calendar();};
 $('next').onclick=()=>{view.setMonth(view.getMonth()+1);calendar();};
 $('resetDay').onclick=()=>{day='';render();};
-$('sync').onclick=load;load();
-setInterval(load,180000);
+load();
 let lastRenderedDate=today();
 setInterval(()=>{const current=today();if(current!==lastRenderedDate){lastRenderedDate=current;render();}},60000);
 
@@ -460,15 +460,12 @@ if(window.matchMedia('(display-mode: standalone)').matches){installButton.hidden
 if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js').catch(err=>console.warn('Service Worker:',err)));}
 </script>
 <script src="./brand.js"></script>
-<script src="./theme.js?v=5"></script>
-<link rel="stylesheet" href="./cleanup.css?v=1">
-<script>
-// Keep the original search controls and handlers; only move their panel.
-const searchPanel = document.querySelector('.filters').closest('.panel');
-document.querySelector('main > footer').before(searchPanel);
-</script>
+<script src="./theme.js?v=6"></script>
+<link rel="stylesheet" href="./cleanup.css?v=2">
+
 </body>
 </html>
+
 
 
 

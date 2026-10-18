@@ -7,8 +7,8 @@
   "start_url": "/nubip-defenses/",
   "scope": "/nubip-defenses/",
   "display": "standalone",
-  "background_color": "#f3f7fd",
-  "theme_color": "#103b75",
+  "background_color": "#f1f5fb",
+  "theme_color": "#195bb5",
   "icons": [
     {
       "src": "./icon-192.png",
@@ -24,4 +24,3 @@
     }
   ]
 }
-

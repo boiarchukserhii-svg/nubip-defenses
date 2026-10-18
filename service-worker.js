@@ -1,75 +1,15 @@
-/* Offline shell, fresh interface assets, and existing background messaging. */
-const VERSION='nubip-defenses-pwa-v20-identity-20261014';
-const SHELL=['./','./index.html','./manifest.webmanifest','./icon-192.png','./icon-512.png',
- './theme.js?v=5','./brand.js','./cleanup.css?v=1'];
-self.addEventListener('install',event=>{
- event.waitUntil(caches.open(VERSION).then(cache=>cache.addAll(SHELL)).then(()=>self.skipWaiting()));
-});
-self.addEventListener('activate',event=>{
- event.waitUntil(caches.keys().then(keys=>Promise.all(
-  keys.filter(key=>key.startsWith('nubip-defenses-pwa-')&&key!==VERSION).map(key=>caches.delete(key))
- )).then(()=>self.clients.claim()));
-});
+/* Independent, locally published data. No University or Firebase requests. */
+const VERSION='nubip-defenses-pwa-v21-independent-20261018';
+const SHELL=['./','./index.html','./data.json','./manifest.webmanifest','./icon-192.png','./icon-512.png','./nubip-logo-blue.png?v=2','./theme.js?v=6','./brand.js','./cleanup.css?v=2'];
+self.addEventListener('install',event=>event.waitUntil(caches.open(VERSION).then(cache=>cache.addAll(SHELL)).then(()=>self.skipWaiting())));
+self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('nubip-defenses-pwa-')&&k!==VERSION).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
 self.addEventListener('fetch',event=>{
- const req=event.request;
- if(req.method!=='GET')return;
- const url=new URL(req.url);
- if(url.origin!==self.location.origin)return;
- const data=url.pathname.endsWith('/data.json');
- const navigation=req.mode==='navigate';
- const fresh=data||navigation||url.pathname.endsWith('/manifest.webmanifest')||/\.(?:js|css)$/.test(url.pathname);
- const key=data?'./data.json':navigation?'./index.html':req;
- const task=(async()=>{
+ const req=event.request,url=new URL(req.url);
+ if(req.method!=='GET'||url.origin!==self.location.origin)return;
+ const key=req.mode==='navigate'?'./index.html':url.pathname.endsWith('/data.json')?'./data.json':req;
+ event.respondWith((async()=>{
   const cache=await caches.open(VERSION);
-  if(!fresh){
-   const cached=await cache.match(key);
-   if(cached)return cached;
-  }
-  try{
-   const response=await fetch(req, fresh?{cache:'no-store'}:undefined);
-   if(response.ok){
-    try{await cache.put(key,response.clone());}catch(error){/* Full cache must not break a valid network response. */}
-    return response;
-   }
-   const cached=await cache.match(key);
-   return cached||response;
-  }catch(error){
-   const cached=await cache.match(key);
-   if(cached)return cached;
-   if(data)return new Response('{"items":[],"complete":false}',{headers:{'Content-Type':'application/json'}});
-   return Response.error();
-  }
- })();
- event.respondWith(task);
- event.waitUntil(task.then(()=>undefined,()=>undefined));
+  try{const response=await fetch(req,{cache:'no-cache'});if(response.ok){await cache.put(key,response.clone());return response;}return await cache.match(key)||response;}
+  catch(error){return await cache.match(key)||Response.error();}
+ })());
 });
-// Use Firebase compat in the existing PWA worker, not a second worker with the same scope.
-importScripts('https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js');
-importScripts('https://www.gstatic.com/firebasejs/10.14.1/firebase-messaging-compat.js');
-firebase.initializeApp({
- apiKey:'AIzaSyAaZnClBaIXQDj6gxdS5KYlFH7ZKTiHutc',
- authDomain:'nubip-dissertation-defenses.firebaseapp.com',
- projectId:'nubip-dissertation-defenses',
- storageBucket:'nubip-dissertation-defenses.firebasestorage.app',
- messagingSenderId:'204128815245',
- appId:'1:204128815245:web:590ed6d46f1a006a13bac4'
-});
-const messaging=firebase.messaging();
-messaging.onBackgroundMessage(payload=>{
- // Notification messages can be displayed by FCM automatically.
- // For data-only messages, show a single notification here.
- if(payload.notification)return;
- const data=payload.data||{};
- const title=data.title||'Захист дисертації — НУБіП України';
- const options={body:data.body||'Нове повідомлення про захист',icon:'./icon-192.png',data:{url:data.url||'./'}};
- self.registration.showNotification(title,options);
-});
-self.addEventListener('notificationclick',event=>{
- event.notification.close();
- const target=event.notification.data?.url||'./';
- event.waitUntil(clients.openWindow(target));
-});
-
-
-
-

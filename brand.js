@@ -15,3 +15,4 @@
   const name=document.createElement('div');name.className='nubip-brand-name';name.textContent='НАЦІОНАЛЬНИЙ УНІВЕРСИТЕТ БІОРЕСУРСІВ І ПРИРОДОКОРИСТУВАННЯ УКРАЇНИ';
   brand.append(img,name);header.prepend(brand);
 })();
+

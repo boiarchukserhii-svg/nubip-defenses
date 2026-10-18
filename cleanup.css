@@ -2,3 +2,30 @@
 .tabs { display: none !important; }
 .reminder-options, .event-help, .event-buttons .download-ics { display: none !important; }
 .event-buttons .google-event { display: inline-flex !important; }
+
+
+:root{color:#253c59;background:#f1f5fb}
+body{background:radial-gradient(ellipse at top left,#e4efff,transparent 52%),radial-gradient(ellipse at top right,#eef2fb,transparent 48%),#f1f5fb!important;padding-bottom:115px!important}
+main{margin-bottom:0!important}
+header h1{color:#253c59!important;letter-spacing:-.025em!important}header .nubip-brand-name{color:#285782!important}
+body:not(.home-mode) .dashboard,body:not(.home-mode) #pwaPanel,body:not(.search-mode) .search-panel,body.home-mode .layout{display:none!important}
+body.home-mode .dashboard{display:block!important}body.search-mode .search-panel{display:block!important}
+.stat:nth-child(n){background:#eaf2ff!important}.stat:nth-child(3n){background:#eef2f8!important}.stat:nth-child(2){background:#dfebff!important}.stat::before{color:#195bb5!important}.stat:nth-child(4)::before{content:'◇'}
+.dashboard .stat b{color:#23466f!important}.dashboard .stat small{color:#60738b!important}
+.search-panel #search-title{margin:0 0 18px;font-size:22px;color:#253c59}
+.search-panel .filters{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr) minmax(0,1fr) auto;align-items:end;gap:14px;margin:0}
+.filters label{display:grid;gap:7px;min-width:0;font-size:13px;font-weight:650;color:#526c82}
+.query-field{position:relative;min-width:0}.query-field svg{position:absolute;left:14px;top:15px;width:20px;height:20px;color:#6888b0;pointer-events:none}
+.search-panel input,.search-panel select{width:100%;min-width:0;min-height:50px;background:#f8faff;border:1px solid #d4e2f6!important;border-radius:13px!important;color:#253c59;font-size:16px;font-weight:400;padding:12px}
+.search-panel input{padding-left:43px}.search-panel #clear{min-height:50px;background:#eaf2ff;color:#195bb5;border:1px solid #d4e2f6!important;font-size:14px}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #195bb5;outline-offset:3px}
+.mobile-nav button.current{color:#195bb5!important;background:#e5efff!important}.mobile-nav{border-color:#dce6f3!important}.mobile-nav button{min-height:64px}
+.next-defense{background:linear-gradient(115deg,#eaf2ff,#f5f8ff)!important;border-color:#d6e5f9!important}.next-defense h2,.next-defense-badge,.date{color:#195bb5!important}
+footer{padding:26px 0 12px;text-align:left}.footer-line{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;max-width:580px;margin:0 auto;align-items:stretch}
+footer .app-owner,footer .official-page-button{display:flex;align-items:center;justify-content:center;gap:5px;min-width:0;min-height:46px;padding:10px 14px;border:1px solid #d6e5f9;border-radius:12px;background:#e5efff;color:#174f9c;font-size:13px;line-height:1.5;text-decoration:none;margin:0}
+footer .app-owner{display:block;align-content:center;text-align:center}footer .app-owner strong{color:#174f9c;white-space:nowrap;font-weight:700}
+.updated-date{text-align:center;font-size:12px;line-height:1.6;color:#60738b;margin:15px 0 0}.card a,.next-defense a{color:#195bb5!important}
+#pwaPanel{margin-top:0!important}.install-app{background:#e5efff!important;color:#195bb5!important;border-color:#d6e5f9!important;font-size:13px}.install-help{font-size:12px;max-width:720px}
+.cal-status-legend span:first-child{font-size:0}.cal-status-legend span:first-child::after{content:'● Майбутні захисти';font-size:12px;color:#195bb5}
+@media(max-width:850px){.search-panel .filters{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.search-query{grid-column:1/-1}.search-panel #clear{grid-column:1/-1}}
+@media(max-width:520px){.search-panel #search-title{font-size:20px}.search-panel .filters{gap:12px 10px}.footer-line{gap:8px}footer .app-owner,footer .official-page-button{font-size:11px;padding:10px 6px}.stat{min-height:108px}.mobile-nav button{font-size:10px!important}.panel{border-radius:22px!important}}
