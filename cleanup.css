@@ -29,3 +29,16 @@ footer .app-owner{display:block;align-content:center;text-align:center}footer .a
 .cal-status-legend span:first-child{font-size:0}.cal-status-legend span:first-child::after{content:'● Майбутні захисти';font-size:12px;color:#195bb5}
 @media(max-width:850px){.search-panel .filters{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.search-query{grid-column:1/-1}.search-panel #clear{grid-column:1/-1}}
 @media(max-width:520px){.search-panel #search-title{font-size:20px}.search-panel .filters{gap:12px 10px}.footer-line{gap:8px}footer .app-owner,footer .official-page-button{font-size:11px;padding:10px 6px}.stat{min-height:108px}.mobile-nav button{font-size:10px!important}.panel{border-radius:22px!important}}
+
+/* Preview: brighter blue statistics, within the Office palette. */
+.dashboard .stats{gap:10px!important}
+.dashboard .stat{border:1px solid #d2e2fb;box-shadow:0 4px 12px #195bb509;min-height:115px;overflow:hidden}
+.dashboard .stat:nth-child(1){background:linear-gradient(135deg,#195bb5,#397cdb)!important;border-color:#2469c6}
+.dashboard .stat:nth-child(1) b,.dashboard .stat:nth-child(1) small,.dashboard .stat:nth-child(1)::before{color:white!important}
+.dashboard .stat:nth-child(2){background:linear-gradient(145deg,#c7deff,#e4efff)!important;border-color:#a7c9fb}
+.dashboard .stat:nth-child(3){background:linear-gradient(145deg,#e1e8f5,#f0f4fa)!important;border-color:#d4dfee}
+.dashboard .stat:nth-child(4){background:linear-gradient(145deg,#d7ddff,#edf0ff)!important;border-color:#c6d1fb}
+.dashboard .stat:nth-child(5){background:linear-gradient(145deg,#cde7ff,#edf6ff)!important;border-color:#bad9f8}
+.dashboard .stat:nth-child(6){background:linear-gradient(145deg,#e1eaff,#f1f5ff)!important;border-color:#cfdcf7}
+.dashboard .stat:nth-child(n+2) b{color:#164c94!important}.dashboard .stat:nth-child(n+2) small{color:#476387!important}
+.dashboard .stat::before{font-size:22px!important;color:#195bb5!important}.dashboard .stat b{font-size:30px!important;font-weight:750}
