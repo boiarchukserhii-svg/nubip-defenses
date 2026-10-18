@@ -153,7 +153,7 @@ body.calendar-mode .layout,body.calendar-mode #nextDefense{display:none!importan
     return `<article class="cal-event">
       ${dateLabel}
       <div class="cal-event-main ${kind(x)}">
-        <strong>${escapeHTML(x.person_original || x.person || x.title || 'Захист дисертації')}</strong>
+        <strong>${escapeHTML(/^Захист дисертації(?:\s|$)/iu.test(x.person_original || x.person || x.title || '') ? (x.person_original || x.person || x.title) : 'Захист дисертації ' + (x.person_original || x.person || x.title || ''))}</strong>
         <small>${escapeHTML(degree)}</small>
         ${topic ? `<span class="cal-topic"><b>Тема:</b> ${escapeHTML(topic)}</span>` : ''}
         ${x.specialty ? `<small><b>Спеціальність:</b> ${escapeHTML(x.specialty)}</small>` : ''}
