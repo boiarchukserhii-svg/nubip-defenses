@@ -117,11 +117,11 @@ body.statistics-mode .layout,body.statistics-mode #calendar-screen,body.statisti
     byId('stats-year').value = chosenYear || '';
     byId('stats-degree').value = chosenDegree;
     const entries = selectedItems(), now = today();
-    const past = entries.filter(entry => entry.date < now).length;
+    const past = entries.filter(entry => !isUpcoming(entry)).length;
     screen.querySelector('.annual-totals').innerHTML =
       `<div class="annual-total"><strong>${entries.length}</strong><span>Захистів ${chosenYear?'за '+chosenYear+' рік':''}</span></div>`+
-      `<div class="annual-total"><strong>${past}</strong><span>Дата минула</span></div>`+
-      `<div class="annual-total"><strong>${entries.length-past}</strong><span>Сьогодні й майбутні</span></div>`;
+      `<div class="annual-total"><strong>${past}</strong><span>Час минув</span></div>`+
+      `<div class="annual-total"><strong>${entries.length-past}</strong><span>Майбутні</span></div>`;
     byId('stats-selection').textContent = [chosenDegree?`Ступінь: ${degreeNames[chosenDegree]}`:'',chosenSpecialty?`Спеціальність: ${chosenSpecialty}`:''].filter(Boolean).join(' · ');
     // Each chart keeps the other chart's filter, so its options remain selectable.
     const degreeEntries = yearItems().filter(entry => !chosenSpecialty || specialtyKey(entry) === chosenSpecialty);

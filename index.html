@@ -168,6 +168,7 @@ function dayWord(n) { const a=n%10,b=n%100; return b>=11&&b<=14 ? 'днів' : a
 function countdown(date, time='') {
   const days = daysUntil(date);
   if (days<0) return {style:'past',text:`Від дати захисту ${dayWord(-days)==='день'?'минув':'минуло'} ${-days} ${dayWord(-days)}`};
+  if (days===0 && !isUpcoming({date,time})) return {style:'past',text:'Запланований час захисту минув (сьогодні о '+time+')'};
   if (days===0) return {style:'today',text:'Захист заплановано сьогодні'+(time?' о '+time:'')};
   if (days===1) return {style:'tomorrow',text:'До захисту залишився 1 день (завтра)'};
   return {style:days<=7?'soon':'far',text:`До захисту залишилося ${days} ${dayWord(days)}`};
@@ -193,6 +194,14 @@ function kyivTimeToUtcMs(date, hour, minute){
     candidate+=difference;
   }
   return candidate;
+}
+// До архіву переносимо в момент початку захисту за київським часом.
+// Якщо час не вказано, запис залишається майбутнім до кінця дня.
+function isUpcoming(x, nowDay=today(), nowMs=Date.now()) {
+  if (x.date !== nowDay) return x.date > nowDay;
+  if (!validEventTime(x.time)) return true;
+  const [hour, minute] = String(x.time).trim().split(':').map(Number);
+  return nowMs < kyivTimeToUtcMs(x.date, hour, minute);
 }
 function icsUtc(ms){return new Date(ms).toISOString().replace(/[-:]/g,'').replace(/\.\d{3}Z$/,'Z');}
 function calendarRange(x) {
@@ -227,7 +236,7 @@ function googleEventLink(x){
 function calendarControls(x){
   const index=items.indexOf(x), range=calendarRange(x);
   if(index<0||!range)return '';
-  const future=x.date>=today();
+  const future=isUpcoming(x);
   const hourDisabled=(!future||!range.timed)?'disabled':'';
   return `<details class="event-actions" data-event-index="${index}">
     <summary>📅 Додати до календаря</summary>
@@ -273,7 +282,7 @@ function icsEvent(x, reminders){
   if(x.place)lines.push('LOCATION:'+icsText(x.place));
   if(officialUrl(x))lines.push('URL:'+officialUrl(x));
   const valid=['P7D','P1D',...(range.timed?['PT1H']:[])];
-  if(x.date>=today())for(const r of reminders){if(valid.includes(r))lines.push('BEGIN:VALARM','ACTION:DISPLAY','DESCRIPTION:'+icsText('Нагадування про захист дисертації'),'TRIGGER:-'+r,'END:VALARM');}
+  if(isUpcoming(x))for(const r of reminders){if(valid.includes(r))lines.push('BEGIN:VALARM','ACTION:DISPLAY','DESCRIPTION:'+icsText('Нагадування про захист дисертації'),'TRIGGER:-'+r,'END:VALARM');}
   lines.push('END:VEVENT','END:VCALENDAR');
   return lines.map(foldIcs).join('\r\n')+'\r\n';
 }
@@ -300,8 +309,7 @@ $('nextDefense').addEventListener('click',onCalendarDownload);
 
 function setTabs() { document.querySelectorAll('[data-tab]').forEach(b => b.classList.toggle('active',b.dataset.tab===tab)); }
 function nextDefense() {
-  const now = today();
-  const future = items.filter(x=>x.date>=now).sort((a,b)=>(a.date+' '+(a.time||'')).localeCompare(b.date+' '+(b.time||'')));
+  const future = items.filter(x=>isUpcoming(x)).sort((a,b)=>(a.date+' '+(a.time||'')).localeCompare(b.date+' '+(b.time||'')));
   const box = $('nextDefense');
   if (!future.length) {box.hidden=true;box.innerHTML='';return;}
   const x=future[0];
@@ -367,21 +375,22 @@ function matchesSearch(entry, query) {
 }
 
 function render() {
-  const now=today();
+  const now=today(), nowMs=Date.now();
+  const futureItems=new Set(items.filter(x=>isUpcoming(x,now,nowMs)));
   if ($('q').value.trim()) { tab='all'; day=''; setTabs(); }
   const years=[...new Set(items.map(x=>x.date.slice(0,4)))].sort().reverse();
   const current=$('year').value;
   $('year').innerHTML='<option value="">Усі роки</option>'+years.map(y=>`<option value="${y}">${y}</option>`).join('');
   $('year').value=current;
   $('all').textContent=items.length;
-  $('future').textContent=items.filter(x=>x.date>=now).length;
-  $('past').textContent=items.filter(x=>x.date<now).length;
+  $('future').textContent=futureItems.size;
+  $('past').textContent=items.length-futureItems.size;
   $('phd').textContent=items.filter(x=>x.degree==='PhD').length;
   $('doctor').textContent=items.filter(x=>x.degree==='Доктор наук').length;
   $('candidate').textContent=items.filter(x=>x.degree==='Кандидат наук').length;
   const q=$('q').value.toLocaleLowerCase('uk-UA').trim(), degree=$('degree').value;
   const filtered=items.filter(x=>
-    (tab==='all'||tab==='calendar'||(tab==='future'?x.date>=now:tab==='past'?x.date<now:false)) &&
+    (tab==='all'||tab==='calendar'||(tab==='future'?futureItems.has(x):tab==='past'?!futureItems.has(x):false)) &&
     (!day||x.date===day) && (!current||x.date.startsWith(current)) &&
     (!degree||(degree==='unknown'?!x.degree:x.degree===degree)) &&
     matchesSearch(x, q)
@@ -441,8 +450,12 @@ $('prev').onclick=()=>{view.setMonth(view.getMonth()-1);calendar();};
 $('next').onclick=()=>{view.setMonth(view.getMonth()+1);calendar();};
 $('resetDay').onclick=()=>{day='';render();};
 load();
-let lastRenderedDate=today();
-setInterval(()=>{const current=today();if(current!==lastRenderedDate){lastRenderedDate=current;render();}},60000);
+// Підтримуємо актуальні списки під час відкритої вкладки та після повернення в застосунок.
+function statusClock(){const now=today();return now+'|'+items.filter(x=>isUpcoming(x,now)).length;}
+let lastRenderedState=statusClock();
+function updateByClock(){const state=statusClock();if(state!==lastRenderedState){lastRenderedState=state;render();}}
+setInterval(updateByClock,15000);
+document.addEventListener('visibilitychange',()=>{if(!document.hidden)updateByClock();});
 
 let deferredInstallPrompt=null;
 const installButton=$('installApp'),installHelp=$('installHelp');
@@ -460,7 +473,7 @@ if(window.matchMedia('(display-mode: standalone)').matches){installButton.hidden
 if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js').catch(err=>console.warn('Service Worker:',err)));}
 </script>
 <script src="./brand.js"></script>
-<script src="./theme.js?v=7"></script>
+<script src="./theme.js?v=8"></script>
 <link rel="stylesheet" href="./cleanup.css?v=3">
 
 </body>

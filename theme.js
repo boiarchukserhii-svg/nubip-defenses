@@ -185,7 +185,7 @@ body.calendar-mode .layout,body.calendar-mode #nextDefense{display:none!importan
       '<span class="cal-blank"></span>'.repeat(offset);
     for (let d = 1; d <= days; d++) {
       const date = iso(y, m, d), events = byDate.get(date) || [];
-      const status = events.length ? (date < todayKey ? 'completed' :
+      const status = events.length ? (events.every(x => !isUpcoming(x)) ? 'completed' :
         date === todayKey ? 'current-defense' : 'upcoming') : '';
       const dots = [...new Set(events.map(kind))].slice(0, 3)
         .map(k => `<i class="cal-dot ${k}"></i>`).join('');
@@ -294,7 +294,7 @@ body.calendar-mode .layout,body.calendar-mode #nextDefense{display:none!importan
     const filtered = day || ['q','degree','year'].some(id => document.getElementById(id)?.value);
     box.hidden = tab !== 'home' || !!filtered;
     if (box.hidden) { box.innerHTML = ''; return; }
-    const upcoming = items.filter(x => x.date >= today()).slice().sort((a,b) =>
+    const upcoming = items.filter(x => isUpcoming(x)).slice().sort((a,b) =>
       (a.date + ' ' + (a.time || '23:59')).localeCompare(b.date + ' ' + (b.time || '23:59')));
     if (!upcoming.length) {
       box.innerHTML = '<h2>Найближчі захисти</h2><p>Запланованих захистів поки немає.</p>';
@@ -354,7 +354,7 @@ body.calendar-mode .layout,body.calendar-mode #nextDefense{display:none!importan
     const degree = document.getElementById('degree').value;
     const year = document.getElementById('year').value;
     const entries = items.filter(x =>
-      x.date < today() && (!day || x.date === day) &&
+      !isUpcoming(x) && (!day || x.date === day) &&
       (!year || x.date.startsWith(year)) &&
       (!degree || (degree === 'unknown' ? !x.degree : x.degree === degree)) &&
       (!query || [x.title,x.person,x.person_original,x.person_display,x.topic,x.place,x.degree,x.degree_full,x.council,x.specialty].join(' ').toLocaleLowerCase('uk-UA').includes(query))
