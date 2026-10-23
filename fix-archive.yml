@@ -1,0 +1,101 @@
+name: Виправити автоматичний архів захистів
+
+on:
+  push:
+    paths:
+      - '.github/workflows/fix-archive.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fix-archive:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Виправити розподіл за київським часом
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+
+          def patch(name, replacements):
+              path=Path(name)
+              original=path.read_bytes()
+              newline=b'\r\n' if b'\r\n' in original else b'\n'
+              text=original.decode('utf-8').replace('\r\n','\n')
+              for label, old, new in replacements:
+                  count=text.count(old)
+                  if count == 1:
+                      text=text.replace(old,new,1)
+                      print(f'{name}: {label} — виправлено')
+                  elif new in text:
+                      print(f'{name}: {label} — вже виправлено')
+                  else:
+                      raise RuntimeError(f'{name}: не знайдено ділянку {label} (збігів: {count})')
+              result=text.replace('\n',newline.decode()).encode('utf-8')
+              if result!=original:
+                  path.write_bytes(result)
+
+          patch('index.html', [
+          ('позначка після часу захисту',
+           "  if (days===0) return {style:'today',text:'Захист заплановано сьогодні'+(time?' о '+time:'')};",
+           "  if (days===0 && !isUpcoming({date,time})) return {style:'past',text:'Запланований час захисту минув (сьогодні о '+time+')'};\n  if (days===0) return {style:'today',text:'Захист заплановано сьогодні'+(time?' о '+time:'')};"),
+          ('облік часу за Києвом',
+           '  return candidate;\n}\nfunction icsUtc(ms)',
+           "  return candidate;\n}\n// До архіву переносимо в момент початку захисту за київським часом.\n// Якщо час не вказано, запис залишається майбутнім до кінця дня.\nfunction isUpcoming(x, nowDay=today(), nowMs=Date.now()) {\n  if (x.date !== nowDay) return x.date > nowDay;\n  if (!validEventTime(x.time)) return true;\n  const [hour, minute] = String(x.time).trim().split(':').map(Number);\n  return nowMs < kyivTimeToUtcMs(x.date, hour, minute);\n}\nfunction icsUtc(ms)"),
+          ('майбутні події у календарі', '  const future=x.date>=today();', '  const future=isUpcoming(x);'),
+          ('нагадування .ics', '  if(x.date>=today())for(const r of reminders)', '  if(isUpcoming(x))for(const r of reminders)'),
+          ('найближчий захист', '  const now = today();\n  const future = items.filter(x=>x.date>=now).sort(', '  const future = items.filter(x=>isUpcoming(x)).sort('),
+          ('часовий стан списків', 'function render() {\n  const now=today();', 'function render() {\n  const now=today(), nowMs=Date.now();\n  const futureItems=new Set(items.filter(x=>isUpcoming(x,now,nowMs)));'),
+          ('лічильники майбутніх та архіву', "  $('future').textContent=items.filter(x=>x.date>=now).length;\n  $('past').textContent=items.filter(x=>x.date<now).length;", "  $('future').textContent=futureItems.size;\n  $('past').textContent=items.length-futureItems.size;"),
+          ('фільтр майбутніх та архіву', "    (tab==='all'||tab==='calendar'||(tab==='future'?x.date>=now:tab==='past'?x.date<now:false)) &&", "    (tab==='all'||tab==='calendar'||(tab==='future'?futureItems.has(x):tab==='past'?!futureItems.has(x):false)) &&"),
+          ('оновлення під час роботи', 'let lastRenderedDate=today();\nsetInterval(()=>{const current=today();if(current!==lastRenderedDate){lastRenderedDate=current;render();}},60000);', "// Підтримуємо актуальні списки під час відкритої вкладки та після повернення в застосунок.\nfunction statusClock(){const now=today();return now+'|'+items.filter(x=>isUpcoming(x,now)).length;}\nlet lastRenderedState=statusClock();\nfunction updateByClock(){const state=statusClock();if(state!==lastRenderedState){lastRenderedState=state;render();}}\nsetInterval(updateByClock,15000);\ndocument.addEventListener('visibilitychange',()=>{if(!document.hidden)updateByClock();});"),
+          ('оновлення теми', '<script src="./theme.js?v=7"></script>', '<script src="./theme.js?v=8"></script>')
+          ])
+
+          patch('theme.js', [
+          ('позначки календаря', "      const status = events.length ? (date < todayKey ? 'completed' :\n        date === todayKey ? 'current-defense' : 'upcoming') : '';", "      const status = events.length ? (events.every(x => !isUpcoming(x)) ? 'completed' :\n        date === todayKey ? 'current-defense' : 'upcoming') : '';"),
+          ('найближчі на головній', '    const upcoming = items.filter(x => x.date >= today()).slice().sort(', '    const upcoming = items.filter(x => isUpcoming(x)).slice().sort('),
+          ('групування архіву', '      x.date < today() && (!day || x.date === day) &&', '      !isUpcoming(x) && (!day || x.date === day) &&')
+          ])
+
+          patch('service-worker.js', [
+          ('нова версія встановленого застосунку', 'nubip-defenses-pwa-v23-calendar-title-20261019', 'nubip-defenses-pwa-v24-time-aware-archive-20261022'),
+          ('оновлення кешу мобільної теми', "'./theme.js?v=7'", "'./theme.js?v=8'")
+          ])
+
+          patch('statistics.js', [
+          ('статистика минулих захистів', '    const past = entries.filter(entry => entry.date < now).length;', '    const past = entries.filter(entry => !isUpcoming(entry)).length;'),
+          ('підпис статистики архіву', '<span>Дата минула</span>', '<span>Час минув</span>'),
+          ('підпис статистики майбутніх', '<span>Сьогодні й майбутні</span>', '<span>Майбутні</span>')
+          ])
+          PY
+      - name: Перевірити синтаксис JavaScript
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          s = Path('index.html').read_text(encoding='utf-8')
+          assert s.count('<script>') == 1, 'Не знайдено основний JavaScript'
+          assert 'function isUpcoming(' in s
+          Path('/tmp/nubip-main.js').write_text(s.split('<script>',1)[1].split('</script>',1)[0],encoding='utf-8')
+          PY
+          node --check /tmp/nubip-main.js
+          node --check theme.js
+          node --check statistics.js
+          node --check service-worker.js
+      - name: Зберегти виправлення в main
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add index.html theme.js service-worker.js statistics.js
+          if ! git diff --cached --quiet; then
+            git commit -m 'Fix time-aware automatic defense archive (Kyiv timezone)'
+            git push origin HEAD:main
+          fi
