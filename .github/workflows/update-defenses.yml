@@ -2,9 +2,6 @@ name: Оновлення захистів
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '17 6 * * *'
-
 permissions:
   contents: write
 
