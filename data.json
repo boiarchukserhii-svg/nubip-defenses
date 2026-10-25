@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-18T21:23:59.120243+00:00",
+  "updated_at": "2026-10-25T12:19:09.242208+00:00",
   "pages_scanned": 17,
   "complete": true,
   "detail_failures": 0,
@@ -2667,11 +2667,52 @@
       "specialty": "071 Облік і оподаткування",
       "supervisor": "доктор економічних наук, професор ГУЦАЛЕНКО Любов Василівна, професор кафедри обліку та оподаткування Національного університету біоресурсів і природокористування України Міністерства освіти і науки України",
       "details_checked": true
+    },
+    {
+      "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-lu-tszya-na-temu-orhanizatsiya-proyektno-oriyentovanoho-navchannya-maybutnikh",
+      "title": "Захист дисертації ЛУ Цзя на тему: «Організація проєктно-орієнтованого навчання майбутніх спеціалістів технологічного спрямування фахової передвищої освіти»",
+      "person": "ЛУ Цзя",
+      "topic": "Організація проєктно-орієнтованого навчання майбутніх спеціалістів технологічного спрямування фахової передвищої освіти",
+      "date": "2026-12-10",
+      "time": "10:00",
+      "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
+      "person_original": "ЛУ Цзя",
+      "person_display": "ЛУ Цзя",
+      "degree": "PhD",
+      "council": "РСВР 305",
+      "specialty": "011 Освітні, педагогічні науки",
+      "supervisor": "доктор педагогічних наук, професор ШУМІЛОВА Ірина Федорівна",
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
+    },
+    {
+      "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-svyatnenka-maksyma-olehovycha-na-temu-administratyvno-pravovi-zasady",
+      "title": "Захист дисертації СВЯТНЕНКА Максима Олеговича на тему: «Адміністративно-правові засади організації та функціонування індустріальних парків»",
+      "person": "СВЯТНЕНКА Максима Олеговича",
+      "topic": "Адміністративно-правові засади організації та функціонування індустріальних парків",
+      "date": "2026-12-11",
+      "time": "10:00",
+      "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
+      "person_original": "СВЯТНЕНКА Максима Олеговича",
+      "person_display": "СВЯТНЕНКА Максима Олеговича",
+      "degree": "PhD",
+      "council": "РСВР 306",
+      "specialty": "081 Право",
+      "supervisor": "доктор юридичних наук, професор ЛАДИЧЕНКО Віктор Валерійович",
+      "details_checked": true,
+      "degree_full": "доктор філософії",
+      "degree_version": 4
     }
   ],
   "last_automatic_update_at": "2026-10-15T21:43:18+00:00",
   "manual_update": {
-    "scope": "Додано один захист за офіційною карткою; повне автоматичне сканування не виконувалося",
-    "source": "https://nubip.edu.ua/zakhyst-dysertatsiyi-shao-chao-na-temu-upravlinnya-profesiynym-rozvytkom-vykladacha-tekhnichnoho"
+    "scope": "Ручне додавання двох офіційно опублікованих захистів; автоматичне сканування НУБіП не виконувалося",
+    "source": "https://nubip.edu.ua/defend",
+    "sources": [
+      "https://nubip.edu.ua/zakhyst-dysertatsiyi-lu-tszya-na-temu-orhanizatsiya-proyektno-oriyentovanoho-navchannya-maybutnikh",
+      "https://nubip.edu.ua/zakhyst-dysertatsiyi-svyatnenka-maksyma-olehovycha-na-temu-administratyvno-pravovi-zasady"
+    ],
+    "added": 2
   }
 }
