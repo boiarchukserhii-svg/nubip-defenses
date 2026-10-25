@@ -1,0 +1,88 @@
+name: Ручне додавання нових захистів — 25.10.2026
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/add-defenses-2026-10-25.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  add-defenses:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Отримати поточні файли застосунку
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Додати два захисти без парсера НУБіП
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import json
+          import re
+          from datetime import datetime, timezone
+          
+          records = [{'url': 'https://nubip.edu.ua/zakhyst-dysertatsiyi-lu-tszya-na-temu-orhanizatsiya-proyektno-oriyentovanoho-navchannya-maybutnikh', 'title': 'Захист дисертації ЛУ Цзя на тему: «Організація проєктно-орієнтованого навчання майбутніх спеціалістів технологічного спрямування фахової передвищої освіти»', 'person': 'ЛУ Цзя', 'topic': 'Організація проєктно-орієнтованого навчання майбутніх спеціалістів технологічного спрямування фахової передвищої освіти', 'date': '2026-12-10', 'time': '10:00', 'place': 'вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301', 'person_original': 'ЛУ Цзя', 'person_display': 'ЛУ Цзя', 'degree': 'PhD', 'council': 'РСВР 305', 'specialty': '011 Освітні, педагогічні науки', 'supervisor': 'доктор педагогічних наук, професор ШУМІЛОВА Ірина Федорівна', 'details_checked': True, 'degree_full': 'доктор філософії', 'degree_version': 4}, {'url': 'https://nubip.edu.ua/zakhyst-dysertatsiyi-svyatnenka-maksyma-olehovycha-na-temu-administratyvno-pravovi-zasady', 'title': 'Захист дисертації СВЯТНЕНКА Максима Олеговича на тему: «Адміністративно-правові засади організації та функціонування індустріальних парків»', 'person': 'СВЯТНЕНКА Максима Олеговича', 'topic': 'Адміністративно-правові засади організації та функціонування індустріальних парків', 'date': '2026-12-11', 'time': '10:00', 'place': 'вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301', 'person_original': 'СВЯТНЕНКА Максима Олеговича', 'person_display': 'СВЯТНЕНКА Максима Олеговича', 'degree': 'PhD', 'council': 'РСВР 306', 'specialty': '081 Право', 'supervisor': 'доктор юридичних наук, професор ЛАДИЧЕНКО Віктор Валерійович', 'details_checked': True, 'degree_full': 'доктор філософії', 'degree_version': 4}]
+          
+          p = Path('data.json')
+          data = json.loads(p.read_text(encoding='utf-8'))
+          if not isinstance(data.get('items'), list):
+              raise RuntimeError('У data.json відсутній список захистів.')
+          items = data['items']
+          existing = {str(x.get('url','')).rstrip('/') for x in items}
+          added = 0
+          for record in records:
+              key = record['url'].rstrip('/')
+              if key in existing:
+                  print('Уже є: ' + record['person'])
+                  continue
+              items.append(record)
+              existing.add(key)
+              added += 1
+              print('Додано: ' + record['person'] + ' (' + record['date'] + ')')
+          
+          if added:
+              items.sort(key=lambda x: (x.get('date',''), x.get('time',''), x.get('person','')))
+              data['updated_at'] = datetime.now(timezone.utc).isoformat()
+              data['manual_update'] = {
+                  'scope': 'Ручне додавання двох офіційно опублікованих захистів; автоматичне сканування НУБіП не виконувалося',
+                  'source': 'https://nubip.edu.ua/defend',
+                  'sources': [r['url'] for r in records],
+                  'added': added
+              }
+              p.write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+          print('Зараз захистів: ' + str(len(items)))
+          
+          # Прибираємо старий запуск парсера за розкладом (зберігаємо workflow_dispatch).
+          old = Path('.github/workflows/update-defenses.yml')
+          if old.exists():
+              content = old.read_text(encoding='utf-8')
+              schedule = re.compile(r"(?m)^  schedule:\s*\n    - cron: ['\"][^'\"]+['\"]\s*\n")
+              revised, count = schedule.subn('', content, count=1)
+              if count:
+                  old.write_text(revised, encoding='utf-8')
+                  print('Вимкнено старе автоматичне оновлення за розкладом.')
+              elif '  schedule:' in content:
+                  raise RuntimeError('Невідомий формат старого розкладу; перевірте вручну.')
+              else:
+                  print('Розклад уже вимкнено.')
+          PY
+      - name: Перевірити оновлений JSON
+        run: |
+          python3 -m json.tool data.json >/dev/null
+      - name: Опублікувати нові записи
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data.json .github/workflows/update-defenses.yml
+          if ! git diff --cached --quiet; then
+            git commit -m "Ручне оновлення: захисти 10 і 11 грудня 2026"
+            git push origin HEAD:main
+          else
+            echo "Нові записи вже є; змін немає"
+          fi
