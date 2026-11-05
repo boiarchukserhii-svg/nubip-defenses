@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-10-25T12:19:09.242208+00:00",
-  "pages_scanned": 17,
+  "updated_at": "2026-11-05T13:45:10+00:00",
+  "pages_scanned": 18,
   "complete": true,
   "detail_failures": 0,
   "items": [
@@ -2633,6 +2633,24 @@
       "degree_version": 4
     },
     {
+      "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-horshchara-vladyslava-ivanovycha-na-temu-ekoloho-henetychni-osnovy-sayt",
+      "title": "Захист дисертації ГОРЩАРА Владислава Івановича на тему: «Еколого-генетичні основи сайт-специфічного формотворчого процесу у пшениці озимої»",
+      "person": "ГОРЩАРА Владислава Івановича",
+      "topic": "Еколого-генетичні основи сайт-специфічного формотворчого процесу у пшениці озимої",
+      "date": "2026-11-06",
+      "time": "10:00",
+      "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
+      "person_original": "ГОРЩАРА Владислава Івановича",
+      "person_display": "ГОРЩАРА Владислава Івановича",
+      "degree": "Доктор наук",
+      "degree_full": "доктор сільськогосподарських наук",
+      "council": "Д 26.004.02",
+      "specialty": "03.00.16 Екологія",
+      "supervisor": "",
+      "details_checked": true,
+      "degree_version": 4
+    },
+    {
       "url": "https://nubip.edu.ua/zakhyst-dysertatsiyi-shao-chao-na-temu-upravlinnya-profesiynym-rozvytkom-vykladacha-tekhnichnoho",
       "title": "Захист дисертації ШАО Чао на тему: «Управління професійним розвитком викладача технічного коледжу в Китайській Народній Республіці»",
       "person": "ШАО Чао",
@@ -2673,7 +2691,7 @@
       "title": "Захист дисертації ЛУ Цзя на тему: «Організація проєктно-орієнтованого навчання майбутніх спеціалістів технологічного спрямування фахової передвищої освіти»",
       "person": "ЛУ Цзя",
       "topic": "Організація проєктно-орієнтованого навчання майбутніх спеціалістів технологічного спрямування фахової передвищої освіти",
-      "date": "2026-12-10",
+      "date": "2026-12-11",
       "time": "10:00",
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "ЛУ Цзя",
@@ -2692,7 +2710,7 @@
       "person": "СВЯТНЕНКА Максима Олеговича",
       "topic": "Адміністративно-правові засади організації та функціонування індустріальних парків",
       "date": "2026-12-11",
-      "time": "10:00",
+      "time": "13:00",
       "place": "вул. Героїв Оборони, 15, навчальний корпус № 3, кімната 301",
       "person_original": "СВЯТНЕНКА Максима Олеговича",
       "person_display": "СВЯТНЕНКА Максима Олеговича",
@@ -2704,15 +2722,5 @@
       "degree_full": "доктор філософії",
       "degree_version": 4
     }
-  ],
-  "last_automatic_update_at": "2026-10-15T21:43:18+00:00",
-  "manual_update": {
-    "scope": "Ручне додавання двох офіційно опублікованих захистів; автоматичне сканування НУБіП не виконувалося",
-    "source": "https://nubip.edu.ua/defend",
-    "sources": [
-      "https://nubip.edu.ua/zakhyst-dysertatsiyi-lu-tszya-na-temu-orhanizatsiya-proyektno-oriyentovanoho-navchannya-maybutnikh",
-      "https://nubip.edu.ua/zakhyst-dysertatsiyi-svyatnenka-maksyma-olehovycha-na-temu-administratyvno-pravovi-zasady"
-    ],
-    "added": 2
-  }
+  ]
 }
