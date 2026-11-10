@@ -570,7 +570,7 @@ body.calendar-mode .layout,body.calendar-mode #nextDefense{display:none!importan
     buttons.push(button);
   }
   const analytics = document.createElement('a');
-  analytics.href = './dashboard/';
+  analytics.href = './dashboard.html';
   const analyticsIcon = navIcon('<path d="M4 20h16M7 16v-4m5 4V8m5 8V4"></path>');
   analytics.innerHTML = `<span class="nav-icon" aria-hidden="true">${analyticsIcon}</span><span>Аналітика</span>`;
   nav.append(analytics);
