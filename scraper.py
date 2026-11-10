@@ -14,13 +14,6 @@ MONTHS = {'січ':1,'лют':2,'бер':3,'кві':4,'тра':5,'чер':6,'л�
 DATE_RE = re.compile(r'(\d{1,2})\s+(січ\w*|лют\w*|бер\w*|кві\w*|тра\w*|чер\w*|лип\w*|сер\w*|вер\w*|жов\w*|лис\w*|гру\w*)\s+(20\d{2})(?:\s*[-–]\s*(\d{1,2}:\d{2}))?', re.I)
 TITLE_RE = re.compile(r'^Захист\s+дисертації\s+(.+?)\s+на\s+тему\s*:\s*«(.*)»\s*$', re.I | re.S)
 
-SPECIALTY_RE = re.compile(
-    r'(?:зі|за)\s+спеціальност[іи]\s+'
-    r'([0-9]{2}(?:\s*\.\s*[0-9]{2}){2}|[A-ZА-ЯІЇЄҐ]?[0-9]{2,3}|[A-ZА-ЯІЇЄҐ][0-9])'
-    r'\s*(?:[–—-]\s*)?[«"“]([^»"”]+)[»"”]',
-    re.I,
-)
-
 
 def date_in(text):
     m = DATE_RE.search(text)
@@ -92,15 +85,12 @@ def enrich(session, item):
     text = content.get_text(' ', strip=True)
     degree, degree_full = degree_from_text(text)
     council = re.search(r'(?:разової\s+спеціалізованої\s+вченої\s+ради\s+|спеціалізованої\s+вченої\s+ради\s+)([А-ЯІЇЄҐA-Z]{0,8}\s*[А-ЯІЇЄҐA-Z0-9.\-]{2,20})', text, re.I)
-    specialty = SPECIALTY_RE.search(text)
+    specialty = re.search(r'(?:зі|за)\s+спеціальност[іи]\s+([A-ZА-ЯІЇЄҐ]?\d{2,3})\s*[«"]([^»"]+)', text, re.I)
     supervisor = re.search(r'Науков(?:ий|а)\s+керівник\s*[–—:-]\s*(.+?)(?=Голова\s+ради|Рецензент|Офіційний\s+опонент|Дисертація|$)', text, re.I)
     item['degree'] = degree
     item['degree_full'] = degree_full
     item['council'] = council.group(1).strip() if council else item.get('council', '')
-    item['specialty'] = (
-        re.sub(r'\s+', '', specialty.group(1)) + ' ' + ' '.join(specialty.group(2).split())
-        if specialty else item.get('specialty', '')
-    )
+    item['specialty'] = (specialty.group(1)+' '+specialty.group(2)).strip() if specialty else item.get('specialty', '')
     item['supervisor'] = supervisor.group(1).strip()[:350] if supervisor else item.get('supervisor', '')
     item['details_checked'] = True
     return item
@@ -145,10 +135,10 @@ def main():
         item['person_display'] = item['person_original']
         item.pop('name_status', None)
     # Re-check old records that used a two-category degree classifier.
-    # Also re-check entries left without a specialty by the older extractor.
+    # Once classified with v4, subsequent runs need only check new/unclassified entries.
     failures = 0
     for item in items.values():
-        if item.get('degree_version') == 4 and item.get('degree') and item.get('specialty'): continue
+        if item.get('degree_version') == 4 and item.get('degree'): continue
         try:
             enrich(session, item)
             item['degree_version'] = 4

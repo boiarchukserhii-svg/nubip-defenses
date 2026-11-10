@@ -428,7 +428,9 @@ function calendar() {
 }
 async function load() {
   try {
-    const data=await window.loadDefenseData();items=data.items;
+    const r=await fetch('./data.json',{cache:'no-cache'});
+    if(!r.ok)throw Error('Не вдалося отримати data.json');
+    const data=await r.json();items=data.items||[];
     $('status').textContent = data.updated_at
       ? 'Оновлено: ' + new Date(data.updated_at).toLocaleString('uk-UA', {
           timeZone: 'Europe/Kyiv'
@@ -471,8 +473,7 @@ if(window.matchMedia('(display-mode: standalone)').matches){installButton.hidden
 if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js').catch(err=>console.warn('Service Worker:',err)));}
 </script>
 <script src="./brand.js"></script>
-<script src="./data-source.js"></script>
-<script src="./theme.js?v=9"></script>
+<script src="./theme.js?v=8"></script>
 <link rel="stylesheet" href="./cleanup.css?v=3">
 
 </body>
