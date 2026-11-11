@@ -42,3 +42,8 @@ footer .app-owner{display:block;align-content:center;text-align:center}footer .a
 .dashboard .stat:nth-child(6){background:linear-gradient(145deg,#e1eaff,#f1f5ff)!important;border-color:#cfdcf7}
 .dashboard .stat:nth-child(n+2) b{color:#164c94!important}.dashboard .stat:nth-child(n+2) small{color:#476387!important}
 .dashboard .stat::before{font-size:22px!important;color:#195bb5!important}.dashboard .stat b{font-size:30px!important;font-weight:750}
+
+/* Zakon typeface from the Ministry of Culture font page. */
+@font-face{font-family:Zakon;src:url('./Zakon-Regular.otf') format('opentype');font-style:normal;font-weight:400;font-display:swap}
+@font-face{font-family:Zakon;src:url('./Zakon-Bold.otf') format('opentype');font-style:normal;font-weight:700;font-display:swap}
+:root,body,button,input,select,textarea{font-family:Zakon,Georgia,serif}
